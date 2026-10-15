@@ -1,0 +1,16 @@
+{
+  "id": "tutorial-cards",
+  "label": "教程卡片型",
+  "order": 2,
+  "version": "2026.03.25-alpha.1",
+  "selectionValue": "tutorial-cards",
+  "defaultColorPalette": "ocean-blue",
+  "promptMode": "tutorial-cards",
+  "fallbackPolicy": "tutorial-structured",
+  "renderProfile": "tutorial-cards",
+  "allowedBlocks": ["hero", "part-nav", "lead-quote", "case-block", "section-block", "phone-frame", "cta-card"],
+  "supportsImages": true,
+  "providerStrategy": "require-ai",
+  "recommendedArticleTypes": ["tutorial", "case-study", "product-intro", "workflow"],
+  "description": "更强调章节编号、信息卡与截图展示，适合教程、清单和案例拆解。"
+}

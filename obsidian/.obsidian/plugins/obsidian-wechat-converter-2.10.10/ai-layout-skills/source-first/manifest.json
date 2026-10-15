@@ -1,0 +1,16 @@
+{
+  "id": "source-first",
+  "label": "原文增强型",
+  "order": 1,
+  "version": "2026.03.25-alpha.1",
+  "selectionValue": "source-first",
+  "defaultColorPalette": "tech-green",
+  "promptMode": "source-first",
+  "fallbackPolicy": "source-first-preserve",
+  "renderProfile": "source-first",
+  "allowedBlocks": ["hero", "part-nav", "lead-quote", "case-block", "section-block", "phone-frame", "cta-card"],
+  "supportsImages": true,
+  "providerStrategy": "prefer-ai-fallback-local",
+  "recommendedArticleTypes": ["article", "essay", "note", "knowledge-base"],
+  "description": "最接近普通预览，正文尽量连续流动，只做轻量结构增强。"
+}

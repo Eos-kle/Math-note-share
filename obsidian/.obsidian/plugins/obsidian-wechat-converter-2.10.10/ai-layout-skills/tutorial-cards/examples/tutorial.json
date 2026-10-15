@@ -1,0 +1,58 @@
+{
+  "articleType": "tutorial",
+  "selection": {
+    "layoutFamily": "tutorial-cards",
+    "colorPalette": "ocean-blue"
+  },
+  "resolved": {
+    "layoutFamily": "tutorial-cards",
+    "colorPalette": "ocean-blue"
+  },
+  "recommendedLayoutFamily": "tutorial-cards",
+  "recommendedColorPalette": "ocean-blue",
+  "title": "Obsidian 入门：给笔记打标签",
+  "summary": "像教程精修稿一样结构清晰。",
+  "blocks": [
+    {
+      "type": "hero",
+      "eyebrow": "AI Layout Draft",
+      "title": "Obsidian 入门：给笔记打标签",
+      "subtitle": "让内容自己跳出来",
+      "coverImageId": "image-1",
+      "variant": "cover-right"
+    },
+    {
+      "type": "part-nav",
+      "items": [
+        { "label": "PART 01", "text": "标签是什么" },
+        { "label": "PART 02", "text": "怎么用" }
+      ]
+    },
+    {
+      "type": "section-block",
+      "sectionIndex": 0,
+      "sectionLabel": "PART 01",
+      "title": "标签是什么",
+      "callouts": [
+        {
+          "type": "tip",
+          "title": "先理解再操作",
+          "body": "教程型布局可以强化结构，但原文里的提示信息仍应作为 callout 保留。"
+        }
+      ],
+      "subsections": [
+        {
+          "title": "常见误区",
+          "level": 3,
+          "callouts": [
+            {
+              "type": "note",
+              "title": "注意",
+              "body": "不要把所有提示内容都压平成普通子段落。"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

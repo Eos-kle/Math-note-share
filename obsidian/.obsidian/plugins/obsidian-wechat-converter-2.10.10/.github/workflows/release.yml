@@ -1,0 +1,119 @@
+name: Release Package
+
+on:
+  push:
+    tags:
+      - "*.*.*"
+      - "v*.*.*"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  attestations: write
+  id-token: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Use Node.js 24.x
+        uses: actions/setup-node@v6
+        with:
+          node-version: "24.x"
+          cache: "npm"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Validate versions.json mapping
+        run: |
+          MANIFEST_VERSION="$(node -p "require('./manifest.json').version")"
+          MANIFEST_MIN_APP_VERSION="$(node -p "require('./manifest.json').minAppVersion")"
+          VERSION_MAP="$(node -p "const v=require('./versions.json'); v[require('./manifest.json').version] || ''")"
+
+          if [ -z "$VERSION_MAP" ]; then
+            echo "versions.json missing entry for $MANIFEST_VERSION"
+            exit 1
+          fi
+
+          if [ "$VERSION_MAP" != "$MANIFEST_MIN_APP_VERSION" ]; then
+            echo "versions.json mapping mismatch: expected $MANIFEST_VERSION -> $MANIFEST_MIN_APP_VERSION, got $VERSION_MAP"
+            exit 1
+          fi
+
+      - name: Validate tag/version consistency
+        if: startsWith(github.ref, 'refs/tags/')
+        run: |
+          TAG="${GITHUB_REF_NAME}"
+          MANIFEST_VERSION="$(node -p "require('./manifest.json').version")"
+
+          if [[ "$TAG" == v* ]]; then
+            echo "Release tags must match manifest version exactly and must not use a v prefix."
+            echo "Use $MANIFEST_VERSION instead of v$MANIFEST_VERSION."
+            exit 1
+          fi
+
+          if [ "$TAG" != "$MANIFEST_VERSION" ]; then
+            echo "Tag version ($TAG) does not match manifest version ($MANIFEST_VERSION)"
+            exit 1
+          fi
+
+      - name: Setup Mock for CI
+        run: |
+          mkdir -p node_modules/obsidian
+          cp __mocks__/obsidian.js node_modules/obsidian/index.js
+
+      - name: Obsidian mobile and release readiness guard
+        run: npm run review:guard
+
+      - name: Prepare release notes
+        if: startsWith(github.ref, 'refs/tags/')
+        id: release_notes
+        run: |
+          VERSION="${GITHUB_REF_NAME}"
+          NOTES_FILE="RELEASE_NOTES/v${VERSION}.md"
+
+          if [ -f "$NOTES_FILE" ]; then
+            # Extract title from YAML front matter
+            TITLE=$(sed -n 's/^title: *//p' "$NOTES_FILE" | head -1)
+            echo "title=$TITLE" >> $GITHUB_OUTPUT
+
+            # Extract body (everything after the second ---)
+            # Use awk to get content after the closing front matter delimiter
+            awk '/^---$/{n++;next} n>=2' "$NOTES_FILE" > /tmp/release_body.md
+            echo "body_file=/tmp/release_body.md" >> $GITHUB_OUTPUT
+            echo "found=true" >> $GITHUB_OUTPUT
+            echo "✅ Found release notes: $NOTES_FILE"
+            echo "Title: $TITLE"
+            echo "Body preview:"
+            head -5 /tmp/release_body.md
+          else
+            echo "found=false" >> $GITHUB_OUTPUT
+            echo "⚠️ Release notes file not found: $NOTES_FILE"
+          fi
+
+      - name: Attest release assets
+        if: startsWith(github.ref, 'refs/tags/')
+        uses: actions/attest-build-provenance@v3
+        with:
+          subject-path: |
+            main.js
+            manifest.json
+            styles.css
+
+      - name: Create GitHub release
+        if: startsWith(github.ref, 'refs/tags/')
+        uses: softprops/action-gh-release@v3
+        with:
+          name: ${{ github.ref_name }}${{ steps.release_notes.outputs.found == 'true' && format(' - {0}', steps.release_notes.outputs.title) || '' }}
+          body_path: ${{ steps.release_notes.outputs.body_file }}
+          files: |
+            main.js
+            manifest.json
+            styles.css
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

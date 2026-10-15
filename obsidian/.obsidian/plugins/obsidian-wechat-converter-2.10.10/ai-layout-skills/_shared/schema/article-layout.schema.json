@@ -1,0 +1,226 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "obsidian-wechat-converter/article-layout.schema.json",
+  "title": "WeChat Article Layout",
+  "type": "object",
+  "required": ["articleType", "title", "summary", "selection", "resolved", "blocks"],
+  "additionalProperties": false,
+  "properties": {
+    "articleType": { "type": "string" },
+    "title": { "type": "string" },
+    "summary": { "type": "string" },
+    "selection": {
+      "type": "object",
+      "required": ["layoutFamily", "colorPalette"],
+      "additionalProperties": false,
+      "properties": {
+        "layoutFamily": {
+          "enum": ["auto", "source-first", "tutorial-cards", "editorial-lite"]
+        },
+        "colorPalette": {
+          "enum": ["auto", "tech-green", "ocean-blue", "sunset-amber", "graphite-rose", "basic-blue", "basic-green", "basic-purple", "basic-orange", "basic-teal", "basic-rose", "basic-ruby", "basic-slate", "custom"]
+        }
+      }
+    },
+    "resolved": {
+      "type": "object",
+      "required": ["layoutFamily", "colorPalette"],
+      "additionalProperties": false,
+      "properties": {
+        "layoutFamily": {
+          "enum": ["source-first", "tutorial-cards", "editorial-lite"]
+        },
+        "colorPalette": {
+          "enum": ["tech-green", "ocean-blue", "sunset-amber", "graphite-rose", "basic-blue", "basic-green", "basic-purple", "basic-orange", "basic-teal", "basic-rose", "basic-ruby", "basic-slate", "custom"]
+        }
+      }
+    },
+    "recommendedLayoutFamily": {
+      "enum": ["source-first", "tutorial-cards", "editorial-lite"]
+    },
+    "recommendedColorPalette": {
+      "enum": ["tech-green", "ocean-blue", "sunset-amber", "graphite-rose", "basic-blue", "basic-green", "basic-purple", "basic-orange", "basic-teal", "basic-rose", "basic-ruby", "basic-slate", "custom"]
+    },
+    "stylePack": {
+      "type": "string",
+      "description": "兼容旧版本字段；运行时应以 resolved.colorPalette 为准。"
+    },
+    "blocks": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 24,
+      "items": {
+        "oneOf": [
+          {
+            "type": "object",
+            "required": ["type", "title"],
+            "additionalProperties": false,
+            "properties": {
+              "type": { "const": "hero" },
+              "eyebrow": { "type": "string" },
+              "title": { "type": "string" },
+              "subtitle": { "type": "string" },
+              "coverImageId": { "type": "string" },
+              "variant": { "enum": ["cover-right", "cover-left"] }
+            }
+          },
+          {
+            "type": "object",
+            "required": ["type", "items"],
+            "additionalProperties": false,
+            "properties": {
+              "type": { "const": "part-nav" },
+              "items": {
+                "type": "array",
+                "maxItems": 6,
+                "items": {
+                  "type": "object",
+                  "required": ["label", "text"],
+                  "additionalProperties": false,
+                  "properties": {
+                    "label": { "type": "string" },
+                    "text": { "type": "string" }
+                  }
+                }
+              }
+            }
+          },
+          {
+            "type": "object",
+            "required": ["type", "text"],
+            "additionalProperties": false,
+            "properties": {
+              "type": { "const": "lead-quote" },
+              "text": { "type": "string" },
+              "note": { "type": "string" }
+            }
+          },
+          {
+            "type": "object",
+            "required": ["type"],
+            "additionalProperties": false,
+            "properties": {
+              "type": { "const": "case-block" },
+              "caseLabel": { "type": "string" },
+              "title": { "type": "string" },
+              "summary": { "type": "string" },
+              "bullets": {
+                "type": "array",
+                "maxItems": 6,
+                "items": { "type": "string" }
+              },
+              "imageIds": {
+                "type": "array",
+                "maxItems": 4,
+                "items": { "type": "string" }
+              },
+              "highlight": { "type": "string" }
+            }
+          },
+          {
+            "type": "object",
+            "required": ["type", "sectionIndex"],
+            "additionalProperties": false,
+            "properties": {
+              "type": { "const": "section-block" },
+              "sectionIndex": {
+                "oneOf": [
+                  { "type": "integer", "minimum": 0 },
+                  { "type": "string", "pattern": "^[0-9]+$" }
+                ]
+              },
+              "sectionLabel": { "type": "string" },
+              "headingLevel": { "type": "integer", "minimum": 2, "maximum": 6 },
+              "title": { "type": "string" },
+              "paragraphs": {
+                "type": "array",
+                "items": { "type": "string" }
+              },
+              "bulletGroups": {
+                "type": "array",
+                "items": {
+                  "type": "array",
+                  "items": { "type": "string" }
+                }
+              },
+              "callouts": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "properties": {
+                    "type": { "type": "string" },
+                    "title": { "type": "string" },
+                    "body": { "type": "string" }
+                  }
+                }
+              },
+              "subsections": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "required": ["title"],
+                  "additionalProperties": false,
+                  "properties": {
+                    "title": { "type": "string" },
+                    "level": { "type": "integer", "minimum": 3, "maximum": 6 },
+                    "paragraphs": {
+                      "type": "array",
+                      "items": { "type": "string" }
+                    },
+                    "bulletGroups": {
+                      "type": "array",
+                      "items": {
+                        "type": "array",
+                        "items": { "type": "string" }
+                      }
+                    },
+                    "callouts": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                          "type": { "type": "string" },
+                          "title": { "type": "string" },
+                          "body": { "type": "string" }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "imageIds": {
+                "type": "array",
+                "maxItems": 3,
+                "items": { "type": "string" }
+              }
+            }
+          },
+          {
+            "type": "object",
+            "required": ["type", "imageId"],
+            "additionalProperties": false,
+            "properties": {
+              "type": { "const": "phone-frame" },
+              "imageId": { "type": "string" },
+              "caption": { "type": "string" }
+            }
+          },
+          {
+            "type": "object",
+            "required": ["type"],
+            "additionalProperties": false,
+            "properties": {
+              "type": { "const": "cta-card" },
+              "title": { "type": "string" },
+              "body": { "type": "string" },
+              "buttonText": { "type": "string" },
+              "note": { "type": "string" }
+            }
+          }
+        ]
+      }
+    }
+  }
+}

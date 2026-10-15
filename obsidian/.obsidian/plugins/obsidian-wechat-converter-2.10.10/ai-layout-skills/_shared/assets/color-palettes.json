@@ -1,0 +1,227 @@
+{
+  "version": "2026.03.25-alpha.1",
+  "defaultColorPalette": "tech-green",
+  "colorPalettes": [
+    {
+      "id": "tech-green",
+      "label": "科技绿",
+      "description": "信息卡与案例教程风格，适合产品介绍、操作指南和案例拆解。",
+      "recommendedFor": ["tutorial", "case-study", "product-intro"],
+      "tokens": {
+        "accent": "#14b37d",
+        "accentDeep": "#0f8f64",
+        "accentSoft": "#e8faf4",
+        "text": "#24323d",
+        "muted": "#66737f",
+        "border": "#dbe7e1",
+        "surface": "#ffffff",
+        "surfaceSoft": "#f5f8f7",
+        "quoteBg": "#f4f7f6"
+      }
+    },
+    {
+      "id": "ocean-blue",
+      "label": "深海蓝",
+      "description": "更冷静的科技信息风格，适合教程、知识卡片和产品更新。",
+      "recommendedFor": ["tutorial", "knowledge-card", "release-note"],
+      "tokens": {
+        "accent": "#2c6bed",
+        "accentDeep": "#1f4fb2",
+        "accentSoft": "#edf4ff",
+        "text": "#223047",
+        "muted": "#5e718f",
+        "border": "#d8e2f2",
+        "surface": "#ffffff",
+        "surfaceSoft": "#f6f9fd",
+        "quoteBg": "#f2f6fc"
+      }
+    },
+    {
+      "id": "sunset-amber",
+      "label": "暖砂金",
+      "description": "更偏内容杂志感的暖色风格，适合观点、清单和经验分享。",
+      "recommendedFor": ["essay", "checklist", "experience"],
+      "tokens": {
+        "accent": "#d8892b",
+        "accentDeep": "#a66218",
+        "accentSoft": "#fff5e8",
+        "text": "#3a2b1f",
+        "muted": "#7b6756",
+        "border": "#eadfce",
+        "surface": "#fffdf9",
+        "surfaceSoft": "#faf6f0",
+        "quoteBg": "#f8f2ea"
+      }
+    },
+    {
+      "id": "graphite-rose",
+      "label": "石墨玫瑰",
+      "description": "偏编辑感的灰粉中性色，适合案例拆解和品牌内容。",
+      "recommendedFor": ["case-study", "brand-story", "editorial"],
+      "tokens": {
+        "accent": "#cc5f82",
+        "accentDeep": "#9f4764",
+        "accentSoft": "#fff0f5",
+        "text": "#2e2c33",
+        "muted": "#6f6874",
+        "border": "#e7dce3",
+        "surface": "#fffefe",
+        "surfaceSoft": "#faf7f9",
+        "quoteBg": "#f8f2f5"
+      }
+    },
+    {
+      "id": "basic-blue",
+      "label": "经典蓝",
+      "description": "AI 编排独立基础色，适合通用知识文章和工具说明。",
+      "recommendedFor": ["article", "tutorial", "knowledge-card"],
+      "tokens": {
+        "accent": "#2c6bed",
+        "accentDeep": "#1f4fb2",
+        "accentSoft": "#edf4ff",
+        "text": "#223047",
+        "muted": "#5e718f",
+        "border": "#d8e2f2",
+        "surface": "#ffffff",
+        "surfaceSoft": "#f6f9fd",
+        "quoteBg": "#f2f6fc"
+      }
+    },
+    {
+      "id": "basic-green",
+      "label": "清爽绿",
+      "description": "AI 编排独立基础色，适合流程、经验和效率主题。",
+      "recommendedFor": ["workflow", "experience", "tutorial"],
+      "tokens": {
+        "accent": "#28a745",
+        "accentDeep": "#1e7e34",
+        "accentSoft": "#edf9f0",
+        "text": "#24332a",
+        "muted": "#63746a",
+        "border": "#d8e7dc",
+        "surface": "#ffffff",
+        "surfaceSoft": "#f6faf7",
+        "quoteBg": "#f2f8f4"
+      }
+    },
+    {
+      "id": "basic-purple",
+      "label": "灵感紫",
+      "description": "AI 编排独立基础色，适合创作、灵感和方法论内容。",
+      "recommendedFor": ["essay", "creative", "method"],
+      "tokens": {
+        "accent": "#7c3aed",
+        "accentDeep": "#5b21b6",
+        "accentSoft": "#f3edff",
+        "text": "#302942",
+        "muted": "#716780",
+        "border": "#e1d8f2",
+        "surface": "#ffffff",
+        "surfaceSoft": "#f9f6fd",
+        "quoteBg": "#f5f0fb"
+      }
+    },
+    {
+      "id": "basic-orange",
+      "label": "活力橙",
+      "description": "AI 编排独立基础色，适合清单、推荐和运营复盘。",
+      "recommendedFor": ["checklist", "recommendation", "operation"],
+      "tokens": {
+        "accent": "#f97316",
+        "accentDeep": "#c2410c",
+        "accentSoft": "#fff2e8",
+        "text": "#3f2b20",
+        "muted": "#7c6759",
+        "border": "#ecd9ca",
+        "surface": "#fffefe",
+        "surfaceSoft": "#fff8f3",
+        "quoteBg": "#fbf1ea"
+      }
+    },
+    {
+      "id": "basic-teal",
+      "label": "湖水青",
+      "description": "AI 编排独立基础色，适合产品、数据和轻科技内容。",
+      "recommendedFor": ["product-intro", "data", "tech"],
+      "tokens": {
+        "accent": "#0f9f9a",
+        "accentDeep": "#0b756f",
+        "accentSoft": "#e8f8f7",
+        "text": "#213737",
+        "muted": "#5f7474",
+        "border": "#d2e7e5",
+        "surface": "#ffffff",
+        "surfaceSoft": "#f4faf9",
+        "quoteBg": "#eef8f7"
+      }
+    },
+    {
+      "id": "basic-rose",
+      "label": "柔和玫瑰",
+      "description": "AI 编排独立基础色，适合品牌、生活方式和案例故事。",
+      "recommendedFor": ["brand-story", "lifestyle", "case-study"],
+      "tokens": {
+        "accent": "#e83e8c",
+        "accentDeep": "#b81f66",
+        "accentSoft": "#fff0f7",
+        "text": "#3a2832",
+        "muted": "#766672",
+        "border": "#ead8e3",
+        "surface": "#fffefe",
+        "surfaceSoft": "#fff7fb",
+        "quoteBg": "#faf0f6"
+      }
+    },
+    {
+      "id": "basic-ruby",
+      "label": "醒目红",
+      "description": "AI 编排独立基础色，适合重点提醒、观点表达和发布说明。",
+      "recommendedFor": ["announcement", "opinion", "release-note"],
+      "tokens": {
+        "accent": "#dc3545",
+        "accentDeep": "#a81825",
+        "accentSoft": "#fff0f2",
+        "text": "#3b282b",
+        "muted": "#766367",
+        "border": "#ead8da",
+        "surface": "#fffefe",
+        "surfaceSoft": "#fff7f8",
+        "quoteBg": "#faf0f1"
+      }
+    },
+    {
+      "id": "basic-slate",
+      "label": "克制灰",
+      "description": "AI 编排独立基础色，适合长文、说明文和偏专业内容。",
+      "recommendedFor": ["article", "documentation", "professional"],
+      "tokens": {
+        "accent": "#64748b",
+        "accentDeep": "#475569",
+        "accentSoft": "#f1f5f9",
+        "text": "#27313f",
+        "muted": "#687386",
+        "border": "#dbe2ea",
+        "surface": "#ffffff",
+        "surfaceSoft": "#f8fafc",
+        "quoteBg": "#f3f6f9"
+      }
+    },
+    {
+      "id": "custom",
+      "label": "自定义",
+      "description": "AI 编排独立自定义色，会根据你选择的颜色自动派生深色、浅底和边框。",
+      "recommendedFor": ["custom"],
+      "tokens": {
+        "accent": "#7c3aed",
+        "accentDeep": "#5b21b6",
+        "accentSoft": "#f3edff",
+        "text": "#302942",
+        "muted": "#716780",
+        "border": "#e1d8f2",
+        "surface": "#ffffff",
+        "surfaceSoft": "#f9f6fd",
+        "quoteBg": "#f5f0fb"
+      }
+    }
+  ]
+}

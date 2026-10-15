@@ -1,0 +1,8 @@
+{
+  "preferredIntroBlocks": ["lead-quote"],
+  "optionalIntroBlocks": ["hero", "part-nav"],
+  "preferredBodyBlocks": ["section-block"],
+  "optionalBodyBlocks": ["case-block"],
+  "optionalTailBlocks": ["cta-card"],
+  "imageStrategy": "conservative"
+}

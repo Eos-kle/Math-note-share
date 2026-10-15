@@ -1,0 +1,572 @@
+/*
+## 核心功能
+
+实现飞书云文档同步链路的 feishu sync 服务能力。
+
+## 输入
+
+接收飞书设置、Markdown/HTML 内容、本地图片、Mermaid 图和飞书 API 响应。
+
+## 输出
+
+输出 `prepareLocalImagesForFeishu`、`getFeishuRootBlockId`、`getFeishuDirectChildBlocks`、`summarizeFeishuBlockChunk`、`buildFeishuCreatePayloadBlocks`、`insertFeishuBlocksInChunks`、`deleteFeishuChildRange`、`syncNoteToFeishu`，用于文档创建/更新、媒体上传、块写入或错误恢复。
+
+## 定位
+
+位于 services/，属于飞书发布服务层；不承载微信专属逻辑。
+
+## 依赖
+
+关键依赖：`./dom-utils.js`、`./article-image-assets.js`、`./feishu-api.js`、`./feishu-mermaid-renderer.js`、`./feishu-mermaid-remote-renderer.js`、`./feishu-media-sync.js`、`./feishu-markdown-processor.js`、`./feishu-settings.js`。
+
+## 维护规则
+
+- 修改逻辑后同步更新本文件说明书，并检查 services 的文件夹 README 是否仍准确。
+- 保持职责边界清晰，跨层行为优先通过既有服务、视图或测试 helper 协作。
+*/
+
+/* eslint-disable @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-argument -- reason: JS file handles dynamic API responses without strict typescript type annotations */
+// services/feishu-sync.js
+//
+// High-level orchestrator for Feishu cloud documents synchronization.
+// Integrates settings, preprocessor, and low-level API client.
+// Uses Obsidian APIs (via injected 'app' dependency) and requestUrl.
+
+import { getActiveWindowValue } from './dom-utils.js';
+import { resolveArticleImages } from './article-image-assets.js';
+import { FeishuApiClient } from './feishu-api.js';
+import { prepareMermaidDiagramsForFeishu } from './feishu-mermaid-renderer.js';
+import { renderMermaidWithKroki } from './feishu-mermaid-remote-renderer.js';
+import { createImageSummary, replaceFeishuImageBlocks } from './feishu-media-sync.js';
+import {
+  stripYamlFrontmatter,
+  parseYamlTitle,
+  convertWikilinks,
+  getImageFileNameFromSrc,
+} from './feishu-markdown-processor.js';
+import {
+  addFeishuUploadHistory,
+  findFeishuHistoryByPath,
+  incrementFeishuApiUsage,
+  removeFeishuHistoryByPath,
+} from './feishu-settings.js';
+import {
+  getFeishuRootBlockId,
+  getFeishuDirectChildBlocks,
+  summarizeFeishuBlockChunk,
+  buildFeishuCreatePayloadBlocks,
+  insertFeishuBlocksInChunks,
+  deleteFeishuChildRange,
+} from './feishu-block-sync.js';
+
+const FEISHU_LOCAL_IMAGE_PLACEHOLDER_BASE = 'https://obsidian-wechat-converter.invalid/feishu-local-image';
+
+/**
+ * @param {{ id?: string, filename?: string }} asset
+ * @returns {string}
+ */
+function createFeishuLocalImagePlaceholder(asset) {
+  const rawName = String(asset?.filename || '').trim();
+  const extensionMatch = rawName.match(/\.([a-z0-9]+)$/i);
+  const extension = extensionMatch ? extensionMatch[1].toLowerCase() : 'png';
+  return `${FEISHU_LOCAL_IMAGE_PLACEHOLDER_BASE}/${asset?.id || 'image'}.${extension}`;
+}
+
+/**
+ * Converts an ArrayBuffer to a base64 string.
+ * @param {ArrayBuffer} buffer
+ * @returns {string}
+ */
+function arrayBufferToBase64(buffer) {
+  let binary = '';
+  const bytes = new Uint8Array(buffer);
+  const len = bytes.byteLength;
+  for (let i = 0; i < len; i++) {
+    binary += String.fromCharCode(bytes[i]);
+  }
+  return window.btoa(binary);
+}
+
+/**
+ * @param {unknown} error
+ * @returns {string}
+ */
+function getErrorText(error) {
+  if (error instanceof Error) return error.message || String(error);
+  return String(error || '');
+}
+
+/**
+ * @param {unknown} error
+ * @returns {boolean}
+ */
+function isRecoverableFeishuHistoryError(error) {
+  const text = getErrorText(error);
+  return text.includes('1770003') || /resource deleted/i.test(text) || /HTTP 404|404 page not found|not found/i.test(text);
+}
+
+/**
+ * @param {unknown} error
+ * @returns {boolean}
+ */
+function isFeishuBlockSchemaMismatchError(error) {
+  const text = getErrorText(error);
+  return text.includes('1770006') || /schema mismatch/i.test(text);
+}
+
+/**
+ * @param {unknown} error
+ * @returns {boolean}
+ */
+function isFeishuBlockWriteError(error) {
+  const text = getErrorText(error);
+  return isFeishuBlockSchemaMismatchError(error)
+    || text.includes('9499')
+    || /Invalid parameter/i.test(text)
+    || /插入飞书文档块|插入文档块|插入内容块|插入嵌套内容块/.test(text);
+}
+
+/**
+ * Imports markdown into a temporary Feishu docx so we can reuse Feishu's own
+ * final block ordering for stable smart updates.
+ * @param {object} params
+ * @param {FeishuApiClient} params.client
+ * @param {string} params.title
+ * @param {string} params.markdown
+ * @param {string} params.folderToken
+ * @param {(stage: string, msg: string) => void} params.notify
+ * @returns {Promise<{ tempDocToken: string, tempDocUrl: string, cleanup: () => Promise<void> }>}
+ */
+async function importTemporaryFeishuDocument({ client, title, markdown, folderToken, notify }) {
+  notify('uploading_temp', '正在生成用于覆盖更新的临时 Markdown 文件...');
+  const textEncoder = new TextEncoder();
+  const mdBase64 = arrayBufferToBase64(textEncoder.encode(markdown).buffer);
+  const tempBaseName = String(title || 'document').trim() || 'document';
+  const tempFileName = `${tempBaseName}.md`;
+  const tempImportTitle = `${tempBaseName} · Sync Temp`;
+
+  const tempFileToken = await client.uploadFile(tempFileName, mdBase64, folderToken);
+  let tempDocToken = '';
+  let tempDocUrl = '';
+
+  try {
+    notify('importing', '正在导入临时飞书文档结构...');
+    const ticket = await client.createImportTask(tempImportTitle, tempFileToken, folderToken);
+    const result = await client.waitForImportTask(ticket);
+    tempDocToken = result.token;
+    tempDocUrl = result.url;
+  } finally {
+    client.deleteFile(tempFileToken, 'file').catch((err) => {
+      console.warn('[飞书同步] 清理临时 Markdown 文件失败:', err);
+    });
+  }
+
+  return {
+    tempDocToken,
+    tempDocUrl,
+    cleanup: async () => {
+      if (!tempDocToken) return;
+      try {
+        await client.deleteFile(tempDocToken, 'docx');
+      } catch (err) {
+        console.warn('[飞书同步] 清理临时飞书文档失败:', err);
+      }
+    },
+  };
+}
+
+/**
+ * @param {FeishuApiClient} client
+ * @param {string} folderToken
+ * @param {string[]} candidateTitles
+ * @returns {Promise<{ title: string, url: string, docToken: string, sourcePath: string } | null>}
+ */
+async function findFeishuDocumentInFolder(client, folderToken, candidateTitles) {
+  const normalizedTitles = candidateTitles
+    .map((item) => String(item || '').trim())
+    .filter(Boolean);
+  if (!normalizedTitles.length) return null;
+
+  const items = await client.listFolderItems(folderToken);
+  const matched = items.find((item) => item.type === 'docx' && normalizedTitles.includes(String(item.name || '').trim()));
+  if (!matched) return null;
+
+  return {
+    title: matched.name,
+    url: `https://open.feishu.cn/docx/${matched.token}`,
+    docToken: matched.token,
+    sourcePath: '',
+  };
+}
+
+/**
+ * Resolves local Obsidian image references for Feishu block replacement while
+ * keeping the Markdown import source readable for Feishu's converter.
+ * @param {any} app Obsidian App instance
+ * @param {any} activeFile TFile
+ * @param {string} markdown
+ * @returns {Promise<{ markdown: string, assets: Array<{ id: string, filename: string, mimeType: string, base64: string }>, warnings: Array<{ message?: string, src?: string, filename?: string }>, references: Array<{ originalSrc: string, path: string, fileName: string, isRemote: boolean, sizeHint?: { width: number, height: number | null } | null }> }>}
+ */
+async function prepareLocalImagesForFeishu(app, activeFile, markdown) {
+  const result = await resolveArticleImages(markdown, activeFile, {
+    app,
+    localImageSrcFactory: createFeishuLocalImagePlaceholder,
+    embedAssetBase64: false,
+  });
+
+  return {
+    markdown: result.markdown,
+    assets: result.assets || [],
+    warnings: result.warnings || [],
+    references: (result.references || []).map((ref) => {
+      const resolvedSrc = String(ref?.resolvedSrc || ref?.originalSrc || '');
+      const decodedPath = decodeURI(resolvedSrc);
+      return {
+        originalSrc: resolvedSrc,
+        path: decodedPath,
+        fileName: getImageFileNameFromSrc(String(ref?.originalSrc || resolvedSrc)),
+        isRemote: /^https?:\/\//i.test(decodedPath) || decodedPath.startsWith('data:'),
+        sizeHint: ref?.sizeHint || null,
+      };
+    }),
+  };
+}
+
+/**
+ * Orchestrates the sync flow.
+ * @param {object} params
+ * @param {any} params.app Obsidian App
+ * @param {object} params.settings Feishu settings object
+ * @param {any} params.activeFile TFile
+ * @param {string} params.markdown Note content
+ * @param {string} [params.titleOverride] User-edited title for this sync; blank values restore automatic title resolution
+ * @param {function} [params.onProgress] progress callback (stage, message)
+ * @param {any} [params.requestUrl] requestUrl implementation
+ * @param {'source' | 'remote-image'} [params.mermaidRenderMode] Mermaid handling mode for this sync
+ * @param {'kroki'} [params.mermaidRenderProvider] Remote Mermaid renderer provider
+ * @param {Function} [params.renderMermaidFenceToDataUrl] Injected remote renderer for tests/custom providers
+ * @returns {Promise<{ title: string, url: string, docToken: string, titleUpdateWarning?: { code: string }, transferOwnerWarning?: string, imageSummary: { uploaded: number, skipped: number, failed: number, details: Array<{ filename: string, status: string, reason: string }> } }>}
+ */
+async function syncNoteToFeishu({
+  app,
+  settings,
+  activeFile,
+  markdown,
+  titleOverride,
+  onProgress,
+  requestUrl,
+  mermaidRenderMode = 'source',
+  mermaidRenderProvider = 'kroki',
+  renderMermaidFenceToDataUrl,
+}) {
+  const notify = (stage, msg) => {
+    if (typeof onProgress === 'function') {
+      onProgress(stage, msg);
+    }
+  };
+
+  const obsidianApi = getActiveWindowValue('obsidian');
+  const requestUrlImpl = requestUrl || (obsidianApi && typeof obsidianApi.requestUrl === 'function' ? obsidianApi.requestUrl : null);
+
+  // 1. Resolve document title
+  const normalizedTitleOverride = typeof titleOverride === 'string' ? titleOverride.trim() : '';
+  let title = normalizedTitleOverride || parseYamlTitle(markdown);
+  if (!title) title = activeFile.basename;
+  title = String(title).trim().substring(0, 250); // limit Feishu title length
+
+  // 2. Initialize API client
+  const client = new FeishuApiClient(settings.appId, settings.appSecret, requestUrlImpl, {
+    onApiCall: () => {
+      incrementFeishuApiUsage(settings);
+    },
+  });
+
+  // 3. Fallback Folder Search for lost history
+  let historyItem = findFeishuHistoryByPath(settings, activeFile.path);
+  if (!historyItem) {
+    notify('searching_folder', '正在检索飞书目标文件夹中是否存在同名文档...');
+    try {
+      const matched = await findFeishuDocumentInFolder(client, settings.folderToken, [title]);
+      if (matched) {
+        historyItem = {
+          title,
+          url: matched.url,
+          docToken: matched.docToken,
+          sourcePath: activeFile.path,
+        };
+        addFeishuUploadHistory(settings, historyItem);
+        notify('searching_folder', '命中飞书同名文档，自动关联并恢复更新链路');
+      }
+    } catch (err) {
+      console.warn('[飞书同步] 文件夹检索失败 (不影响正常创建):', err);
+    }
+  }
+
+  // 4. Preprocess Markdown body
+  let processedMd = stripYamlFrontmatter(markdown);
+  processedMd = convertWikilinks(processedMd, settings.uploadHistory);
+  const imageSummary = createImageSummary();
+  let mermaidImageResult = { markdown: processedMd, assets: [], warnings: [] };
+  if (mermaidRenderMode === 'remote-image') {
+    notify('processing_mermaid', '正在远端渲染 Mermaid 图表...');
+    const renderMermaid = typeof renderMermaidFenceToDataUrl === 'function'
+      ? renderMermaidFenceToDataUrl
+      : (source) => renderMermaidWithKroki(source, {
+          requestUrl: requestUrlImpl,
+          provider: mermaidRenderProvider,
+        });
+    mermaidImageResult = await prepareMermaidDiagramsForFeishu(processedMd, {
+      localImageSrcFactory: createFeishuLocalImagePlaceholder,
+      notePath: activeFile.path,
+      renderMermaidFenceToDataUrl: renderMermaid,
+    });
+    processedMd = mermaidImageResult.markdown;
+  }
+  const localImageResult = await prepareLocalImagesForFeishu(app, activeFile, processedMd);
+  processedMd = localImageResult.markdown;
+  for (const warning of [...(mermaidImageResult.warnings || []), ...localImageResult.warnings]) {
+    const detail = warning.filename || warning.src || '';
+    if (warning.severity !== 'info') {
+      console.warn('[飞书同步] 图片预处理跳过:', detail ? `${warning.message || '图片无法处理'} (${detail})` : warning.message || warning);
+    }
+    imageSummary.skipped += 1;
+    imageSummary.details.push({
+      filename: warning.filename || warning.src || 'image',
+      status: 'skipped',
+      reason: warning.code || warning.message || 'image_prepare_warning',
+    });
+  }
+
+  // 5. Check if it's a Smart Update or a New Document
+  let docToken = '';
+  let docUrl = '';
+  let shouldTransferOwnership = false;
+  let didUpdateExistingDocument = false;
+  let titleUpdateWarning;
+
+  const importAsNewDocument = async () => {
+    notify('uploading_temp', '正在生成临时 Markdown 上传文件...');
+    const textEncoder = new TextEncoder();
+    const mdBase64 = arrayBufferToBase64(textEncoder.encode(processedMd).buffer);
+    
+    const tempFileToken = await client.uploadFile(title + '.md', mdBase64, settings.folderToken);
+    
+    notify('importing', '正在导入为飞书云文档...');
+    const ticket = await client.createImportTask(title, tempFileToken, settings.folderToken);
+    
+    const result = await client.waitForImportTask(ticket);
+    docToken = result.token;
+    docUrl = result.url;
+
+    // Delete temp file silently in the background
+    client.deleteFile(tempFileToken, 'file').catch((err) => {
+      console.warn('[飞书同步] 清理临时 MD 文件失败:', err);
+    });
+
+    historyItem = {
+      title,
+      url: docUrl,
+      docToken: docToken,
+      sourcePath: activeFile.path,
+    };
+    shouldTransferOwnership = true;
+  };
+
+  const relinkExistingDocumentFromFolder = async (candidateTitles = []) => {
+    notify('searching_folder', '历史同步记录已失效，正在目标文件夹中重新定位文档...');
+    const matched = await findFeishuDocumentInFolder(client, settings.folderToken, candidateTitles);
+    if (!matched) return null;
+
+    const reboundHistoryItem = {
+      title: matched.title || title,
+      url: matched.url,
+      docToken: matched.docToken,
+      sourcePath: activeFile.path,
+    };
+    addFeishuUploadHistory(settings, reboundHistoryItem);
+    notify('searching_folder', '已在目标文件夹中重新定位到原文档，继续执行覆盖更新');
+    return reboundHistoryItem;
+  };
+
+  const updateExistingDocument = async () => {
+    if (!historyItem || !historyItem.docToken) return false;
+
+    docToken = historyItem.docToken;
+    docUrl = historyItem.url;
+    const rootBlockId = getFeishuRootBlockId(docToken);
+    let cleanupTempDocument = async () => {};
+
+    try {
+      notify('deleting_blocks', '正在读取旧文档结构...');
+      const blocks = await client.getDocumentBlocks(docToken);
+
+      const oldChildBlockCount = getFeishuDirectChildBlocks(blocks, rootBlockId).length;
+
+      const tempImport = await importTemporaryFeishuDocument({
+        client,
+        title,
+        markdown: processedMd,
+        folderToken: settings.folderToken,
+        notify,
+      });
+      cleanupTempDocument = tempImport.cleanup;
+
+      notify('importing', '正在读取临时飞书文档结构...');
+      const importedBlocks = await client.getDocumentBlocks(tempImport.tempDocToken);
+      const newBlocks = buildFeishuCreatePayloadBlocks(importedBlocks, tempImport.tempDocToken);
+
+      // Write new blocks first. If Feishu rejects the block schema, the old
+      // document remains intact instead of being cleared prematurely.
+      await insertFeishuBlocksInChunks({
+        client,
+        docToken,
+        parentId: rootBlockId,
+        startIndex: oldChildBlockCount,
+        blocks: newBlocks,
+        notify,
+      });
+
+      if (oldChildBlockCount > 0) {
+        notify('deleting_blocks', '正在清理旧文档内容...');
+        await deleteFeishuChildRange({
+          client,
+          docToken,
+          parentId: rootBlockId,
+          startIndex: 0,
+          endIndex: oldChildBlockCount,
+        });
+      }
+
+      if (title !== historyItem.title) {
+        notify('renaming', '正在更新飞书文档名称...');
+        try {
+          await client.renameFile(docToken, title);
+          historyItem.title = title;
+        } catch (err) {
+          console.warn('[飞书同步] 重命名失败:', err);
+          titleUpdateWarning = { code: 'title_update_failed' };
+        }
+      }
+
+      didUpdateExistingDocument = true;
+      return true;
+    } finally {
+      await cleanupTempDocument();
+    }
+  };
+
+  if (historyItem && historyItem.docToken) {
+    try {
+      await updateExistingDocument();
+    } catch (err) {
+      if (isFeishuBlockWriteError(err)) {
+        console.warn('[飞书同步] 智能覆盖写入失败，旧文档内容已保留:', err);
+        throw err;
+      }
+      let recoveredFromHistoryDrift = false;
+      if (isRecoverableFeishuHistoryError(err)) {
+        const previousTitle = historyItem?.title || '';
+        const removed = removeFeishuHistoryByPath(settings, activeFile.path);
+        if (removed) {
+          console.warn('[飞书同步] 检测到历史飞书 token 已失效，已清理本地关联记录');
+        }
+
+        historyItem = await relinkExistingDocumentFromFolder([title, previousTitle]);
+        if (historyItem?.docToken) {
+          try {
+            await updateExistingDocument();
+            recoveredFromHistoryDrift = true;
+          } catch (retryErr) {
+            if (isFeishuBlockWriteError(retryErr)) {
+              console.warn('[飞书同步] 智能覆盖写入失败，旧文档内容已保留:', retryErr);
+              throw retryErr;
+            }
+            console.warn('[飞书同步] 重新绑定后覆盖更新仍然失败，降级为新建文档:', retryErr);
+            notify('importing', '旧文档重新绑定后仍无法覆盖更新，正在新建飞书文档...');
+            await importAsNewDocument();
+            recoveredFromHistoryDrift = true;
+          }
+        } else {
+          console.warn('[飞书同步] 历史飞书 token 已失效，且未能在目标文件夹中重新定位原文档');
+        }
+      }
+      if (!recoveredFromHistoryDrift) {
+        console.warn('[飞书同步] 智能覆盖更新失败，降级为新建文档:', err);
+        notify('importing', '更新旧文档失败，正在新建飞书文档...');
+        await importAsNewDocument();
+      }
+    }
+  } else {
+    await importAsNewDocument();
+  }
+
+  // 6. Image processing and patching
+  const images = localImageResult.references || [];
+  if (images.length > 0) {
+    notify('processing_images', '正在扫描文档图片结构...');
+    try {
+      const replacementSummary = await replaceFeishuImageBlocks({
+        app,
+        client,
+        docToken,
+        images,
+        assets: [
+          ...(mermaidImageResult.assets || []),
+          ...localImageResult.assets,
+        ],
+        requestUrl: requestUrlImpl,
+        includeRemoteImages: didUpdateExistingDocument,
+        onProgress: notify,
+      });
+      imageSummary.uploaded += replacementSummary.uploaded;
+      imageSummary.skipped += replacementSummary.skipped;
+      imageSummary.failed += replacementSummary.failed;
+      imageSummary.details.push(...replacementSummary.details);
+    } catch (err) {
+      console.warn('[飞书同步] 图片后处理跳过，文档正文已导入:', err);
+      imageSummary.failed += 1;
+      imageSummary.details.push({
+        filename: '文档图片结构',
+        status: 'failed',
+        reason: err?.message || String(err || 'image_post_process_failed'),
+      });
+    }
+  }
+
+  // 7. Non-blocking Ownership Transfer
+  let transferOwnerWarning = '';
+  if (settings.userId && shouldTransferOwnership) {
+    notify('transfer_owner', '正在转移文档所有权至配置用户...');
+    try {
+      await client.transferDocumentOwnership(docToken, settings.userId);
+    } catch (err) {
+      console.warn('[飞书同步] 文档所有权转移失败:', err);
+      transferOwnerWarning = err instanceof Error ? err.message : String(err || 'unknown_error');
+    }
+  }
+
+  // 8. Update Settings History registry
+  addFeishuUploadHistory(settings, historyItem);
+
+  return {
+    title,
+    url: docUrl,
+    docToken,
+    titleUpdateWarning,
+    transferOwnerWarning,
+    imageSummary,
+  };
+}
+
+export {
+  prepareLocalImagesForFeishu,
+  getFeishuRootBlockId,
+  getFeishuDirectChildBlocks,
+  summarizeFeishuBlockChunk,
+  buildFeishuCreatePayloadBlocks,
+  insertFeishuBlocksInChunks,
+  deleteFeishuChildRange,
+  syncNoteToFeishu,
+};
+
+/* eslint-enable @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-argument -- reason: resume typed linting after Feishu sync orchestration boundary */

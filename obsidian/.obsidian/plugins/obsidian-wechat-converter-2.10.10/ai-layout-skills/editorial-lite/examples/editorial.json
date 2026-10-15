@@ -1,0 +1,42 @@
+{
+  "articleType": "article",
+  "selection": {
+    "layoutFamily": "editorial-lite",
+    "colorPalette": "graphite-rose"
+  },
+  "resolved": {
+    "layoutFamily": "editorial-lite",
+    "colorPalette": "graphite-rose"
+  },
+  "recommendedLayoutFamily": "editorial-lite",
+  "recommendedColorPalette": "graphite-rose",
+  "title": "写作经验复盘",
+  "summary": "更有呼吸感、更像编辑稿。",
+  "blocks": [
+    {
+      "type": "hero",
+      "eyebrow": "Editorial Layout",
+      "title": "写作经验复盘",
+      "subtitle": "更轻、更有呼吸感的版式",
+      "coverImageId": "image-1",
+      "variant": "cover-left"
+    },
+    {
+      "type": "lead-quote",
+      "text": "写作的真正难点，从来不是表达，而是删改。",
+      "note": "摘自原文观点句"
+    },
+    {
+      "type": "section-block",
+      "sectionIndex": 0,
+      "title": "删改比落笔更重要",
+      "callouts": [
+        {
+          "type": "note",
+          "title": "编者按",
+          "body": "即使是轻杂志型，也应保留原文里的提示、说明和注记，而不是把它们改写成普通正文。"
+        }
+      ]
+    }
+  ]
+}

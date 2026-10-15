@@ -1,0 +1,3102 @@
+﻿### rebuild 2026-10-11T00:42:40.6296002+08:00
+build exit=0
+### 基线重建
+
+ RUN  v4.0.18 C:/文件/笔记/obsidian/.obsidian/plugins/obsidian-wechat-converter-2.10.10
+
+node.exe : (node:1088) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/%E6%96%87%E4%BB%B6/%E7%AC%94%E
+8%AE%B0/obsidian/.obsidian/plugins/obsidian-wechat-converter-2.10.10/services/dom-utils.js is not specified and it does
+n't parse as CommonJS.
+所在位置 行:9 字符: 1
++ & $node 'node_modules\vitest\vitest.mjs' run tests/dsh_regen_baseline ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: ((node:1088) [MO...se as CommonJS.:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\C:\文件\笔记\obsidian\.obsidian\plugins\obsidian-wechat-converter-2.
+10.10\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+stdout | tests/dsh_regen_baselines.test.js > DSH 重建 parity 基线 > 只接受可解释的差异
+[基线] control-main: 已更新
+   类型: note, note, warning, tip, 研究
+   旧图标: {"ℹ️":3,"💡":1,"⚠️":1}
+   新图标: {"🗒️":3,"💡":1,"⚠️":1}
+
+stdout | tests/dsh_regen_baselines.test.js > DSH 重建 parity 基线 > 只接受可解释的差异
+[基线] control-micro: 无变化
+
+stdout | tests/dsh_regen_baselines.test.js > DSH 重建 parity 基线 > 只接受可解释的差异
+[基线] control-micro-placeholder-data: 无变化
+
+stdout | tests/dsh_regen_baselines.test.js > DSH 重建 parity 基线 > 只接受可解释的差异
+[基线] control-longform-workflow: 无变化
+
+stdout | tests/dsh_regen_baselines.test.js > DSH 重建 parity 基线 > 只接受可解释的差异
+[基线] control-image-stack: 已更新
+   类型: note
+   旧图标: {"ℹ️":1}
+   新图标: {"🗒️":1}
+[基线] 结果：更新 2 个，拒绝 0 个
+
+ ✓ tests/dsh_regen_baselines.test.js (1 test) 1034ms
+     ✓ 只接受可解释的差异  1031ms
+
+ Test Files  1 passed (1)
+      Tests  1 passed (1)
+   Start at  00:42:41
+   Duration  2.28s (transform 29ms, setup 39ms, import 87ms, tests 1.03s, environment 894ms)
+
+baseline exit=0
+### 图标矩阵
+
+ RUN  v4.0.18 C:/文件/笔记/obsidian/.obsidian/plugins/obsidian-wechat-converter-2.10.10
+
+node.exe : (node:22820) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/%E6%96%87%E4%BB%B6/%E7%AC%94%
+E8%AE%B0/obsidian/.obsidian/plugins/obsidian-wechat-converter-2.10.10/services/dom-utils.js is not specified and it doe
+sn't parse as CommonJS.
+所在位置 行:12 字符: 1
++ & $node 'node_modules\vitest\vitest.mjs' run tests/dsh_icon_matrix.te ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: ((node:22820) [M...se as CommonJS.:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\C:\文件\笔记\obsidian\.obsidian\plugins\obsidian-wechat-converter-2.
+10.10\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+stdout | tests/dsh_icon_matrix.test.js > DSH 图标矩阵 > 每种块都有自己的图标，未登记类型才回退 ℹ️
+=== 类型 → 图标 ===
+definition     → 📐
+def            → 📐
+theorem        → 🧮
+thm            → 🧮
+proposition    → 🧠
+prop           → 🧠
+lemma          → 🧩
+corollary      → 🌿
+cor            → 🌿
+formula        → 🔣
+notation       → 🔖
+example        → 📋
+proof          → ✍️
+定义             → 📐
+定理             → 🧮
+命题             → 🧠
+引理             → 🧩
+推论             → 🌿
+公式             → 🔣
+记号             → 🔖
+例题             → 📋
+证明             → ✍️
+tip            → 💡
+hint           → 💡
+note           → 🗒️
+note-box       → 🗒️
+summary        → 📄
+important      → ❗
+wrong          → 🚫
+warning        → ⚠️
+caution        → ⚠️
+quote          → 💬
+quote-card     → 💬
+提示             → 💡
+备忘             → 🗒️
+小结             → 📄
+归纳             → 📄
+重点             → ❗
+关键             → ❗
+反例             → 🚫
+易错             → 🚫
+注意             → ⚠️
+金句             → 💬
+multi-column   → 🧱
+grid           → 🔳
+网格             → 🔳
+info           → ℹ️
+todo           → ☑️
+success        → ✅
+question       → ❓
+danger         → 🚨
+bug            → 🐛
+error          → ❌
+
+回退到 ℹ️ 的类型: info
+
+ ❯ tests/dsh_icon_matrix.test.js (1 test | 1 failed) 464ms
+     × 每种块都有自己的图标，未登记类型才回退 ℹ️ 463ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/dsh_icon_matrix.test.js > DSH 图标矩阵 > 每种块都有自己的图标，未登记类型才回退 ℹ️
+AssertionError: expected [ 'info' ] to deeply equal []
+
+- Expected
++ Received
+
+- []
++ [
++   "info",
++ ]
+
+ ❯ tests/dsh_icon_matrix.test.js:44:22
+     42|     console.log('\n回退到 ℹ️ 的类型:', fallback.length ? fallback.join(', ')…
+     43| 
+     44|     expect(fallback).toEqual([]);
+       |                      ^
+     45|   });
+     46| });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed (1)
+   Start at  00:42:44
+   Duration  1.49s (transform 23ms, setup 25ms, import 54ms, tests 464ms, environment 748ms)
+
+matrix exit=1
+### 相关单测
+
+ RUN  v4.0.18 C:/文件/笔记/obsidian/.obsidian/plugins/obsidian-wechat-converter-2.10.10
+
+node.exe : (node:22436) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/%E6%96%87%E4%BB%B6/%E7%AC%94%
+E8%AE%B0/obsidian/.obsidian/plugins/obsidian-wechat-converter-2.10.10/services/dom-utils.js is not specified and it doe
+sn't parse as CommonJS.
+所在位置 行:15 字符: 1
++ & $node 'node_modules\vitest\vitest.mjs' run tests/obsidian_triplet_s ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: ((node:22436) [M...se as CommonJS.:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\C:\文件\笔记\obsidian\.obsidian\plugins\obsidian-wechat-converter-2.
+10.10\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:18100) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/%E6%96%87%E4%BB%B6/%E7%AC%94%E8%AE%B0/ob
+sidian/.obsidian/plugins/obsidian-wechat-converter-2.10.10/services/dom-utils.js is not specified and it doesn't parse 
+as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\C:\文件\笔记\obsidian\.obsidian\plugins\obsidian-wechat-converter-2.
+10.10\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+ ✓ tests/custom_css_compiler.test.js (8 tests) 61ms
+ ✓ tests/obsidian_triplet_serializer.test.js (26 tests) 646ms
+ ✓ tests/parity_corpus.test.js (6 tests) 1103ms
+     ✓ should keep cleaned html stable for control-main  666ms
+
+ Test Files  3 passed (3)
+      Tests  40 passed (40)
+   Start at  00:42:46
+   Duration  2.41s (transform 236ms, setup 106ms, import 704ms, tests 1.81s, environment 2.52s)
+
+related exit=0
+### 完整套件
+
+ RUN  v4.0.18 C:/文件/笔记/obsidian/.obsidian/plugins/obsidian-wechat-converter-2.10.10
+
+node.exe : (node:2292) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/%E6%96%87%E4%BB%B6/%E7%AC%94%E
+8%AE%B0/obsidian/.obsidian/plugins/obsidian-wechat-converter-2.10.10/services/dom-utils.js is not specified and it does
+n't parse as CommonJS.
+所在位置 行:18 字符: 1
++ & $node 'node_modules\vitest\vitest.mjs' run 2>&1 | Out-File $log -Ap ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: ((node:2292) [MO...se as CommonJS.:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\C:\文件\笔记\obsidian\.obsidian\plugins\obsidian-wechat-converter-2.
+10.10\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:22428) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/%E6%96%87%E4%BB%B6/%E7%AC%94%E8%AE%B0/ob
+sidian/.obsidian/plugins/obsidian-wechat-converter-2.10.10/services/dom-utils.js is not specified and it doesn't parse 
+as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\C:\文件\笔记\obsidian\.obsidian\plugins\obsidian-wechat-converter-2.
+10.10\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:4436) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/%E6%96%87%E4%BB%B6/%E7%AC%94%E8%AE%B0/obs
+idian/.obsidian/plugins/obsidian-wechat-converter-2.10.10/services/ai-layout/index.js is not specified and it doesn't p
+arse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\C:\文件\笔记\obsidian\.obsidian\plugins\obsidian-wechat-converter-2.
+10.10\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:23464) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/%E6%96%87%E4%BB%B6/%E7%AC%94%E8%AE%B0/ob
+sidian/.obsidian/plugins/obsidian-wechat-converter-2.10.10/services/dom-utils.js is not specified and it doesn't parse 
+as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\C:\文件\笔记\obsidian\.obsidian\plugins\obsidian-wechat-converter-2.
+10.10\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:19376) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/%E6%96%87%E4%BB%B6/%E7%AC%94%E8%AE%B0/ob
+sidian/.obsidian/plugins/obsidian-wechat-converter-2.10.10/services/svg-rasterizer.js is not specified and it doesn't p
+arse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\C:\文件\笔记\obsidian\.obsidian\plugins\obsidian-wechat-converter-2.
+10.10\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+stdout | tests/wechatsync_bridge_clients.test.js > §17 Sub-sprint 4.1 — multi-client sessions > two different instanceIds both become connected entries
+[WechatsyncBridge] Bridge started { port: 45800, httpPort: 45801, host: '127.0.0.1', allowRemote: false }
+
+stdout | tests/wechatsync_bridge_clients.test.js > §17 Sub-sprint 4.1 — multi-client sessions > two different instanceIds both become connected entries
+[WechatsyncBridge] Extension connected (pending hello) { connectionId: '39775313-816e-4daa-a857-8d0778cea049', origin: '' }
+
+stdout | tests/wechatsync_bridge_clients.test.js > §17 Sub-sprint 4.1 — multi-client sessions > two different instanceIds both become connected entries
+[WechatsyncBridge:audit] session_registered {
+  connectionId: '39775313-816e-4daa-a857-8d0778cea049',
+  extensionInstanceId: 'multi-A',
+  profileLabel: 'Test Profile',
+  browserName: 'TestBrowser',
+  sessionsCount: 1
+}
+
+stdout | tests/wechatsync_bridge_clients.test.js > §17 Sub-sprint 4.1 — multi-client sessions > two different instanceIds both become connected entries
+[WechatsyncBridge] Extension connected (pending hello) { connectionId: 'aaec4c99-31b5-4c56-a3d2-6b4af8f5cc5c', origin: '' }
+
+stdout | tests/wechatsync_bridge_clients.test.js > §17 Sub-sprint 4.1 — multi-client sessions > two different instanceIds both become connected entries
+[WechatsyncBridge:audit] session_registered {
+  connectionId: 'aaec4c99-31b5-4c56-a3d2-6b4af8f5cc5c',
+  extensionInstanceId: 'multi-B',
+  profileLabel: 'Test Profile',
+  browserName: 'TestBrowser',
+  sessionsCount: 2
+}
+
+stdout | tests/dsh_icon_matrix.test.js > DSH 图标矩阵 > 每种块都有自己的图标，未登记类型才回退 ℹ️
+=== 类型 → 图标 ===
+definition     → 📐
+def            → 📐
+theorem        → 🧮
+thm            → 🧮
+proposition    → 🧠
+prop           → 🧠
+lemma          → 🧩
+corollary      → 🌿
+cor            → 🌿
+formula        → 🔣
+notation       → 🔖
+example        → 📋
+proof          → ✍️
+定义             → 📐
+定理             → 🧮
+命题             → 🧠
+引理             → 🧩
+推论             → 🌿
+公式             → 🔣
+记号             → 🔖
+例题             → 📋
+证明             → ✍️
+tip            → 💡
+hint           → 💡
+note           → 🗒️
+note-box       → 🗒️
+summary        → 📄
+important      → ❗
+wrong          → 🚫
+warning        → ⚠️
+caution        → ⚠️
+quote          → 💬
+quote-card     → 💬
+提示             → 💡
+备忘             → 🗒️
+小结             → 📄
+归纳             → 📄
+重点             → ❗
+关键             → ❗
+反例             → 🚫
+易错             → 🚫
+注意             → ⚠️
+金句             → 💬
+multi-column   → 🧱
+grid           → 🔳
+网格             → 🔳
+info           → ℹ️
+todo           → ☑️
+success        → ✅
+question       → ❓
+danger         → 🚨
+bug            → 🐛
+error          → ❌
+
+回退到 ℹ️ 的类型: info
+
+ ❯ tests/dsh_icon_matrix.test.js (1 test | 1 failed) 1224ms
+     × 每种块都有自己的图标，未登记类型才回退 ℹ️ 1222ms
+(node:13940) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/%E6%96%87%E4%BB%B6/%E7%AC%94%E8%AE%B0/ob
+sidian/.obsidian/plugins/obsidian-wechat-converter-2.10.10/views/apple-style-view.js is not specified and it doesn't pa
+rse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\C:\文件\笔记\obsidian\.obsidian\plugins\obsidian-wechat-converter-2.
+10.10\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+stdout | tests/wechatsync_bridge_clients.test.js > §17 Sub-sprint 4.1 — multi-client sessions > first connected client becomes primary
+[WechatsyncBridge] Bridge started { port: 45802, httpPort: 45803, host: '127.0.0.1', allowRemote: false }
+
+stdout | tests/wechatsync_bridge_clients.test.js > §17 Sub-sprint 4.1 — multi-client sessions > first connected client becomes primary
+[WechatsyncBridge] Extension connected (pending hello) { connectionId: 'dbf89652-f12a-4e26-9a2d-cadc766d7663', origin: '' }
+
+stdout | tests/wechatsync_bridge_clients.test.js > §17 Sub-sprint 4.1 — multi-client sessions > first connected client becomes primary
+[WechatsyncBridge:audit] session_registered {
+  connectionId: 'dbf89652-f12a-4e26-9a2d-cadc766d7663',
+  extensionInstanceId: 'primary-A',
+  profileLabel: 'Test Profile',
+  browserName: 'TestBrowser',
+  sessionsCount: 1
+}
+
+stdout | tests/wechatsync_bridge_clients.test.js > §17 Sub-sprint 4.1 — multi-client sessions > first connected client becomes primary
+[WechatsyncBridge] Extension connected (pending hello) { connectionId: '819220fe-f1c0-4f5c-8404-51ff840f97a5', origin: '' }
+
+stdout | tests/wechatsync_bridge_clients.test.js > §17 Sub-sprint 4.1 — multi-client sessions > first connected client becomes primary
+[WechatsyncBridge:audit] session_registered {
+  connectionId: '819220fe-f1c0-4f5c-8404-51ff840f97a5',
+  extensionInstanceId: 'primary-B',
+  profileLabel: 'Test Profile',
+  browserName: 'TestBrowser',
+  sessionsCount: 2
+}
+
+stdout | tests/wechatsync_bridge_clients.test.js > §17 Sub-sprint 4.1 — multi-client sessions > takeover: same-instanceId reconnect succeeds even at maxClients cap
+[WechatsyncBridge] Bridge started { port: 45806, httpPort: 45807, host: '127.0.0.1', allowRemote: false }
+
+stdout | tests/wechatsync_bridge_clients.test.js > §17 Sub-sprint 4.1 — multi-client sessions > takeover: same-instanceId reconnect succeeds even at maxClients cap
+[WechatsyncBridge] Extension connected (pending hello) { connectionId: '317eba2f-c7b1-41d5-b84d-06463b7b7847', origin: '' }
+
+stdout | tests/wechatsync_bridge_clients.test.js > §17 Sub-sprint 4.1 — multi-client sessions > takeover: same-instanceId reconnect succeeds even at maxClients cap
+[WechatsyncBridge:audit] session_registered {
+  connectionId: '317eba2f-c7b1-41d5-b84d-06463b7b7847',
+  extensionInstanceId: 'solo-A',
+  profileLabel: 'Test Profile',
+  browserName: 'TestBrowser',
+  sessionsCount: 1
+}
+
+stdout | tests/wechatsync_bridge_clients.test.js > §17 Sub-sprint 4.1 — multi-client sessions > takeover: same-instanceId reconnect succeeds even at maxClients cap
+[WechatsyncBridge] Extension connected (pending hello) { connectionId: '6cbb4229-db6f-4d14-bbcb-d6f0e593410d', origin: '' }
+
+stdout | tests/wechatsync_bridge_clients.test.js > §17 Sub-sprint 4.1 — multi-client sessions > takeover: same-instanceId reconnect succeeds even at maxClients cap
+[WechatsyncBridge:audit] hello_takeover {
+  connectionId: '317eba2f-c7b1-41d5-b84d-06463b7b7847',
+  newConnectionId: '6cbb4229-db6f-4d14-bbcb-d6f0e593410d',
+  extensionInstanceId: 'solo-A',
+  previousSocketOpen: true
+}
+[WechatsyncBridge:audit] session_registered {
+  connectionId: '6cbb4229-db6f-4d14-bbcb-d6f0e593410d',
+  extensionInstanceId: 'solo-A',
+  profileLabel: 'Test Profile',
+  browserName: 'TestBrowser',
+  sessionsCount: 1
+}
+
+stdout | tests/wechatsync_bridge_clients.test.js > §17 Sub-sprint 4.1 — multi-client sessions > rejects too_many_clients when at maxClients limit
+[WechatsyncBridge] Bridge started { port: 45808, httpPort: 45809, host: '127.0.0.1', allowRemote: false }
+
+stdout | tests/wechatsync_bridge_clients.test.js > §17 Sub-sprint 4.1 — multi-client sessions > rejects too_many_clients when at maxClients limit
+[WechatsyncBridge] Extension connected (pending hello) { connectionId: '0ecf240e-ea26-486e-8932-d4c29a817e7a', origin: '' }
+
+stdout | tests/wechatsync_bridge_clients.test.js > §17 Sub-sprint 4.1 — multi-client sessions > rejects too_many_clients when at maxClients limit
+[WechatsyncBridge:audit] session_registered {
+  connectionId: '0ecf240e-ea26-486e-8932-d4c29a817e7a',
+  extensionInstanceId: 'cap-1',
+  profileLabel: 'Test Profile',
+  browserName: 'TestBrowser',
+  sessionsCount: 1
+}
+
+stdout | tests/wechatsync_bridge_clients.test.js > §17 Sub-sprint 4.1 — multi-client sessions > rejects too_many_clients when at maxClients limit
+[WechatsyncBridge] Extension connected (pending hello) { connectionId: '2174d120-1098-4530-97dc-fc2207713be9', origin: '' }
+
+stdout | tests/wechatsync_bridge_clients.test.js > §17 Sub-sprint 4.1 — multi-client sessions > rejects too_many_clients when at maxClients limit
+[WechatsyncBridge:audit] session_registered {
+  connectionId: '2174d120-1098-4530-97dc-fc2207713be9',
+  extensionInstanceId: 'cap-2',
+  profileLabel: 'Test Profile',
+  browserName: 'TestBrowser',
+  sessionsCount: 2
+}
+
+stdout | tests/wechatsync_bridge_clients.test.js > §17 Sub-sprint 4.1 — multi-client sessions > rejects too_many_clients when at maxClients limit
+[WechatsyncBridge] Extension connected (pending hello) { connectionId: 'afb53fd9-0544-4549-9d74-8491bc2bb71c', origin: '' }
+
+stdout | tests/wechatsync_bridge_clients.test.js > §17 Sub-sprint 4.1 — multi-client sessions > rejects too_many_clients when at maxClients limit
+[WechatsyncBridge:audit] hello_rejected {
+  connectionId: 'afb53fd9-0544-4549-9d74-8491bc2bb71c',
+  reason: 'too_many_clients',
+  max: 2,
+  current: 2
+}
+
+stdout | tests/wechatsync_bridge_clients.test.js > §17 Sub-sprint 4.1 — multi-client sessions > closing a non-primary session does not affect primary or other sessions
+[WechatsyncBridge] Bridge started { port: 45810, httpPort: 45811, host: '127.0.0.1', allowRemote: false }
+
+stdout | tests/wechatsync_bridge_clients.test.js > §17 Sub-sprint 4.1 — multi-client sessions > closing a non-primary session does not affect primary or other sessions
+[WechatsyncBridge] Extension connected (pending hello) { connectionId: 'c3cc03ce-3426-4b06-ad32-0697b134b74e', origin: '' }
+
+stdout | tests/wechatsync_bridge_clients.test.js > §17 Sub-sprint 4.1 — multi-client sessions > closing a non-primary session does not affect primary or other sessions
+[WechatsyncBridge:audit] session_registered {
+  connectionId: 'c3cc03ce-3426-4b06-ad32-0697b134b74e',
+  extensionInstanceId: 'keep-A',
+  profileLabel: 'Test Profile',
+  browserName: 'TestBrowser',
+  sessionsCount: 1
+}
+
+stdout | tests/wechatsync_bridge_clients.test.js > §17 Sub-sprint 4.1 — multi-client sessions > closing a non-primary session does not affect primary or other sessions
+[WechatsyncBridge] Extension connected (pending hello) { connectionId: '95adefa0-bf1b-428e-838d-c610d1cf066e', origin: '' }
+
+stdout | tests/wechatsync_bridge_clients.test.js > §17 Sub-sprint 4.1 — multi-client sessions > closing a non-primary session does not affect primary or other sessions
+[WechatsyncBridge:audit] session_registered {
+  connectionId: '95adefa0-bf1b-428e-838d-c610d1cf066e',
+  extensionInstanceId: 'drop-B',
+  profileLabel: 'Test Profile',
+  browserName: 'TestBrowser',
+  sessionsCount: 2
+}
+
+stdout | tests/wechatsync_bridge_clients.test.js > §17 Sub-sprint 4.1 — multi-client sessions > closing a non-primary session does not affect primary or other sessions
+[WechatsyncBridge] Session disconnected {
+  connectionId: '95adefa0-bf1b-428e-838d-c610d1cf066e',
+  extensionInstanceId: 'drop-B'
+}
+
+ ✓ tests/obsidian_triplet_renderer.test.js (19 tests) 1461ms
+     ✓ should preserve standard local image alt as caption through triplet rendering  568ms
+ ✓ tests/render_diff_budget.test.js (2 tests) 1800ms
+     ✓ main control sample should keep the same structural metrics  1446ms
+stdout | tests/wechatsync_bridge_clients.test.js > §17 Sub-sprint 4.1 — multi-client sessions > primary migrates to next open session when primary disconnects
+[WechatsyncBridge] Bridge started { port: 45812, httpPort: 45813, host: '127.0.0.1', allowRemote: false }
+
+stdout | tests/wechatsync_bridge_clients.test.js > §17 Sub-sprint 4.1 — multi-client sessions > primary migrates to next open session when primary disconnects
+[WechatsyncBridge] Extension connected (pending hello) { connectionId: 'cbc0cb61-39f0-4cc6-90d8-f71205a87579', origin: '' }
+
+stdout | tests/wechatsync_bridge_clients.test.js > §17 Sub-sprint 4.1 — multi-client sessions > primary migrates to next open session when primary disconnects
+[WechatsyncBridge:audit] session_registered {
+  connectionId: 'cbc0cb61-39f0-4cc6-90d8-f71205a87579',
+  extensionInstanceId: 'prim-A',
+  profileLabel: 'Test Profile',
+  browserName: 'TestBrowser',
+  sessionsCount: 1
+}
+
+stdout | tests/wechatsync_bridge_clients.test.js > §17 Sub-sprint 4.1 — multi-client sessions > primary migrates to next open session when primary disconnects
+[WechatsyncBridge] Extension connected (pending hello) { connectionId: '598e5c71-ce43-437a-9cda-87b112a1b2bb', origin: '' }
+
+stdout | tests/wechatsync_bridge_clients.test.js > §17 Sub-sprint 4.1 — multi-client sessions > primary migrates to next open session when primary disconnects
+[WechatsyncBridge:audit] session_registered {
+  connectionId: '598e5c71-ce43-437a-9cda-87b112a1b2bb',
+  extensionInstanceId: 'prim-B',
+  profileLabel: 'Test Profile',
+  browserName: 'TestBrowser',
+  sessionsCount: 2
+}
+
+stdout | tests/wechatsync_bridge_clients.test.js > §17 Sub-sprint 4.1 — multi-client sessions > primary migrates to next open session when primary disconnects
+[WechatsyncBridge] Session disconnected {
+  connectionId: 'cbc0cb61-39f0-4cc6-90d8-f71205a87579',
+  extensionInstanceId: 'prim-A'
+}
+
+ ✓ tests/ai_layout_service_generation.test.js (16 tests) 2066ms
+     ✓ should convert aborted provider requests into timeout errors  2016ms
+stdout | tests/wechatsync_bridge_clients.test.js > §17 Sub-sprint 4.1 — multi-client sessions > getStatus includes primaryClientId and maxClients fields
+[WechatsyncBridge] Bridge started { port: 45814, httpPort: 45815, host: '127.0.0.1', allowRemote: false }
+
+stdout | tests/wechatsync_bridge_clients.test.js > §16 Phase 1 — connected clients registry > adds a connected entry after successful extension_hello
+[WechatsyncBridge] Bridge started { port: 45816, httpPort: 45817, host: '127.0.0.1', allowRemote: false }
+
+stdout | tests/wechatsync_bridge_clients.test.js > §16 Phase 1 — connected clients registry > adds a connected entry after successful extension_hello
+[WechatsyncBridge] Extension connected (pending hello) { connectionId: 'd9b0fae1-dc6c-44ea-8b71-cb7ec6ccc711', origin: '' }
+
+stdout | tests/wechatsync_bridge_clients.test.js > §16 Phase 1 — connected clients registry > adds a connected entry after successful extension_hello
+[WechatsyncBridge:audit] session_registered {
+  connectionId: 'd9b0fae1-dc6c-44ea-8b71-cb7ec6ccc711',
+  extensionInstanceId: 'ext-instance-test',
+  profileLabel: 'Test Profile',
+  browserName: 'TestBrowser',
+  sessionsCount: 1
+}
+
+ ✓ tests/parity_corpus.test.js (6 tests) 2463ms
+     ✓ should keep cleaned html stable for control-main  1460ms
+     ✓ should keep cleaned html stable for control-longform-workflow  349ms
+ ✓ tests/image_processing.test.js (3 tests) 1675ms
+     ✓ should handle app:// images (Desktop)  851ms
+     ✓ should handle capacitor:// images (Mobile)  819ms
+stdout | tests/wechatsync_bridge_clients.test.js > §16 Phase 1 — connected clients registry > preserves firstConnectedAt on reconnect and updates lastConnectedAt
+[WechatsyncBridge] Bridge started { port: 45818, httpPort: 45819, host: '127.0.0.1', allowRemote: false }
+
+stdout | tests/wechatsync_bridge_clients.test.js > §16 Phase 1 — connected clients registry > preserves firstConnectedAt on reconnect and updates lastConnectedAt
+[WechatsyncBridge] Extension connected (pending hello) { connectionId: 'cd8d1a41-db0a-4a97-8c15-cb02031d95c8', origin: '' }
+
+stdout | tests/wechatsync_bridge_clients.test.js > §16 Phase 1 — connected clients registry > preserves firstConnectedAt on reconnect and updates lastConnectedAt
+[WechatsyncBridge:audit] session_registered {
+  connectionId: 'cd8d1a41-db0a-4a97-8c15-cb02031d95c8',
+  extensionInstanceId: 'ext-instance-test',
+  profileLabel: 'Test Profile',
+  browserName: 'TestBrowser',
+  sessionsCount: 1
+}
+
+(node:8020) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/%E6%96%87%E4%BB%B6/%E7%AC%94%E8%AE%B0/obs
+idian/.obsidian/plugins/obsidian-wechat-converter-2.10.10/services/dom-utils.js is not specified and it doesn't parse a
+s CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\C:\文件\笔记\obsidian\.obsidian\plugins\obsidian-wechat-converter-2.
+10.10\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:14828) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/%E6%96%87%E4%BB%B6/%E7%AC%94%E8%AE%B0/ob
+sidian/.obsidian/plugins/obsidian-wechat-converter-2.10.10/services/obsidian-triplet-serializer.js is not specified and
+ it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\C:\文件\笔记\obsidian\.obsidian\plugins\obsidian-wechat-converter-2.
+10.10\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+ ✓ tests/golden_control_baseline.test.js (4 tests) 1449ms
+     ✓ main control sample should keep key structure stable  1033ms
+stdout | tests/wechatsync_bridge_clients.test.js > §16 Phase 1 — connected clients registry > preserves firstConnectedAt on reconnect and updates lastConnectedAt
+[WechatsyncBridge] Session disconnected {
+  connectionId: 'cd8d1a41-db0a-4a97-8c15-cb02031d95c8',
+  extensionInstanceId: 'ext-instance-test'
+}
+
+stderr | tests/sticker_publish_flow.test.js > WeChat sticker publish flow > onSyncToWechat in sticker mode > should rep
+ort which image failed to upload
+Wechat Sticker Sync Error: Error: 第 1 张图片上传失败（a.png）：读取失败
+    at resolveStickerMediaIds (file:///C:/%E6%96%87%E4%BB%B6/%E7%AC%94%E8%AE%B0/obsidian/.obsidian/plugins/obsidian-wec
+hat-converter-2.10.10/services/sticker-media-resolver.js:111:13)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at AppleStyleView.onSyncStickerToWechat (file:///C:/%E6%96%87%E4%BB%B6/%E7%AC%94%E8%AE%B0/obsidian/.obsidian/plugin
+s/obsidian-wechat-converter-2.10.10/views/publish-modal/wechat-sync-action.js:209:27)
+    at C:/文件/笔记/obsidian/.obsidian/plugins/obsidian-wechat-converter-2.10.10/tests/sticker_publish_flow.test.js:487:7
+    at file:///C:/%E6%96%87%E4%BB%B6/%E7%AC%94%E8%AE%B0/obsidian/.obsidian/plugins/obsidian-wechat-converter-2.10.10/no
+de_modules/.pnpm/@vitest+runner@4.0.18/node_modules/@vitest/runner/dist/index.js:915:20
+
+(node:17136) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/%E6%96%87%E4%BB%B6/%E7%AC%94%E8%AE%B0/ob
+sidian/.obsidian/plugins/obsidian-wechat-converter-2.10.10/views/apple-style-view.js is not specified and it doesn't pa
+rse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\C:\文件\笔记\obsidian\.obsidian\plugins\obsidian-wechat-converter-2.
+10.10\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+ ✓ tests/sticker_publish_flow.test.js (20 tests) 1389ms
+       ✓ should render sticker thumbnails with displayable resource paths  1130ms
+stdout | tests/wechatsync_bridge_clients.test.js > §16 Phase 1 — connected clients registry > preserves firstConnectedAt on reconnect and updates lastConnectedAt
+[WechatsyncBridge] Extension connected (pending hello) { connectionId: 'ce5d4e9a-6eba-44e2-972c-ee08eef7ec0b', origin: '' }
+
+stdout | tests/wechatsync_bridge_clients.test.js > §16 Phase 1 — connected clients registry > preserves firstConnectedAt on reconnect and updates lastConnectedAt
+[WechatsyncBridge:audit] session_registered {
+  connectionId: 'ce5d4e9a-6eba-44e2-972c-ee08eef7ec0b',
+  extensionInstanceId: 'ext-instance-test',
+  profileLabel: 'Test Profile',
+  browserName: 'TestBrowser',
+  sessionsCount: 1
+}
+
+(node:16352) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/%E6%96%87%E4%BB%B6/%E7%AC%94%E8%AE%B0/ob
+sidian/.obsidian/plugins/obsidian-wechat-converter-2.10.10/views/apple-style-view.js is not specified and it doesn't pa
+rse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\C:\文件\笔记\obsidian\.obsidian\plugins\obsidian-wechat-converter-2.
+10.10\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+ ✓ tests/obsidian_triplet_renderer_math.test.js (14 tests) 1136ms
+     ✓ should preserve inline and block math markers inside fenced code blocks  316ms
+(node:11324) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/%E6%96%87%E4%BB%B6/%E7%AC%94%E8%AE%B0/ob
+sidian/.obsidian/plugins/obsidian-wechat-converter-2.10.10/views/apple-style-view.js is not specified and it doesn't pa
+rse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\C:\文件\笔记\obsidian\.obsidian\plugins\obsidian-wechat-converter-2.
+10.10\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+ ✓ tests/wechat_api.test.js (22 tests) 1240ms
+     ✓ should use FileReader for proxy uploads (Perf Optimization)  1132ms
+stdout | tests/dsh_regen_baselines.test.js > DSH 重建 parity 基线 > 只接受可解释的差异
+[基线] control-main: 无变化
+
+stdout | tests/dsh_regen_baselines.test.js > DSH 重建 parity 基线 > 只接受可解释的差异
+[基线] control-micro: 无变化
+
+stdout | tests/wechatsync_bridge_clients.test.js > §16 Phase 1 — connected clients registry > echoes heartbeat_ack with the same ts so extension liveness counter can reset (SPEC-1)
+[WechatsyncBridge] Bridge started { port: 45820, httpPort: 45821, host: '127.0.0.1', allowRemote: false }
+
+stdout | tests/wechatsync_bridge_clients.test.js > §16 Phase 1 — connected clients registry > echoes heartbeat_ack with the same ts so extension liveness counter can reset (SPEC-1)
+[WechatsyncBridge] Extension connected (pending hello) { connectionId: 'fe513597-17a4-4b08-8636-80ee6ed2773a', origin: '' }
+
+stdout | tests/wechatsync_bridge_clients.test.js > §16 Phase 1 — connected clients registry > echoes heartbeat_ack with the same ts so extension liveness counter can reset (SPEC-1)
+[WechatsyncBridge:audit] session_registered {
+  connectionId: 'fe513597-17a4-4b08-8636-80ee6ed2773a',
+  extensionInstanceId: 'ext-instance-test',
+  profileLabel: 'Test Profile',
+  browserName: 'TestBrowser',
+  sessionsCount: 1
+}
+
+stdout | tests/wechatsync_bridge_clients.test.js > §16 Phase 1 — connected clients registry > refreshes lastSeenAt when a heartbeat arrives
+[WechatsyncBridge] Bridge started { port: 45822, httpPort: 45823, host: '127.0.0.1', allowRemote: false }
+
+stdout | tests/dsh_regen_baselines.test.js > DSH 重建 parity 基线 > 只接受可解释的差异
+[基线] control-micro-placeholder-data: 无变化
+
+stdout | tests/wechatsync_bridge_clients.test.js > §16 Phase 1 — connected clients registry > refreshes lastSeenAt when a heartbeat arrives
+[WechatsyncBridge] Extension connected (pending hello) { connectionId: '89f0f7d6-83d8-43a0-93ea-d521fcb7925d', origin: '' }
+
+stdout | tests/wechatsync_bridge_clients.test.js > §16 Phase 1 — connected clients registry > refreshes lastSeenAt when a heartbeat arrives
+[WechatsyncBridge:audit] session_registered {
+  connectionId: '89f0f7d6-83d8-43a0-93ea-d521fcb7925d',
+  extensionInstanceId: 'ext-instance-test',
+  profileLabel: 'Test Profile',
+  browserName: 'TestBrowser',
+  sessionsCount: 1
+}
+
+stdout | tests/dsh_regen_baselines.test.js > DSH 重建 parity 基线 > 只接受可解释的差异
+[基线] control-longform-workflow: 无变化
+
+stdout | tests/settings_ui_smoke.test.js > AppleStyleSettingTab settings rendering - smoke test > testing the bridge connection does not read or refresh platform auth state
+[Wechatsync] test connection started { port: 9527, hasToken: true, forceRefresh: false }
+
+stdout | tests/settings_ui_smoke.test.js > AppleStyleSettingTab settings rendering - smoke test > testing the bridge connection does not read or refresh platform auth state
+[Wechatsync] bridge started {}
+
+stdout | tests/settings_ui_smoke.test.js > AppleStyleSettingTab settings rendering - smoke test > testing the bridge connection does not read or refresh platform auth state
+[Wechatsync] extension connection ready { elapsedMs: 2 }
+
+stdout | tests/settings_ui_smoke.test.js > AppleStyleSettingTab settings rendering - smoke test > testing the bridge connection does not read or refresh platform auth state
+[Wechatsync] health result { ok: true, tokenValid: true, error: '', capabilities: {} }
+
+stdout | tests/settings_ui_smoke.test.js > AppleStyleSettingTab settings rendering - smoke test > testing the bridge connection does not read or refresh platform auth state
+[Wechatsync] supported platforms loaded { count: 2, platforms: [ 'zhihu', 'juejin' ] }
+
+stdout | tests/settings_ui_smoke.test.js > AppleStyleSettingTab settings rendering - smoke test > reads cached selected platform auth state without running a live auth check
+[Wechatsync] selected platform cached auth snapshot summary {
+  elapsedMs: 5,
+  checkedAt: 456,
+  responseKind: 'array',
+  rawCount: 1,
+  normalizedCount: 1,
+  authenticatedCount: 1,
+  platforms: [ { id: 'zhihu', name: '知乎', authenticated: true, username: 'Lin' } ]
+}
+
+stdout | tests/dsh_regen_baselines.test.js > DSH 重建 parity 基线 > 只接受可解释的差异
+[基线] control-image-stack: 无变化
+[基线] 结果：更新 0 个，拒绝 0 个
+
+ ✓ tests/dsh_regen_baselines.test.js (1 test) 3168ms
+     ✓ 只接受可解释的差异  3166ms
+ ✓ tests/settings_ui_smoke.test.js (37 tests) 2295ms
+     ✓ uses the imperative full-page fallback on Obsidian 1.13+  366ms
+(node:20420) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/%E6%96%87%E4%BB%B6/%E7%AC%94%E8%AE%B0/ob
+sidian/.obsidian/plugins/obsidian-wechat-converter-2.10.10/views/apple-style-view.js is not specified and it doesn't pa
+rse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\C:\文件\笔记\obsidian\.obsidian\plugins\obsidian-wechat-converter-2.
+10.10\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+ ✓ tests/sync_modal_ui.test.js (4 tests) 1288ms
+     ✓ should auto-expand advanced options on mobile when cover is missing  1230ms
+(node:20692) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/%E6%96%87%E4%BB%B6/%E7%AC%94%E8%AE%B0/ob
+sidian/.obsidian/plugins/obsidian-wechat-converter-2.10.10/views/apple-style-view.js is not specified and it doesn't pa
+rse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\C:\文件\笔记\obsidian\.obsidian\plugins\obsidian-wechat-converter-2.
+10.10\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+ ✓ tests/wechat_material_cache.test.js (6 tests) 999ms
+     ✓ should reuse cached material pages within the ttl  964ms
+stderr | tests/frontmatter_cleanup.test.js > AppleStyleView - Frontmatter Meta & Configured Directory Cleanup > should 
+not trigger cleanup when createDraft fails
+Wechat Sync Error: Error: create failed
+    at C:/文件/笔记/obsidian/.obsidian/plugins/obsidian-wechat-converter-2.10.10/tests/frontmatter_cleanup.test.js:382:91
+    at file:///C:/%E6%96%87%E4%BB%B6/%E7%AC%94%E8%AE%B0/obsidian/.obsidian/plugins/obsidian-wechat-converter-2.10.10/no
+de_modules/.pnpm/@vitest+runner@4.0.18/node_modules/@vitest/runner/dist/index.js:145:11
+    at file:///C:/%E6%96%87%E4%BB%B6/%E7%AC%94%E8%AE%B0/obsidian/.obsidian/plugins/obsidian-wechat-converter-2.10.10/no
+de_modules/.pnpm/@vitest+runner@4.0.18/node_modules/@vitest/runner/dist/index.js:915:26
+    at file:///C:/%E6%96%87%E4%BB%B6/%E7%AC%94%E8%AE%B0/obsidian/.obsidian/plugins/obsidian-wechat-converter-2.10.10/no
+de_modules/.pnpm/@vitest+runner@4.0.18/node_modules/@vitest/runner/dist/index.js:1243:20
+    at new Promise (<anonymous>)
+    at runWithTimeout (file:///C:/%E6%96%87%E4%BB%B6/%E7%AC%94%E8%AE%B0/obsidian/.obsidian/plugins/obsidian-wechat-conv
+erter-2.10.10/node_modules/.pnpm/@vitest+runner@4.0.18/node_modules/@vitest/runner/dist/index.js:1209:10)
+    at file:///C:/%E6%96%87%E4%BB%B6/%E7%AC%94%E8%AE%B0/obsidian/.obsidian/plugins/obsidian-wechat-converter-2.10.10/no
+de_modules/.pnpm/@vitest+runner@4.0.18/node_modules/@vitest/runner/dist/index.js:1653:37
+    at Traces.$ (file:///C:/%E6%96%87%E4%BB%B6/%E7%AC%94%E8%AE%B0/obsidian/.obsidian/plugins/obsidian-wechat-converter-
+2.10.10/node_modules/.pnpm/vitest@4.0.18_@types+node@2_a19b9e59b8ec02b5d719c0952ab0230b/node_modules/vitest/dist/chunks
+/traces.CCmnQaNT.js:142:27)
+    at trace (file:///C:/%E6%96%87%E4%BB%B6/%E7%AC%94%E8%AE%B0/obsidian/.obsidian/plugins/obsidian-wechat-converter-2.1
+0.10/node_modules/.pnpm/vitest@4.0.18_@types+node@2_a19b9e59b8ec02b5d719c0952ab0230b/node_modules/vitest/dist/chunks/te
+st.B8ej_ZHS.js:239:21)
+    at runTest (file:///C:/%E6%96%87%E4%BB%B6/%E7%AC%94%E8%AE%B0/obsidian/.obsidian/plugins/obsidian-wechat-converter-2
+.10.10/node_modules/.pnpm/@vitest+runner@4.0.18/node_modules/@vitest/runner/dist/index.js:1653:12)
+
+(node:19256) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/%E6%96%87%E4%BB%B6/%E7%AC%94%E8%AE%B0/ob
+sidian/.obsidian/plugins/obsidian-wechat-converter-2.10.10/views/apple-style-view.js is not specified and it doesn't pa
+rse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\C:\文件\笔记\obsidian\.obsidian\plugins\obsidian-wechat-converter-2.
+10.10\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+ ✓ tests/frontmatter_cleanup.test.js (20 tests) 1049ms
+     ✓ should read excerpt/cover/cover_dir and resolve cover resource from frontmatter  880ms
+stdout | tests/wechatsync_bridge_clients.test.js > §16 Phase 1 — connected clients registry > marks entry as disconnected (but keeps it) when WebSocket closes
+[WechatsyncBridge] Bridge started { port: 45824, httpPort: 45825, host: '127.0.0.1', allowRemote: false }
+
+stdout | tests/wechatsync_bridge_clients.test.js > §16 Phase 1 — connected clients registry > marks entry as disconnected (but keeps it) when WebSocket closes
+[WechatsyncBridge] Extension connected (pending hello) { connectionId: 'ab9e2087-c2e7-4c57-bfe5-5b23493129d8', origin: '' }
+
+stdout | tests/wechatsync_bridge_clients.test.js > §16 Phase 1 — connected clients registry > marks entry as disconnected (but keeps it) when WebSocket closes
+[WechatsyncBridge:audit] session_registered {
+  connectionId: 'ab9e2087-c2e7-4c57-bfe5-5b23493129d8',
+  extensionInstanceId: 'ext-instance-test',
+  profileLabel: 'Test Profile',
+  browserName: 'TestBrowser',
+  sessionsCount: 1
+}
+
+(node:12892) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/%E6%96%87%E4%BB%B6/%E7%AC%94%E8%AE%B0/ob
+sidian/.obsidian/plugins/obsidian-wechat-converter-2.10.10/views/apple-style-view.js is not specified and it doesn't pa
+rse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\C:\文件\笔记\obsidian\.obsidian\plugins\obsidian-wechat-converter-2.
+10.10\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+stdout | tests/settings_migration.test.js > AppleStylePlugin - Settings Migration > should migrate legacy folder cleanup config to cleanupDirTemplate
+✅ 已将旧清理配置迁移为目录模板 cleanupDirTemplate
+
+ ✓ tests/settings_migration.test.js (15 tests) 1084ms
+     ✓ serializes bridge lifecycle operations across configuration changes  1054ms
+(node:19112) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/%E6%96%87%E4%BB%B6/%E7%AC%94%E8%AE%B0/ob
+sidian/.obsidian/plugins/obsidian-wechat-converter-2.10.10/views/apple-style-view.js is not specified and it doesn't pa
+rse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\C:\文件\笔记\obsidian\.obsidian\plugins\obsidian-wechat-converter-2.
+10.10\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+ ✓ tests/view_sticker_mode.test.js (9 tests) 1019ms
+     ✓ should initialize with default previewMode as article  900ms
+stdout | tests/wechatsync_bridge_clients.test.js > §16 Phase 1 — connected clients registry > marks entry as disconnected (but keeps it) when WebSocket closes
+[WechatsyncBridge] Session disconnected {
+  connectionId: 'ab9e2087-c2e7-4c57-bfe5-5b23493129d8',
+  extensionInstanceId: 'ext-instance-test'
+}
+
+(node:11996) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/%E6%96%87%E4%BB%B6/%E7%AC%94%E8%AE%B0/ob
+sidian/.obsidian/plugins/obsidian-wechat-converter-2.10.10/views/apple-style-view.js is not specified and it doesn't pa
+rse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\C:\文件\笔记\obsidian\.obsidian\plugins\obsidian-wechat-converter-2.
+10.10\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+ ✓ tests/sync_modal_actions.test.js (6 tests) 1004ms
+     ✓ openPluginSettings should return false when app.setting api is unavailable  953ms
+stdout | tests/custom_css_preview_notice.test.js > AppleStylePlugin - custom CSS preview refresh > clears a pending refresh when the plugin unloads
+📝 Obsidian 发布助手已卸载
+
+(node:14164) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/%E6%96%87%E4%BB%B6/%E7%AC%94%E8%AE%B0/ob
+sidian/.obsidian/plugins/obsidian-wechat-converter-2.10.10/views/apple-style-view.js is not specified and it doesn't pa
+rse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\C:\文件\笔记\obsidian\.obsidian\plugins\obsidian-wechat-converter-2.
+10.10\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+ ✓ tests/custom_css_preview_notice.test.js (6 tests) 831ms
+     ✓ coalesces rapid changes into one hot refresh while the preview is open  823ms
+(node:15072) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/%E6%96%87%E4%BB%B6/%E7%AC%94%E8%AE%B0/ob
+sidian/.obsidian/plugins/obsidian-wechat-converter-2.10.10/views/apple-style-view.js is not specified and it doesn't pa
+rse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\C:\文件\笔记\obsidian\.obsidian\plugins\obsidian-wechat-converter-2.
+10.10\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+ ✓ tests/open_converter_title.test.js (4 tests) 843ms
+     ✓ should refresh stale converter leaf title to unified name  838ms
+stdout | tests/wechatsync_bridge_clients.test.js > §16 Phase 1 — connected clients registry > caps the persisted registry at 20 entries on construction, keeping the most recently seen disconnected clients
+[WechatsyncBridge] Bridge started { port: 45826, httpPort: 45827, host: '127.0.0.1', allowRemote: false }
+
+stdout | tests/wechatsync_bridge_clients.test.js > §16 Phase 1 — connected clients registry > never evicts currently connected entries even when the registry is over cap
+[WechatsyncBridge] Bridge started { port: 45828, httpPort: 45829, host: '127.0.0.1', allowRemote: false }
+
+stdout | tests/wechatsync_bridge_clients.test.js > §16 Phase 1 — connected clients registry > does not modify the registry when it is at or below cap
+[WechatsyncBridge] Bridge started { port: 45830, httpPort: 45831, host: '127.0.0.1', allowRemote: false }
+
+stdout | tests/wechatsync_bridge_clients.test.js > §16 Phase 1 — connected clients registry > preserves the offline Pro cache when trimming, even if its lastSeenAt is the oldest
+[WechatsyncBridge] Bridge started { port: 45832, httpPort: 45833, host: '127.0.0.1', allowRemote: false }
+
+ ✓ tests/wechatsync_bridge_clients.test.js (17 tests) 11047ms
+     ✓ two different instanceIds both become connected entries  1280ms
+     ✓ closing a non-primary session does not affect primary or other sessions  320ms
+     ✓ primary migrates to next open session when primary disconnects  353ms
+     ✓ adds a connected entry after successful extension_hello  1220ms
+     ✓ preserves firstConnectedAt on reconnect and updates lastConnectedAt  2684ms
+     ✓ refreshes lastSeenAt when a heartbeat arrives  2502ms
+     ✓ marks entry as disconnected (but keeps it) when WebSocket closes  2441ms
+(node:2596) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/%E6%96%87%E4%BB%B6/%E7%AC%94%E8%AE%B0/obs
+idian/.obsidian/plugins/obsidian-wechat-converter-2.10.10/views/apple-style-view.js is not specified and it doesn't par
+se as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\C:\文件\笔记\obsidian\.obsidian\plugins\obsidian-wechat-converter-2.
+10.10\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+ ✓ tests/plugin_security.test.js (6 tests) 813ms
+     ✓ should throw Security Error when proxy URL is not HTTPS in sendRequest  797ms
+(node:14664) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/%E6%96%87%E4%BB%B6/%E7%AC%94%E8%AE%B0/ob
+sidian/.obsidian/plugins/obsidian-wechat-converter-2.10.10/services/dom-utils.js is not specified and it doesn't parse 
+as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\C:\文件\笔记\obsidian\.obsidian\plugins\obsidian-wechat-converter-2.
+10.10\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:4308) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/%E6%96%87%E4%BB%B6/%E7%AC%94%E8%AE%B0/obs
+idian/.obsidian/plugins/obsidian-wechat-converter-2.10.10/views/apple-style-view.js is not specified and it doesn't par
+se as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\C:\文件\笔记\obsidian\.obsidian\plugins\obsidian-wechat-converter-2.
+10.10\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:1572) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/%E6%96%87%E4%BB%B6/%E7%AC%94%E8%AE%B0/obs
+idian/.obsidian/plugins/obsidian-wechat-converter-2.10.10/services/dom-utils.js is not specified and it doesn't parse a
+s CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\C:\文件\笔记\obsidian\.obsidian\plugins\obsidian-wechat-converter-2.
+10.10\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+ ✓ tests/obsidian_triplet_serializer_images.test.js (17 tests) 764ms
+(node:20052) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/%E6%96%87%E4%BB%B6/%E7%AC%94%E8%AE%B0/ob
+sidian/.obsidian/plugins/obsidian-wechat-converter-2.10.10/views/apple-style-view.js is not specified and it doesn't pa
+rse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\C:\文件\笔记\obsidian\.obsidian\plugins\obsidian-wechat-converter-2.
+10.10\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+ ✓ tests/view_ai_layout_state.test.js (16 tests) 652ms
+(node:8356) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/%E6%96%87%E4%BB%B6/%E7%AC%94%E8%AE%B0/obs
+idian/.obsidian/plugins/obsidian-wechat-converter-2.10.10/services/dom-utils.js is not specified and it doesn't parse a
+s CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\C:\文件\笔记\obsidian\.obsidian\plugins\obsidian-wechat-converter-2.
+10.10\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+ ✓ tests/native_renderer.test.js (14 tests) 690ms
+(node:18080) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/%E6%96%87%E4%BB%B6/%E7%AC%94%E8%AE%B0/ob
+sidian/.obsidian/plugins/obsidian-wechat-converter-2.10.10/services/dom-utils.js is not specified and it doesn't parse 
+as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\C:\文件\笔记\obsidian\.obsidian\plugins\obsidian-wechat-converter-2.
+10.10\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+stderr | tests/copy_html.test.js > AppleStyleView - copyHTML clipboard behavior > should fail clearly when rich clipboa
+rd html write is unavailable
+复制失败: Error: rich copy unavailable
+    at AppleStyleView.copyHTML (file:///C:/%E6%96%87%E4%BB%B6/%E7%AC%94%E8%AE%B0/obsidian/.obsidian/plugins/obsidian-we
+chat-converter-2.10.10/views/converter/clipboard.js:611:13)
+    at C:/文件/笔记/obsidian/.obsidian/plugins/obsidian-wechat-converter-2.10.10/tests/copy_html.test.js:399:5
+    at file:///C:/%E6%96%87%E4%BB%B6/%E7%AC%94%E8%AE%B0/obsidian/.obsidian/plugins/obsidian-wechat-converter-2.10.10/no
+de_modules/.pnpm/@vitest+runner@4.0.18/node_modules/@vitest/runner/dist/index.js:915:20
+
+ ✓ tests/copy_html.test.js (13 tests) 839ms
+ ✓ tests/obsidian_triplet_serializer_tasks.test.js (4 tests) 500ms
+ ✓ tests/obsidian_triplet_serializer.test.js (26 tests) 1205ms
+(node:19600) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/%E6%96%87%E4%BB%B6/%E7%AC%94%E8%AE%B0/ob
+sidian/.obsidian/plugins/obsidian-wechat-converter-2.10.10/views/apple-style-view.js is not specified and it doesn't pa
+rse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\C:\文件\笔记\obsidian\.obsidian\plugins\obsidian-wechat-converter-2.
+10.10\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+ ✓ tests/view_ai_layout_cache.test.js (15 tests) 628ms
+(node:16484) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/%E6%96%87%E4%BB%B6/%E7%AC%94%E8%AE%B0/ob
+sidian/.obsidian/plugins/obsidian-wechat-converter-2.10.10/views/apple-style-view.js is not specified and it doesn't pa
+rse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\C:\文件\笔记\obsidian\.obsidian\plugins\obsidian-wechat-converter-2.
+10.10\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:2344) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/%E6%96%87%E4%BB%B6/%E7%AC%94%E8%AE%B0/obs
+idian/.obsidian/plugins/obsidian-wechat-converter-2.10.10/services/dom-utils.js is not specified and it doesn't parse a
+s CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\C:\文件\笔记\obsidian\.obsidian\plugins\obsidian-wechat-converter-2.
+10.10\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:19952) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/%E6%96%87%E4%BB%B6/%E7%AC%94%E8%AE%B0/ob
+sidian/.obsidian/plugins/obsidian-wechat-converter-2.10.10/views/apple-style-view.js is not specified and it doesn't pa
+rse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\C:\文件\笔记\obsidian\.obsidian\plugins\obsidian-wechat-converter-2.
+10.10\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+ ✓ tests/watermark_layout_integration.test.js (1 test) 444ms
+     ✓ should render avatar and caption as inline-safe siblings in watermark mode  442ms
+stdout | tests/wechatsync_bridge_protocol.test.js > §3.1 / §3.2 extension_hello handshake > closes a WebSocket that does not send extension_hello within helloTimeoutMs
+[WechatsyncBridge] Bridge started { port: 45400, httpPort: 45401, host: '127.0.0.1', allowRemote: false }
+
+stdout | tests/wechatsync_bridge_protocol.test.js > §3.1 / §3.2 extension_hello handshake > closes a WebSocket that does not send extension_hello within helloTimeoutMs
+[WechatsyncBridge] Extension connected (pending hello) { connectionId: '75a6e1ce-7e04-43ab-a579-8fc89fa7a133', origin: '' }
+
+stderr | tests/view_settings_panel.test.js > AppleStyleView settings panel + toolbar > createSettingsPanel should conti
+nue building when a theme list method throws
+读取主题列表失败: Error: stale theme registry
+    at Object.getThemeList (C:/文件/笔记/obsidian/.obsidian/plugins/obsidian-wechat-converter-2.10.10/tests/view_settings_p
+anel.test.js:149:15)
+    at readThemeOptions (file:///C:/%E6%96%87%E4%BB%B6/%E7%AC%94%E8%AE%B0/obsidian/.obsidian/plugins/obsidian-wechat-co
+nverter-2.10.10/views/converter/settings-panel.js:46:37)
+    at file:///C:/%E6%96%87%E4%BB%B6/%E7%AC%94%E8%AE%B0/obsidian/.obsidian/plugins/obsidian-wechat-converter-2.10.10/vi
+ews/converter/settings-panel.js:158:20
+    at AppleStyleView.createSection (file:///C:/%E6%96%87%E4%BB%B6/%E7%AC%94%E8%AE%B0/obsidian/.obsidian/plugins/obsidi
+an-wechat-converter-2.10.10/views/converter/settings-panel.js:619:3)
+    at AppleStyleView.createSettingsPanel (file:///C:/%E6%96%87%E4%BB%B6/%E7%AC%94%E8%AE%B0/obsidian/.obsidian/plugins/
+obsidian-wechat-converter-2.10.10/views/converter/settings-panel.js:155:8)
+    at C:/文件/笔记/obsidian/.obsidian/plugins/obsidian-wechat-converter-2.10.10/tests/view_settings_panel.test.js:155:10
+    at file:///C:/%E6%96%87%E4%BB%B6/%E7%AC%94%E8%AE%B0/obsidian/.obsidian/plugins/obsidian-wechat-converter-2.10.10/no
+de_modules/.pnpm/@vitest+runner@4.0.18/node_modules/@vitest/runner/dist/index.js:145:11
+    at file:///C:/%E6%96%87%E4%BB%B6/%E7%AC%94%E8%AE%B0/obsidian/.obsidian/plugins/obsidian-wechat-converter-2.10.10/no
+de_modules/.pnpm/@vitest+runner@4.0.18/node_modules/@vitest/runner/dist/index.js:915:26
+    at file:///C:/%E6%96%87%E4%BB%B6/%E7%AC%94%E8%AE%B0/obsidian/.obsidian/plugins/obsidian-wechat-converter-2.10.10/no
+de_modules/.pnpm/@vitest+runner@4.0.18/node_modules/@vitest/runner/dist/index.js:1243:20
+    at new Promise (<anonymous>)
+
+stdout | tests/wechatsync_bridge_protocol.test.js > §3.1 / §3.2 extension_hello handshake > closes a WebSocket that does not send extension_hello within helloTimeoutMs
+[WechatsyncBridge:audit] hello_rejected {
+  connectionId: '75a6e1ce-7e04-43ab-a579-8fc89fa7a133',
+  reason: 'hello_timeout',
+  timeoutMs: 80
+}
+
+stdout | tests/wechatsync_bridge_protocol.test.js > §3.1 / §3.2 extension_hello handshake > accepts an explicitly approved pending client and rejects later credential drift
+[WechatsyncBridge] Bridge started { port: 45404, httpPort: 45405, host: '127.0.0.1', allowRemote: false }
+
+stdout | tests/wechatsync_bridge_protocol.test.js > §3.1 / §3.2 extension_hello handshake > accepts an explicitly approved pending client and rejects later credential drift
+[WechatsyncBridge] Extension connected (pending hello) { connectionId: '6af3fa5a-64a7-4dd5-bf47-49c304fb8768', origin: '' }
+
+stdout | tests/wechatsync_bridge_protocol.test.js > §3.1 / §3.2 extension_hello handshake > accepts an explicitly approved pending client and rejects later credential drift
+[WechatsyncBridge:audit] hello_rejected {
+  connectionId: '6af3fa5a-64a7-4dd5-bf47-49c304fb8768',
+  reason: 'pairing_required',
+  extensionInstanceId: 'profile-A',
+  extensionId: 'test-extension',
+  browserName: 'TestBrowser',
+  profileLabel: 'Test Profile',
+  credentialFingerprint: 'f6ccb990acf9'
+}
+
+stdout | tests/wechatsync_bridge_protocol.test.js > §3.1 / §3.2 extension_hello handshake > accepts an explicitly approved pending client and rejects later credential drift
+[WechatsyncBridge] Extension connected (pending hello) { connectionId: 'fc27a637-1537-4636-8dae-c2da05891f5c', origin: '' }
+
+stdout | tests/wechatsync_bridge_protocol.test.js > §3.1 / §3.2 extension_hello handshake > accepts an explicitly approved pending client and rejects later credential drift
+[WechatsyncBridge:audit] session_registered {
+  connectionId: 'fc27a637-1537-4636-8dae-c2da05891f5c',
+  extensionInstanceId: 'profile-A',
+  profileLabel: 'Test Profile',
+  browserName: 'TestBrowser',
+  sessionsCount: 1
+}
+
+stdout | tests/wechatsync_bridge_protocol.test.js > §3.1 / §3.2 extension_hello handshake > accepts an explicitly approved pending client and rejects later credential drift
+[WechatsyncBridge] Session disconnected {
+  connectionId: 'fc27a637-1537-4636-8dae-c2da05891f5c',
+  extensionInstanceId: 'profile-A'
+}
+
+stdout | tests/wechatsync_bridge_protocol.test.js > §3.1 / §3.2 extension_hello handshake > accepts an explicitly approved pending client and rejects later credential drift
+[WechatsyncBridge] Extension connected (pending hello) { connectionId: '09374dd5-0c80-4ae0-9b5f-07b7139b2968', origin: '' }
+
+stdout | tests/wechatsync_bridge_protocol.test.js > §3.1 / §3.2 extension_hello handshake > accepts an explicitly approved pending client and rejects later credential drift
+[WechatsyncBridge:audit] hello_rejected {
+  connectionId: '09374dd5-0c80-4ae0-9b5f-07b7139b2968',
+  reason: 'credential_mismatch',
+  extensionInstanceId: 'profile-A',
+  extensionId: 'test-extension',
+  credentialFingerprint: 'b4b18db98b7e'
+}
+
+stdout | tests/wechatsync_bridge_protocol.test.js > §3.1 / §3.2 extension_hello handshake > rejects extension_hello with an invalid payload (non-hello first message)
+[WechatsyncBridge] Bridge started { port: 45406, httpPort: 45407, host: '127.0.0.1', allowRemote: false }
+
+stdout | tests/wechatsync_bridge_protocol.test.js > §3.1 / §3.2 extension_hello handshake > rejects extension_hello with an invalid payload (non-hello first message)
+[WechatsyncBridge] Extension connected (pending hello) { connectionId: '5c06f230-10a2-418e-956e-3c86ce90c721', origin: '' }
+
+stdout | tests/wechatsync_bridge_protocol.test.js > §3.1 / §3.2 extension_hello handshake > rejects extension_hello with an invalid payload (non-hello first message)
+[WechatsyncBridge:audit] hello_rejected {
+  connectionId: '5c06f230-10a2-418e-956e-3c86ce90c721',
+  reason: 'invalid_payload',
+  receivedType: ''
+}
+
+stdout | tests/wechatsync_bridge_protocol.test.js > §3.1 / §3.2 extension_hello handshake > accepts a valid extension_hello and records active client metadata
+[WechatsyncBridge] Bridge started { port: 45408, httpPort: 45409, host: '127.0.0.1', allowRemote: false }
+
+stdout | tests/wechatsync_bridge_protocol.test.js > §3.1 / §3.2 extension_hello handshake > accepts a valid extension_hello and records active client metadata
+[WechatsyncBridge] Extension connected (pending hello) { connectionId: '07671ca1-7dc2-4f27-9a44-1d4a82e9ab5b', origin: '' }
+
+stdout | tests/wechatsync_bridge_protocol.test.js > §3.1 / §3.2 extension_hello handshake > accepts a valid extension_hello and records active client metadata
+[WechatsyncBridge:audit] session_registered {
+  connectionId: '07671ca1-7dc2-4f27-9a44-1d4a82e9ab5b',
+  extensionInstanceId: 'ext-instance-A',
+  profileLabel: 'Chrome 主号',
+  browserName: 'Chrome',
+  sessionsCount: 1
+}
+
+stdout | tests/wechatsync_bridge_protocol.test.js > §3.1 / §3.2 extension_hello handshake > rejects bridge requests with EXTENSION_NOT_AUTHENTICATED while only pending connections exist
+[WechatsyncBridge] Bridge started { port: 45410, httpPort: 45411, host: '127.0.0.1', allowRemote: false }
+
+stdout | tests/wechatsync_bridge_protocol.test.js > §3.1 / §3.2 extension_hello handshake > rejects bridge requests with EXTENSION_NOT_AUTHENTICATED while only pending connections exist
+[WechatsyncBridge] Extension connected (pending hello) { connectionId: '10c6dca1-bdbc-4add-8e22-8633b3bac114', origin: '' }
+
+stdout | tests/wechatsync_bridge_protocol.test.js > §3.1 / §3.2 extension_hello handshake > returns EXTENSION_NOT_CONNECTED when there is no connection at all
+[WechatsyncBridge] Bridge started { port: 45412, httpPort: 45413, host: '127.0.0.1', allowRemote: false }
+
+stdout | tests/wechatsync_bridge_protocol.test.js > §3.1 / §3.2 extension_hello handshake > keeps the active client when an unrelated pending connection closes
+[WechatsyncBridge] Bridge started { port: 45414, httpPort: 45415, host: '127.0.0.1', allowRemote: false }
+
+stdout | tests/wechatsync_bridge_protocol.test.js > §3.1 / §3.2 extension_hello handshake > keeps the active client when an unrelated pending connection closes
+[WechatsyncBridge] Extension connected (pending hello) { connectionId: 'a9b94f56-016c-4d46-901c-060a0d61eab4', origin: '' }
+
+stdout | tests/wechatsync_bridge_protocol.test.js > §3.1 / §3.2 extension_hello handshake > keeps the active client when an unrelated pending connection closes
+[WechatsyncBridge:audit] session_registered {
+  connectionId: 'a9b94f56-016c-4d46-901c-060a0d61eab4',
+  extensionInstanceId: 'ext-instance-test',
+  profileLabel: 'Test Profile',
+  browserName: 'TestBrowser',
+  sessionsCount: 1
+}
+
+stdout | tests/wechatsync_bridge_protocol.test.js > §3.1 / §3.2 extension_hello handshake > keeps the active client when an unrelated pending connection closes
+[WechatsyncBridge] Extension connected (pending hello) { connectionId: '543803e4-2f70-41b4-b7e8-7a8a27fdc224', origin: '' }
+
+ ✓ tests/ai_layout_service_rendering.test.js (19 tests) 444ms
+ ✓ tests/settings_platform_chip.test.js (6 tests) 489ms
+ ✓ tests/view_settings_panel.test.js (15 tests) 480ms
+stdout | tests/wechatsync_bridge_protocol.test.js > §3.1 / §3.2 extension_hello handshake > keeps the active client when an unrelated pending connection closes
+[WechatsyncBridge] Sending request {
+  id: '1791650587609-2oskj9ezb',
+  method: 'health',
+  timeoutMs: 500,
+  connectionId: 'a9b94f56-016c-4d46-901c-060a0d61eab4',
+  extensionInstanceId: 'ext-instance-test',
+  paramKeys: []
+}
+
+stdout | tests/wechatsync_bridge_protocol.test.js > §3.1 / §3.2 extension_hello handshake > keeps the active client when an unrelated pending connection closes
+[WechatsyncBridge] Request completed {
+  id: '1791650587609-2oskj9ezb',
+  method: 'health',
+  elapsedMs: 1,
+  resultKind: 'object'
+}
+
+ ✓ tests/wechatsync_bridge_protocol.test.js (20 tests) 486ms
+(node:16880) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/%E6%96%87%E4%BB%B6/%E7%AC%94%E8%AE%B0/ob
+sidian/.obsidian/plugins/obsidian-wechat-converter-2.10.10/views/apple-style-view.js is not specified and it doesn't pa
+rse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\C:\文件\笔记\obsidian\.obsidian\plugins\obsidian-wechat-converter-2.
+10.10\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+ ✓ tests/html_cleaning.test.js (17 tests) 323ms
+ ✓ tests/feishu_sync_coordinator_images.test.js (9 tests) 391ms
+ ✓ tests/converter_image_resolution.test.js (3 tests) 348ms
+     ✓ resolves note-relative markdown image paths when metadata cache misses  328ms
+(node:23452) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/%E6%96%87%E4%BB%B6/%E7%AC%94%E8%AE%B0/ob
+sidian/.obsidian/plugins/obsidian-wechat-converter-2.10.10/services/svg-rasterizer.js is not specified and it doesn't p
+arse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\C:\文件\笔记\obsidian\.obsidian\plugins\obsidian-wechat-converter-2.
+10.10\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:18400) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/%E6%96%87%E4%BB%B6/%E7%AC%94%E8%AE%B0/ob
+sidian/.obsidian/plugins/obsidian-wechat-converter-2.10.10/services/dom-utils.js is not specified and it doesn't parse 
+as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\C:\文件\笔记\obsidian\.obsidian\plugins\obsidian-wechat-converter-2.
+10.10\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+ ✓ tests/rendered_mermaid.test.js (13 tests) 248ms
+ ✓ tests/task_list_rendering.test.js (3 tests) 419ms
+ ✓ tests/ai_layout_service.test.js (26 tests) 340ms
+(node:22680) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/%E6%96%87%E4%BB%B6/%E7%AC%94%E8%AE%B0/ob
+sidian/.obsidian/plugins/obsidian-wechat-converter-2.10.10/services/obsidian-triplet-serializer.js is not specified and
+ it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\C:\文件\笔记\obsidian\.obsidian\plugins\obsidian-wechat-converter-2.
+10.10\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:18132) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/%E6%96%87%E4%BB%B6/%E7%AC%94%E8%AE%B0/ob
+sidian/.obsidian/plugins/obsidian-wechat-converter-2.10.10/views/apple-style-view.js is not specified and it doesn't pa
+rse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\C:\文件\笔记\obsidian\.obsidian\plugins\obsidian-wechat-converter-2.
+10.10\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+ ✓ tests/chinese_punctuation.test.js (23 tests) 204ms
+ ✓ tests/custom_css_end_to_end.test.js (5 tests) 160ms
+ ✓ tests/race_condition.test.js (2 tests) 214ms
+(node:9796) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/%E6%96%87%E4%BB%B6/%E7%AC%94%E8%AE%B0/obs
+idian/.obsidian/plugins/obsidian-wechat-converter-2.10.10/services/dom-utils.js is not specified and it doesn't parse a
+s CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\C:\文件\笔记\obsidian\.obsidian\plugins\obsidian-wechat-converter-2.
+10.10\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+ ✓ tests/wechat_sync.test.js (21 tests) 222ms
+stdout | tests/wechatsync_bridge.test.js > Wechatsync bridge service > sends listPlatforms requests to a connected extension client
+[WechatsyncBridge] Bridge started { port: 45000, httpPort: 45001, host: '127.0.0.1', allowRemote: false }
+
+stdout | tests/wechatsync_bridge.test.js > Wechatsync bridge service > sends listPlatforms requests to a connected extension client
+[WechatsyncBridge] Extension connected (pending hello) { connectionId: '3cd66046-50ef-4a74-8417-1460cb8d5682', origin: '' }
+
+stdout | tests/wechatsync_bridge.test.js > Wechatsync bridge service > sends listPlatforms requests to a connected extension client
+[WechatsyncBridge:audit] session_registered {
+  connectionId: '3cd66046-50ef-4a74-8417-1460cb8d5682',
+  extensionInstanceId: 'ext-instance-test',
+  profileLabel: 'Test Profile',
+  browserName: 'TestBrowser',
+  sessionsCount: 1
+}
+
+stdout | tests/wechatsync_bridge.test.js > Wechatsync bridge service > sends listPlatforms requests to a connected extension client
+[WechatsyncBridge] Sending request {
+  id: 'req-1',
+  method: 'listPlatforms',
+  timeoutMs: 60000,
+  connectionId: '3cd66046-50ef-4a74-8417-1460cb8d5682',
+  extensionInstanceId: 'ext-instance-test',
+  paramKeys: [ 'forceRefresh' ]
+}
+
+stdout | tests/wechatsync_bridge.test.js > Wechatsync bridge service > sends listPlatforms requests to a connected extension client
+[WechatsyncBridge] Request completed {
+  id: 'req-1',
+  method: 'listPlatforms',
+  elapsedMs: 3,
+  resultKind: 'array'
+}
+
+ ✓ tests/feishu_sync_coordinator_creation.test.js (3 tests) 265ms
+stdout | tests/wechatsync_bridge.test.js > Wechatsync bridge service > checks bridge health through the extension so token errors are surfaced
+[WechatsyncBridge] Bridge started { port: 45002, httpPort: 45003, host: '127.0.0.1', allowRemote: false }
+
+stdout | tests/wechatsync_bridge.test.js > Wechatsync bridge service > checks bridge health through the extension so token errors are surfaced
+[WechatsyncBridge] Extension connected (pending hello) { connectionId: '80449ade-910a-449c-ac1d-d10a87900ae2', origin: '' }
+
+stdout | tests/wechatsync_bridge.test.js > Wechatsync bridge service > checks bridge health through the extension so token errors are surfaced
+[WechatsyncBridge:audit] session_registered {
+  connectionId: '80449ade-910a-449c-ac1d-d10a87900ae2',
+  extensionInstanceId: 'ext-instance-test',
+  profileLabel: 'Test Profile',
+  browserName: 'TestBrowser',
+  sessionsCount: 1
+}
+
+stdout | tests/wechatsync_bridge.test.js > Wechatsync bridge service > checks bridge health through the extension so token errors are surfaced
+[WechatsyncBridge] Sending request {
+  id: 'health-1',
+  method: 'health',
+  timeoutMs: 5000,
+  connectionId: '80449ade-910a-449c-ac1d-d10a87900ae2',
+  extensionInstanceId: 'ext-instance-test',
+  paramKeys: []
+}
+
+stdout | tests/wechatsync_bridge.test.js > Wechatsync bridge service > checks bridge health through the extension so token errors are surfaced
+[WechatsyncBridge] Request completed {
+  id: 'health-1',
+  method: 'health',
+  elapsedMs: 10,
+  resultKind: 'object'
+}
+
+stdout | tests/wechatsync_bridge.test.js > Wechatsync bridge service > loads supported platform metadata without triggering auth checks
+[WechatsyncBridge] Bridge started { port: 45004, httpPort: 45005, host: '127.0.0.1', allowRemote: false }
+
+stdout | tests/wechatsync_bridge.test.js > Wechatsync bridge service > loads supported platform metadata without triggering auth checks
+[WechatsyncBridge] Extension connected (pending hello) { connectionId: '99240f17-42cb-41f8-91ba-89d224ed7e1b', origin: '' }
+
+stdout | tests/wechatsync_bridge.test.js > Wechatsync bridge service > loads supported platform metadata without triggering auth checks
+[WechatsyncBridge:audit] session_registered {
+  connectionId: '99240f17-42cb-41f8-91ba-89d224ed7e1b',
+  extensionInstanceId: 'ext-instance-test',
+  profileLabel: 'Test Profile',
+  browserName: 'TestBrowser',
+  sessionsCount: 1
+}
+
+stdout | tests/wechatsync_bridge.test.js > Wechatsync bridge service > loads supported platform metadata without triggering auth checks
+[WechatsyncBridge] Sending request {
+  id: 'supported-1',
+  method: 'listSupportedPlatforms',
+  timeoutMs: 60000,
+  connectionId: '99240f17-42cb-41f8-91ba-89d224ed7e1b',
+  extensionInstanceId: 'ext-instance-test',
+  paramKeys: []
+}
+
+stdout | tests/wechatsync_bridge.test.js > Wechatsync bridge service > loads supported platform metadata without triggering auth checks
+[WechatsyncBridge] Request completed {
+  id: 'supported-1',
+  method: 'listSupportedPlatforms',
+  elapsedMs: 1,
+  resultKind: 'array'
+}
+
+stdout | tests/wechatsync_bridge.test.js > Wechatsync bridge service > checks auth for selected platforms in a single bridge request
+[WechatsyncBridge] Bridge started { port: 45006, httpPort: 45007, host: '127.0.0.1', allowRemote: false }
+
+stdout | tests/wechatsync_bridge.test.js > Wechatsync bridge service > checks auth for selected platforms in a single bridge request
+[WechatsyncBridge] Extension connected (pending hello) { connectionId: '2c8c22d8-76ae-497f-bc3b-8fe7b987f80c', origin: '' }
+
+stdout | tests/wechatsync_bridge.test.js > Wechatsync bridge service > checks auth for selected platforms in a single bridge request
+[WechatsyncBridge:audit] session_registered {
+  connectionId: '2c8c22d8-76ae-497f-bc3b-8fe7b987f80c',
+  extensionInstanceId: 'ext-instance-test',
+  profileLabel: 'Test Profile',
+  browserName: 'TestBrowser',
+  sessionsCount: 1
+}
+
+stdout | tests/wechatsync_bridge.test.js > Wechatsync bridge service > checks auth for selected platforms in a single bridge request
+[WechatsyncBridge] Sending request {
+  id: 'auth-batch-1',
+  method: 'checkAuth',
+  timeoutMs: 60000,
+  connectionId: '2c8c22d8-76ae-497f-bc3b-8fe7b987f80c',
+  extensionInstanceId: 'ext-instance-test',
+  paramKeys: [ 'platforms', 'forceRefresh' ]
+}
+
+stdout | tests/wechatsync_bridge.test.js > Wechatsync bridge service > checks auth for selected platforms in a single bridge request
+[WechatsyncBridge] Request completed {
+  id: 'auth-batch-1',
+  method: 'checkAuth',
+  elapsedMs: 1,
+  resultKind: 'array'
+}
+
+stdout | tests/wechatsync_bridge.test.js > Wechatsync bridge service > can time out platform listing without waiting for the long sync timeout
+[WechatsyncBridge] Bridge started { port: 45008, httpPort: 45009, host: '127.0.0.1', allowRemote: false }
+
+stdout | tests/wechatsync_bridge.test.js > Wechatsync bridge service > can time out platform listing without waiting for the long sync timeout
+[WechatsyncBridge] Extension connected (pending hello) { connectionId: '1f858991-8523-4c97-b356-6e3d91d0c52e', origin: '' }
+
+stdout | tests/wechatsync_bridge.test.js > Wechatsync bridge service > can time out platform listing without waiting for the long sync timeout
+[WechatsyncBridge:audit] session_registered {
+  connectionId: '1f858991-8523-4c97-b356-6e3d91d0c52e',
+  extensionInstanceId: 'ext-instance-test',
+  profileLabel: 'Test Profile',
+  browserName: 'TestBrowser',
+  sessionsCount: 1
+}
+
+stdout | tests/wechatsync_bridge.test.js > Wechatsync bridge service > can time out platform listing without waiting for the long sync timeout
+[WechatsyncBridge] Sending request {
+  id: 'slow-list',
+  method: 'listPlatforms',
+  timeoutMs: 20,
+  connectionId: '1f858991-8523-4c97-b356-6e3d91d0c52e',
+  extensionInstanceId: 'ext-instance-test',
+  paramKeys: [ 'forceRefresh' ]
+}
+
+stdout | tests/wechatsync_bridge.test.js > Wechatsync bridge service > can time out platform listing without waiting for the long sync timeout
+[WechatsyncBridge] Request timed out { id: 'slow-list', method: 'listPlatforms', timeoutMs: 20 }
+
+stdout | tests/wechatsync_bridge.test.js > Wechatsync bridge service > can time out article sync with a readable timeout error
+[WechatsyncBridge] Bridge started { port: 45010, httpPort: 45011, host: '127.0.0.1', allowRemote: false }
+
+stdout | tests/wechatsync_bridge.test.js > Wechatsync bridge service > can time out article sync with a readable timeout error
+[WechatsyncBridge] Extension connected (pending hello) { connectionId: '23ec6d06-ce4c-410b-a4ec-7f91efa18437', origin: '' }
+
+stdout | tests/wechatsync_bridge.test.js > Wechatsync bridge service > can time out article sync with a readable timeout error
+[WechatsyncBridge:audit] session_registered {
+  connectionId: '23ec6d06-ce4c-410b-a4ec-7f91efa18437',
+  extensionInstanceId: 'ext-instance-test',
+  profileLabel: 'Test Profile',
+  browserName: 'TestBrowser',
+  sessionsCount: 1
+}
+
+stdout | tests/wechatsync_bridge.test.js > Wechatsync bridge service > can time out article sync with a readable timeout error
+[WechatsyncBridge] Sending request {
+  id: 'slow-sync',
+  method: 'syncArticle',
+  timeoutMs: 20,
+  connectionId: '23ec6d06-ce4c-410b-a4ec-7f91efa18437',
+  extensionInstanceId: 'ext-instance-test',
+  paramKeys: [ 'platforms', 'article' ]
+}
+
+stdout | tests/wechatsync_bridge.test.js > Wechatsync bridge service > can time out article sync with a readable timeout error
+[WechatsyncBridge] Request timed out { id: 'slow-sync', method: 'syncArticle', timeoutMs: 20 }
+
+stdout | tests/wechatsync_bridge.test.js > Wechatsync bridge service > maps extension token failures to a readable auth error
+[WechatsyncBridge] Bridge started { port: 45012, httpPort: 45013, host: '127.0.0.1', allowRemote: false }
+
+stdout | tests/wechatsync_bridge.test.js > Wechatsync bridge service > maps extension token failures to a readable auth error
+[WechatsyncBridge] Extension connected (pending hello) { connectionId: 'e5528082-9911-41b5-a68d-e893589227f8', origin: '' }
+
+stdout | tests/wechatsync_bridge.test.js > Wechatsync bridge service > maps extension token failures to a readable auth error
+[WechatsyncBridge:audit] session_registered {
+  connectionId: 'e5528082-9911-41b5-a68d-e893589227f8',
+  extensionInstanceId: 'ext-instance-test',
+  profileLabel: 'Test Profile',
+  browserName: 'TestBrowser',
+  sessionsCount: 1
+}
+
+stdout | tests/wechatsync_bridge.test.js > Wechatsync bridge service > maps extension token failures to a readable auth error
+[WechatsyncBridge] Sending request {
+  id: '1791650591967-wsswlmkv3',
+  method: 'listPlatforms',
+  timeoutMs: 60000,
+  connectionId: 'e5528082-9911-41b5-a68d-e893589227f8',
+  extensionInstanceId: 'ext-instance-test',
+  paramKeys: [ 'forceRefresh' ]
+}
+
+stdout | tests/wechatsync_bridge.test.js > Wechatsync bridge service > maps extension token failures to a readable auth error
+[WechatsyncBridge] Request failed {
+  id: '1791650591967-wsswlmkv3',
+  method: 'listPlatforms',
+  elapsedMs: 1,
+  error: 'Invalid or missing token'
+}
+
+stdout | tests/wechatsync_bridge.test.js > Wechatsync bridge service > passes syncArticle results through with draft URLs and per-platform errors
+[WechatsyncBridge] Bridge started { port: 45014, httpPort: 45015, host: '127.0.0.1', allowRemote: false }
+
+stdout | tests/wechatsync_bridge.test.js > Wechatsync bridge service > passes syncArticle results through with draft URLs and per-platform errors
+[WechatsyncBridge] Extension connected (pending hello) { connectionId: '64ac3300-3729-4504-8162-4534455fd870', origin: '' }
+
+stdout | tests/wechatsync_bridge.test.js > Wechatsync bridge service > passes syncArticle results through with draft URLs and per-platform errors
+[WechatsyncBridge:audit] session_registered {
+  connectionId: '64ac3300-3729-4504-8162-4534455fd870',
+  extensionInstanceId: 'ext-instance-test',
+  profileLabel: 'Test Profile',
+  browserName: 'TestBrowser',
+  sessionsCount: 1
+}
+
+stdout | tests/wechatsync_bridge.test.js > Wechatsync bridge service > passes syncArticle results through with draft URLs and per-platform errors
+[WechatsyncBridge] Sending request {
+  id: 'sync-1',
+  method: 'syncArticle',
+  timeoutMs: 180000,
+  connectionId: '64ac3300-3729-4504-8162-4534455fd870',
+  extensionInstanceId: 'ext-instance-test',
+  paramKeys: [ 'platforms', 'article' ]
+}
+
+stdout | tests/wechatsync_bridge.test.js > Wechatsync bridge service > passes syncArticle results through with draft URLs and per-platform errors
+[WechatsyncBridge] Request completed {
+  id: 'sync-1',
+  method: 'syncArticle',
+  elapsedMs: 1,
+  resultKind: 'object'
+}
+
+stdout | tests/wechatsync_bridge.test.js > Wechatsync bridge service > can send article to the extension without waiting for sync results
+[WechatsyncBridge] Bridge started { port: 45016, httpPort: 45017, host: '127.0.0.1', allowRemote: false }
+
+stdout | tests/wechatsync_bridge.test.js > Wechatsync bridge service > can send article to the extension without waiting for sync results
+[WechatsyncBridge] Extension connected (pending hello) { connectionId: 'fbaf4d10-ea0f-4397-bab8-a7dadc949092', origin: '' }
+
+stdout | tests/wechatsync_bridge.test.js > Wechatsync bridge service > can send article to the extension without waiting for sync results
+[WechatsyncBridge:audit] session_registered {
+  connectionId: 'fbaf4d10-ea0f-4397-bab8-a7dadc949092',
+  extensionInstanceId: 'ext-instance-test',
+  profileLabel: 'Test Profile',
+  browserName: 'TestBrowser',
+  sessionsCount: 1
+}
+
+stdout | tests/wechatsync_bridge.test.js > Wechatsync bridge service > can send article to the extension without waiting for sync results
+[WechatsyncBridge] Sending one-way request {
+  id: 'one-way-sync',
+  method: 'syncArticle',
+  connectionId: 'fbaf4d10-ea0f-4397-bab8-a7dadc949092',
+  extensionInstanceId: 'ext-instance-test',
+  paramKeys: [ 'platforms', 'article' ]
+}
+
+ ✓ tests/wechatsync_bridge.test.js (14 tests) 294ms
+(node:9252) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/%E6%96%87%E4%BB%B6/%E7%AC%94%E8%AE%B0/obs
+idian/.obsidian/plugins/obsidian-wechat-converter-2.10.10/views/apple-style-view.js is not specified and it doesn't par
+se as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\C:\文件\笔记\obsidian\.obsidian\plugins\obsidian-wechat-converter-2.
+10.10\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+stdout | tests/multi_platform_modal.test.js > AppleStyleView - showMultiPlatformSyncModal platform rows > renders selected rows with name + status both inside the label (stacked)
+[Wechatsync] render cached platform state {
+  status: 'connected',
+  checkedAt: 1791650592656,
+  message: '',
+  responseKind: 'array',
+  rawCount: 2,
+  normalizedCount: 2,
+  authenticatedCount: 1,
+  platforms: [
+    { id: 'zhihu', name: '知乎', authenticated: true, username: 'Lin' },
+    { id: 'juejin', name: '掘金', authenticated: false, username: '' }
+  ]
+}
+
+stdout | tests/multi_platform_modal.test.js > AppleStyleView - showMultiPlatformSyncModal platform rows > selected row carries is-selected + auth-status class
+[Wechatsync] render cached platform state {
+  status: 'connected',
+  checkedAt: 1791650592755,
+  message: '',
+  responseKind: 'array',
+  rawCount: 2,
+  normalizedCount: 2,
+  authenticatedCount: 1,
+  platforms: [
+    { id: 'zhihu', name: '知乎', authenticated: true, username: 'Lin' },
+    { id: 'juejin', name: '掘金', authenticated: false, username: '' }
+  ]
+}
+
+stdout | tests/multi_platform_modal.test.js > AppleStyleView - showMultiPlatformSyncModal platform rows > marks platform rows disabled when the browser bridge is not ready
+[Wechatsync] render cached platform state {
+  status: 'untested',
+  checkedAt: 1791650592769,
+  message: '',
+  responseKind: 'array',
+  rawCount: 2,
+  normalizedCount: 2,
+  authenticatedCount: 1,
+  platforms: [
+    { id: 'zhihu', name: '知乎', authenticated: true, username: 'Lin' },
+    { id: 'juejin', name: '掘金', authenticated: false, username: '' }
+  ]
+}
+
+stdout | tests/multi_platform_modal.test.js > AppleStyleView - showMultiPlatformSyncModal platform rows > orders displayed platforms by authenticated state and featured platform order
+[Wechatsync] render cached platform state {
+  status: 'connected',
+  checkedAt: 1791650592778,
+  message: '',
+  responseKind: 'array',
+  rawCount: 4,
+  normalizedCount: 4,
+  authenticatedCount: 2,
+  platforms: [
+    { id: 'douban', name: '豆瓣', authenticated: true, username: '' },
+    {
+      id: 'xiaohongshu',
+      name: '小红书',
+      authenticated: false,
+      username: ''
+    },
+    { id: 'zhihu', name: '知乎', authenticated: false, username: '' },
+    { id: 'weibo', name: '微博', authenticated: true, username: '' }
+  ]
+}
+
+stdout | tests/wechatsync_bridge_http.test.js > §3.3 / §3.4 HTTP Bearer authorization and CORS hardening > returns 401 from /status when no Authorization header is provided
+[WechatsyncBridge] Bridge started { port: 45600, httpPort: 45601, host: '127.0.0.1', allowRemote: false }
+
+stdout | tests/wechatsync_bridge_http.test.js > §3.3 / §3.4 HTTP Bearer authorization and CORS hardening > returns 401 from /status when no Authorization header is provided
+[WechatsyncBridge:audit] http_request_unauthorized { url: '/status', method: 'GET', reason: 'missing_authorization' }
+
+stdout | tests/multi_platform_modal.test.js > AppleStyleView - showMultiPlatformSyncModal platform rows > login_required row gets is-error class when selected
+[Wechatsync] render cached platform state {
+  status: 'connected',
+  checkedAt: 1791650592816,
+  message: '',
+  responseKind: 'array',
+  rawCount: 2,
+  normalizedCount: 2,
+  authenticatedCount: 1,
+  platforms: [
+    { id: 'zhihu', name: '知乎', authenticated: true, username: 'Lin' },
+    { id: 'juejin', name: '掘金', authenticated: false, username: '' }
+  ]
+}
+
+stdout | tests/wechatsync_bridge_http.test.js > §3.3 / §3.4 HTTP Bearer authorization and CORS hardening > returns 403 from /status when Authorization token is wrong
+[WechatsyncBridge] Bridge started { port: 45602, httpPort: 45603, host: '127.0.0.1', allowRemote: false }
+
+stdout | tests/wechatsync_bridge_http.test.js > §3.3 / §3.4 HTTP Bearer authorization and CORS hardening > returns 403 from /status when Authorization token is wrong
+[WechatsyncBridge:audit] http_request_unauthorized { url: '/status', method: 'GET', reason: 'invalid_token' }
+
+stdout | tests/multi_platform_modal.test.js > AppleStyleView - showMultiPlatformSyncModal platform rows > toggling checkbox flips is-selected on the row
+[Wechatsync] render cached platform state {
+  status: 'connected',
+  checkedAt: 1791650592825,
+  message: '',
+  responseKind: 'array',
+  rawCount: 2,
+  normalizedCount: 2,
+  authenticatedCount: 1,
+  platforms: [
+    { id: 'zhihu', name: '知乎', authenticated: true, username: 'Lin' },
+    { id: 'juejin', name: '掘金', authenticated: false, username: '' }
+  ]
+}
+
+stdout | tests/wechatsync_bridge_http.test.js > §3.3 / §3.4 HTTP Bearer authorization and CORS hardening > returns 200 from /status with the correct Bearer token
+[WechatsyncBridge] Bridge started { port: 45604, httpPort: 45605, host: '127.0.0.1', allowRemote: false }
+
+stdout | tests/wechatsync_bridge_http.test.js > §3.3 / §3.4 HTTP Bearer authorization and CORS hardening > rejects /request without Authorization (401) and with wrong token (403)
+[WechatsyncBridge] Bridge started { port: 45606, httpPort: 45607, host: '127.0.0.1', allowRemote: false }
+
+stdout | tests/wechatsync_bridge_http.test.js > §3.3 / §3.4 HTTP Bearer authorization and CORS hardening > rejects /request without Authorization (401) and with wrong token (403)
+[WechatsyncBridge:audit] http_request_unauthorized { url: '/request', method: 'POST', reason: 'missing_authorization' }
+
+stdout | tests/multi_platform_modal.test.js > AppleStyleView - showMultiPlatformSyncModal platform rows > keeps temporary platform choices when returning to the tab inside the same modal
+[Wechatsync] render cached platform state {
+  status: 'connected',
+  checkedAt: 1791650592846,
+  message: '',
+  responseKind: 'array',
+  rawCount: 3,
+  normalizedCount: 3,
+  authenticatedCount: 3,
+  platforms: [
+    { id: 'zhihu', name: '知乎', authenticated: true, username: '' },
+    { id: 'juejin', name: '掘金', authenticated: true, username: '' },
+    { id: 'csdn', name: 'CSDN', authenticated: true, username: '' }
+  ]
+}
+
+stdout | tests/wechatsync_bridge_http.test.js > §3.3 / §3.4 HTTP Bearer authorization and CORS hardening > rejects /request without Authorization (401) and with wrong token (403)
+[WechatsyncBridge:audit] http_request_unauthorized { url: '/request', method: 'POST', reason: 'invalid_token' }
+
+stdout | tests/multi_platform_modal.test.js > AppleStyleView - showMultiPlatformSyncModal platform rows > keeps temporary platform choices when returning to the tab inside the same modal
+[Wechatsync] render cached platform state {
+  status: 'connected',
+  checkedAt: 1791650592846,
+  message: '',
+  responseKind: 'array',
+  rawCount: 3,
+  normalizedCount: 3,
+  authenticatedCount: 3,
+  platforms: [
+    { id: 'zhihu', name: '知乎', authenticated: true, username: '' },
+    { id: 'juejin', name: '掘金', authenticated: true, username: '' },
+    { id: 'csdn', name: 'CSDN', authenticated: true, username: '' }
+  ]
+}
+
+stdout | tests/wechatsync_bridge_http.test.js > §3.3 / §3.4 HTTP Bearer authorization and CORS hardening > forwards /request to the extension when Authorization is correct
+[WechatsyncBridge] Bridge started { port: 45608, httpPort: 45609, host: '127.0.0.1', allowRemote: false }
+
+stdout | tests/multi_platform_modal.test.js > AppleStyleView - showMultiPlatformSyncModal platform rows > hides bridge-not-enabled empty state when enabled
+[Wechatsync] render cached platform state {
+  status: 'connected',
+  checkedAt: 1791650592870,
+  message: '',
+  responseKind: 'array',
+  rawCount: 2,
+  normalizedCount: 2,
+  authenticatedCount: 1,
+  platforms: [
+    { id: 'zhihu', name: '知乎', authenticated: true, username: 'Lin' },
+    { id: 'juejin', name: '掘金', authenticated: false, username: '' }
+  ]
+}
+
+stdout | tests/wechatsync_bridge_http.test.js > §3.3 / §3.4 HTTP Bearer authorization and CORS hardening > forwards /request to the extension when Authorization is correct
+[WechatsyncBridge] Extension connected (pending hello) { connectionId: '724da908-8c19-43b5-b692-649f48de83f9', origin: '' }
+
+stdout | tests/wechatsync_bridge_http.test.js > §3.3 / §3.4 HTTP Bearer authorization and CORS hardening > forwards /request to the extension when Authorization is correct
+[WechatsyncBridge:audit] session_registered {
+  connectionId: '724da908-8c19-43b5-b692-649f48de83f9',
+  extensionInstanceId: 'ext-instance-test',
+  profileLabel: 'Test Profile',
+  browserName: 'TestBrowser',
+  sessionsCount: 1
+}
+
+stdout | tests/wechatsync_bridge_http.test.js > §3.3 / §3.4 HTTP Bearer authorization and CORS hardening > forwards /request to the extension when Authorization is correct
+[WechatsyncBridge] Sending request {
+  id: '1791650592886-zf0304l1x',
+  method: 'health',
+  timeoutMs: 360000,
+  connectionId: '724da908-8c19-43b5-b692-649f48de83f9',
+  extensionInstanceId: 'ext-instance-test',
+  paramKeys: []
+}
+
+stdout | tests/wechatsync_bridge_http.test.js > §3.3 / §3.4 HTTP Bearer authorization and CORS hardening > forwards /request to the extension when Authorization is correct
+[WechatsyncBridge] Request completed {
+  id: '1791650592886-zf0304l1x',
+  method: 'health',
+  elapsedMs: 1,
+  resultKind: 'object'
+}
+
+stdout | tests/wechatsync_bridge_http.test.js > §3.3 / §3.4 HTTP Bearer authorization and CORS hardening > rejects /send without Authorization (401) and with wrong token (403)
+[WechatsyncBridge] Bridge started { port: 45610, httpPort: 45611, host: '127.0.0.1', allowRemote: false }
+
+stdout | tests/multi_platform_modal.test.js > AppleStyleView - showMultiPlatformSyncModal platform rows > row exposes a tooltip with full platform name + status when selected
+[Wechatsync] render cached platform state {
+  status: 'connected',
+  checkedAt: 1791650592896,
+  message: '',
+  responseKind: 'array',
+  rawCount: 2,
+  normalizedCount: 2,
+  authenticatedCount: 1,
+  platforms: [
+    { id: 'zhihu', name: '知乎', authenticated: true, username: 'Lin' },
+    { id: 'juejin', name: '掘金', authenticated: false, username: '' }
+  ]
+}
+
+stdout | tests/wechatsync_bridge_http.test.js > §3.3 / §3.4 HTTP Bearer authorization and CORS hardening > rejects /send without Authorization (401) and with wrong token (403)
+[WechatsyncBridge:audit] http_request_unauthorized { url: '/send', method: 'POST', reason: 'missing_authorization' }
+
+stdout | tests/wechatsync_bridge_http.test.js > §3.3 / §3.4 HTTP Bearer authorization and CORS hardening > rejects /send without Authorization (401) and with wrong token (403)
+[WechatsyncBridge:audit] http_request_unauthorized { url: '/send', method: 'POST', reason: 'invalid_token' }
+
+stdout | tests/multi_platform_modal.test.js > AppleStyleView - showMultiPlatformSyncModal platform rows > renders exactly one connection status bar (Phase 2 helper) above the platform list
+[Wechatsync] render cached platform state {
+  status: 'connected',
+  checkedAt: 1791650592902,
+  message: '',
+  responseKind: 'array',
+  rawCount: 2,
+  normalizedCount: 2,
+  authenticatedCount: 1,
+  platforms: [
+    { id: 'zhihu', name: '知乎', authenticated: true, username: 'Lin' },
+    { id: 'juejin', name: '掘金', authenticated: false, username: '' }
+  ]
+}
+
+stdout | tests/wechatsync_bridge_http.test.js > §3.3 / §3.4 HTTP Bearer authorization and CORS hardening > does not emit Access-Control-Allow-Origin by default (CORS hardening)
+[WechatsyncBridge] Bridge started { port: 45612, httpPort: 45613, host: '127.0.0.1', allowRemote: false }
+
+stdout | tests/multi_platform_modal.test.js > AppleStyleView - showMultiPlatformSyncModal platform rows > shows the free quota hint with a Pro upgrade action
+[Wechatsync] render cached platform state {
+  status: 'connected',
+  checkedAt: 1791650592913,
+  message: '',
+  responseKind: 'array',
+  rawCount: 2,
+  normalizedCount: 2,
+  authenticatedCount: 1,
+  platforms: [
+    { id: 'zhihu', name: '知乎', authenticated: true, username: 'Lin' },
+    { id: 'juejin', name: '掘金', authenticated: false, username: '' }
+  ]
+}
+
+stdout | tests/wechatsync_bridge_http.test.js > §3.3 / §3.4 HTTP Bearer authorization and CORS hardening > responds 204 to OPTIONS preflights without ever exposing the API surface
+[WechatsyncBridge] Bridge started { port: 45614, httpPort: 45615, host: '127.0.0.1', allowRemote: false }
+
+stdout | tests/multi_platform_modal.test.js > AppleStyleView - showMultiPlatformSyncModal platform rows > hides the Pro upgrade button and shows a Pro-specific quota hint when the bridge reports proLicensed
+[Wechatsync] render cached platform state {
+  status: 'connected',
+  checkedAt: 1791650592918,
+  message: '',
+  responseKind: 'array',
+  rawCount: 2,
+  normalizedCount: 2,
+  authenticatedCount: 1,
+  platforms: [
+    { id: 'zhihu', name: '知乎', authenticated: true, username: 'Lin' },
+    { id: 'juejin', name: '掘金', authenticated: false, username: '' }
+  ]
+}
+
+stdout | tests/wechatsync_bridge_http.test.js > §3.3 / §3.4 HTTP Bearer authorization and CORS hardening > fails closed when service is configured without a token
+[WechatsyncBridge] Bridge started { port: 45616, httpPort: 45617, host: '127.0.0.1', allowRemote: false }
+
+stdout | tests/wechatsync_bridge_http.test.js > §3.3 / §3.4 HTTP Bearer authorization and CORS hardening > fails closed when service is configured without a token
+[WechatsyncBridge:audit] http_request_unauthorized {
+  url: '/status',
+  method: 'GET',
+  reason: 'bridge_token_not_configured'
+}
+
+stdout | tests/multi_platform_modal.test.js > AppleStyleView - showMultiPlatformSyncModal platform rows > uses live active client capabilities to hide the Pro upgrade button even when cached connection capabilities are stale
+[Wechatsync] render cached platform state {
+  status: 'connected',
+  checkedAt: 1791650592926,
+  message: '',
+  responseKind: 'array',
+  rawCount: 2,
+  normalizedCount: 2,
+  authenticatedCount: 1,
+  platforms: [
+    { id: 'zhihu', name: '知乎', authenticated: true, username: 'Lin' },
+    { id: 'juejin', name: '掘金', authenticated: false, username: '' }
+  ]
+}
+
+stdout | tests/wechatsync_bridge_http.test.js > §3.5 host binding > binds to 127.0.0.1 by default and rejects non-loopback connections
+[WechatsyncBridge] Bridge started { port: 45618, httpPort: 45619, host: '127.0.0.1', allowRemote: false }
+
+stdout | tests/multi_platform_modal.test.js > AppleStyleView - showMultiPlatformSyncModal platform rows > falls back to live connectedClients capabilities when no active client descriptor is available
+[Wechatsync] render cached platform state {
+  status: 'connected',
+  checkedAt: 1791650592932,
+  message: '',
+  responseKind: 'array',
+  rawCount: 2,
+  normalizedCount: 2,
+  authenticatedCount: 1,
+  platforms: [
+    { id: 'zhihu', name: '知乎', authenticated: true, username: 'Lin' },
+    { id: 'juejin', name: '掘金', authenticated: false, username: '' }
+  ]
+}
+
+stdout | tests/wechatsync_bridge_http.test.js > §3.5 host binding > exposes allowRemote=true binding via 0.0.0.0 when configured
+[WechatsyncBridge] Bridge started { port: 45620, httpPort: 45621, host: '0.0.0.0', allowRemote: true }
+
+stdout | tests/multi_platform_modal.test.js > AppleStyleView - showMultiPlatformSyncModal platform rows > updates quota hint when the selected platforms exactly match the free quota
+[Wechatsync] render cached platform state {
+  status: 'connected',
+  checkedAt: 1791650592939,
+  message: '',
+  responseKind: 'array',
+  rawCount: 4,
+  normalizedCount: 4,
+  authenticatedCount: 4,
+  platforms: [
+    { id: 'zhihu', name: '知乎', authenticated: true, username: '' },
+    { id: 'juejin', name: '掘金', authenticated: true, username: '' },
+    { id: 'csdn', name: 'CSDN', authenticated: true, username: '' },
+    { id: 'bilibili', name: '哔哩哔哩', authenticated: true, username: '' }
+  ]
+}
+
+stdout | tests/wechatsync_bridge_http.test.js > §4.1 diagnostics surface for settings UI state detection > starts with zeroed counters and no last rejection
+[WechatsyncBridge] Bridge started { port: 45622, httpPort: 45623, host: '127.0.0.1', allowRemote: false }
+
+stdout | tests/multi_platform_modal.test.js > AppleStyleView - showMultiPlatformSyncModal platform rows > updates quota hint when selected platforms exceed the free quota
+[Wechatsync] render cached platform state {
+  status: 'connected',
+  checkedAt: 1791650592948,
+  message: '',
+  responseKind: 'array',
+  rawCount: 5,
+  normalizedCount: 5,
+  authenticatedCount: 5,
+  platforms: [
+    { id: 'zhihu', name: '知乎', authenticated: true, username: '' },
+    { id: 'juejin', name: '掘金', authenticated: true, username: '' },
+    { id: 'csdn', name: 'CSDN', authenticated: true, username: '' },
+    { id: 'bilibili', name: '哔哩哔哩', authenticated: true, username: '' },
+    {
+      id: 'xiaohongshu',
+      name: '小红书',
+      authenticated: true,
+      username: ''
+    }
+  ]
+}
+
+stdout | tests/wechatsync_bridge_http.test.js > §4.1 diagnostics surface for settings UI state detection > counts hello rejections separately from successful auths
+[WechatsyncBridge] Bridge started { port: 45624, httpPort: 45625, host: '127.0.0.1', allowRemote: false }
+
+stdout | tests/wechatsync_bridge_http.test.js > §4.1 diagnostics surface for settings UI state detection > counts hello rejections separately from successful auths
+[WechatsyncBridge] Extension connected (pending hello) { connectionId: '86e5a3a8-12bc-4c93-97ff-6c7fd5d5d72c', origin: '' }
+
+stdout | tests/wechatsync_bridge_http.test.js > §4.1 diagnostics surface for settings UI state detection > counts hello rejections separately from successful auths
+[WechatsyncBridge:audit] hello_rejected {
+  connectionId: '86e5a3a8-12bc-4c93-97ff-6c7fd5d5d72c',
+  reason: 'pairing_required',
+  extensionInstanceId: 'ext-instance-test',
+  extensionId: 'test-extension',
+  browserName: 'TestBrowser',
+  profileLabel: 'Test Profile',
+  credentialFingerprint: '8810ad581e59'
+}
+
+stdout | tests/wechatsync_bridge_http.test.js > §4.1 diagnostics surface for settings UI state detection > counts hello rejections separately from successful auths
+[WechatsyncBridge] Extension connected (pending hello) { connectionId: '4e5e958c-b152-4c16-aa18-1904ea2748ee', origin: '' }
+
+stdout | tests/wechatsync_bridge_http.test.js > §4.1 diagnostics surface for settings UI state detection > counts hello rejections separately from successful auths
+[WechatsyncBridge:audit] session_registered {
+  connectionId: '4e5e958c-b152-4c16-aa18-1904ea2748ee',
+  extensionInstanceId: 'ext-instance-test',
+  profileLabel: 'Test Profile',
+  browserName: 'TestBrowser',
+  sessionsCount: 1
+}
+
+stdout | tests/wechatsync_bridge_http.test.js > §4.1 EADDRINUSE no longer silently downgrades > surfaces port conflicts as BRIDGE_UNAVAILABLE instead of falling back to secondary mode
+[WechatsyncBridge] Bridge started { port: 45626, httpPort: 45627, host: '127.0.0.1', allowRemote: false }
+
+ ✓ tests/multi_platform_modal.test.js (21 tests) 325ms
+ ✓ tests/wechatsync_bridge_http.test.js (18 tests) 194ms
+(node:20808) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/%E6%96%87%E4%BB%B6/%E7%AC%94%E8%AE%B0/ob
+sidian/.obsidian/plugins/obsidian-wechat-converter-2.10.10/views/apple-style-view.js is not specified and it doesn't pa
+rse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\C:\文件\笔记\obsidian\.obsidian\plugins\obsidian-wechat-converter-2.
+10.10\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+stdout | tests/view_parity_and_lifecycle.test.js > AppleStyleView native render + lifecycle > onOpen should render the recent Markdown file even when the new sidebar is active
+🍎 发布助手面板打开
+
+stdout | tests/view_parity_and_lifecycle.test.js > AppleStyleView native render + lifecycle > onOpen should keep the preview shell when a non-core settings control throws
+🍎 发布助手面板打开
+
+stderr | tests/view_parity_and_lifecycle.test.js > AppleStyleView native render + lifecycle > onOpen should keep the pr
+eview shell when a non-core settings control throws
+❌ 设置面板加载失败: Error: theme API unavailable
+    at AppleStyleView.<anonymous> (C:/文件/笔记/obsidian/.obsidian/plugins/obsidian-wechat-converter-2.10.10/tests/view_par
+ity_and_lifecycle.test.js:118:13)
+    at AppleStyleView.createSettingsPanel (file:///C:/%E6%96%87%E4%BB%B6/%E7%AC%94%E8%AE%B0/obsidian/.obsidian/plugins/
+obsidian-wechat-converter-2.10.10/node_modules/.pnpm/@vitest+spy@4.0.18/node_modules/@vitest/spy/dist/index.js:285:34)
+    at AppleStyleView.onOpen (file:///C:/%E6%96%87%E4%BB%B6/%E7%AC%94%E8%AE%B0/obsidian/.obsidian/plugins/obsidian-wech
+at-converter-2.10.10/views/converter/core.js:127:10)
+    at C:/文件/笔记/obsidian/.obsidian/plugins/obsidian-wechat-converter-2.10.10/tests/view_parity_and_lifecycle.test.js:12
+1:5
+    at file:///C:/%E6%96%87%E4%BB%B6/%E7%AC%94%E8%AE%B0/obsidian/.obsidian/plugins/obsidian-wechat-converter-2.10.10/no
+de_modules/.pnpm/@vitest+runner@4.0.18/node_modules/@vitest/runner/dist/index.js:915:20
+
+stdout | tests/view_parity_and_lifecycle.test.js > AppleStyleView native render + lifecycle > onClose should detach listeners and clear all view-level caches
+🍎 发布助手面板已关闭
+
+stdout | tests/wechatsync_bridge_queue.test.js > Wechatsync bridge queue operations and recovery > forwards quotaPolicy through syncArticle (SPEC-3)
+[WechatsyncBridge] Bridge started { port: 45200, httpPort: 45201, host: '127.0.0.1', allowRemote: false }
+
+(node:16968) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/%E6%96%87%E4%BB%B6/%E7%AC%94%E8%AE%B0/ob
+sidian/.obsidian/plugins/obsidian-wechat-converter-2.10.10/views/apple-style-view.js is not specified and it doesn't pa
+rse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\C:\文件\笔记\obsidian\.obsidian\plugins\obsidian-wechat-converter-2.
+10.10\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+stdout | tests/wechatsync_bridge_queue.test.js > Wechatsync bridge queue operations and recovery > forwards quotaPolicy through syncArticle (SPEC-3)
+[WechatsyncBridge] Extension connected (pending hello) { connectionId: 'c93e340e-3335-4a2e-b60d-3a28d4241527', origin: '' }
+
+stdout | tests/wechatsync_bridge_queue.test.js > Wechatsync bridge queue operations and recovery > forwards quotaPolicy through syncArticle (SPEC-3)
+[WechatsyncBridge:audit] session_registered {
+  connectionId: 'c93e340e-3335-4a2e-b60d-3a28d4241527',
+  extensionInstanceId: 'ext-instance-test',
+  profileLabel: 'Test Profile',
+  browserName: 'TestBrowser',
+  sessionsCount: 1
+}
+
+stdout | tests/wechatsync_bridge_queue.test.js > Wechatsync bridge queue operations and recovery > forwards quotaPolicy through syncArticle (SPEC-3)
+[WechatsyncBridge] Sending request {
+  id: 'sync-quota-1',
+  method: 'syncArticle',
+  timeoutMs: 180000,
+  connectionId: 'c93e340e-3335-4a2e-b60d-3a28d4241527',
+  extensionInstanceId: 'ext-instance-test',
+  paramKeys: [ 'platforms', 'article', 'quotaPolicy' ]
+}
+
+stdout | tests/wechatsync_bridge_queue.test.js > Wechatsync bridge queue operations and recovery > forwards quotaPolicy through syncArticle (SPEC-3)
+[WechatsyncBridge] Request completed {
+  id: 'sync-quota-1',
+  method: 'syncArticle',
+  elapsedMs: 4,
+  resultKind: 'object'
+}
+
+stdout | tests/wechatsync_bridge_queue.test.js > Wechatsync bridge queue operations and recovery > omits invalid quotaPolicy values from syncArticle wire payload
+[WechatsyncBridge] Bridge started { port: 45202, httpPort: 45203, host: '127.0.0.1', allowRemote: false }
+
+stdout | tests/wechatsync_bridge_queue.test.js > Wechatsync bridge queue operations and recovery > omits invalid quotaPolicy values from syncArticle wire payload
+[WechatsyncBridge] Extension connected (pending hello) { connectionId: '32ca4184-4f5e-4b02-9096-c3ad2de56e88', origin: '' }
+
+stdout | tests/wechatsync_bridge_queue.test.js > Wechatsync bridge queue operations and recovery > omits invalid quotaPolicy values from syncArticle wire payload
+[WechatsyncBridge:audit] session_registered {
+  connectionId: '32ca4184-4f5e-4b02-9096-c3ad2de56e88',
+  extensionInstanceId: 'ext-instance-test',
+  profileLabel: 'Test Profile',
+  browserName: 'TestBrowser',
+  sessionsCount: 1
+}
+
+stdout | tests/wechatsync_bridge_queue.test.js > Wechatsync bridge queue operations and recovery > omits invalid quotaPolicy values from syncArticle wire payload
+[WechatsyncBridge] Sending request {
+  id: 'sync-quota-bad',
+  method: 'syncArticle',
+  timeoutMs: 180000,
+  connectionId: '32ca4184-4f5e-4b02-9096-c3ad2de56e88',
+  extensionInstanceId: 'ext-instance-test',
+  paramKeys: [ 'platforms', 'article' ]
+}
+
+stdout | tests/wechatsync_bridge_queue.test.js > Wechatsync bridge queue operations and recovery > omits invalid quotaPolicy values from syncArticle wire payload
+[WechatsyncBridge] Request completed {
+  id: 'sync-quota-bad',
+  method: 'syncArticle',
+  elapsedMs: 2,
+  resultKind: 'object'
+}
+
+stdout | tests/wechatsync_bridge_queue.test.js > Wechatsync bridge queue operations and recovery > forwards quotaPolicy through sendArticle one-way send (SPEC-3)
+[WechatsyncBridge] Bridge started { port: 45204, httpPort: 45205, host: '127.0.0.1', allowRemote: false }
+
+stdout | tests/wechatsync_bridge_queue.test.js > Wechatsync bridge queue operations and recovery > forwards quotaPolicy through sendArticle one-way send (SPEC-3)
+[WechatsyncBridge] Extension connected (pending hello) { connectionId: '4232684c-a037-483d-89f9-b15d463b54c5', origin: '' }
+
+stdout | tests/wechatsync_bridge_queue.test.js > Wechatsync bridge queue operations and recovery > forwards quotaPolicy through sendArticle one-way send (SPEC-3)
+[WechatsyncBridge:audit] session_registered {
+  connectionId: '4232684c-a037-483d-89f9-b15d463b54c5',
+  extensionInstanceId: 'ext-instance-test',
+  profileLabel: 'Test Profile',
+  browserName: 'TestBrowser',
+  sessionsCount: 1
+}
+
+stdout | tests/view_parity_and_lifecycle.test.js > AppleStyleView native render + lifecycle > onClose should clear active leaf/loading/side-padding timers
+🍎 发布助手面板已关闭
+
+stdout | tests/wechatsync_bridge_queue.test.js > Wechatsync bridge queue operations and recovery > forwards quotaPolicy through sendArticle one-way send (SPEC-3)
+[WechatsyncBridge] Sending one-way request {
+  id: 'send-quota-1',
+  method: 'syncArticle',
+  connectionId: '4232684c-a037-483d-89f9-b15d463b54c5',
+  extensionInstanceId: 'ext-instance-test',
+  paramKeys: [ 'platforms', 'article', 'quotaPolicy' ]
+}
+
+ ✓ tests/view_parity_and_lifecycle.test.js (20 tests) 183ms
+stdout | tests/wechatsync_bridge_queue.test.js > Wechatsync bridge queue operations and recovery > enqueues article sync and returns the extension sync id
+[WechatsyncBridge] Bridge started { port: 45206, httpPort: 45207, host: '127.0.0.1', allowRemote: false }
+
+stdout | tests/wechatsync_bridge_queue.test.js > Wechatsync bridge queue operations and recovery > enqueues article sync and returns the extension sync id
+[WechatsyncBridge] Extension connected (pending hello) { connectionId: 'f571927f-7ea8-461a-8f16-bdb34e4298d6', origin: '' }
+
+stdout | tests/wechatsync_bridge_queue.test.js > Wechatsync bridge queue operations and recovery > enqueues article sync and returns the extension sync id
+[WechatsyncBridge:audit] session_registered {
+  connectionId: 'f571927f-7ea8-461a-8f16-bdb34e4298d6',
+  extensionInstanceId: 'ext-instance-test',
+  profileLabel: 'Test Profile',
+  browserName: 'TestBrowser',
+  sessionsCount: 1
+}
+
+stdout | tests/wechatsync_bridge_queue.test.js > Wechatsync bridge queue operations and recovery > enqueues article sync and returns the extension sync id
+[WechatsyncBridge] Sending request {
+  id: 'enqueue-1',
+  method: 'enqueueSyncArticle',
+  timeoutMs: 10000,
+  connectionId: 'f571927f-7ea8-461a-8f16-bdb34e4298d6',
+  extensionInstanceId: 'ext-instance-test',
+  paramKeys: [ 'platforms', 'source', 'article' ]
+}
+
+stdout | tests/wechatsync_bridge_queue.test.js > Wechatsync bridge queue operations and recovery > enqueues article sync and returns the extension sync id
+[WechatsyncBridge] Request completed {
+  id: 'enqueue-1',
+  method: 'enqueueSyncArticle',
+  elapsedMs: 1,
+  resultKind: 'object'
+}
+
+stdout | tests/wechatsync_bridge_queue.test.js > Wechatsync bridge queue operations and recovery > forwards coverThumbnail through enqueueSyncArticle when provided
+[WechatsyncBridge] Bridge started { port: 45208, httpPort: 45209, host: '127.0.0.1', allowRemote: false }
+
+stdout | tests/wechatsync_bridge_queue.test.js > Wechatsync bridge queue operations and recovery > forwards coverThumbnail through enqueueSyncArticle when provided
+[WechatsyncBridge] Extension connected (pending hello) { connectionId: '5e2638fb-ab49-4bf5-8df0-122d0bd5c705', origin: '' }
+
+stdout | tests/wechatsync_bridge_queue.test.js > Wechatsync bridge queue operations and recovery > forwards coverThumbnail through enqueueSyncArticle when provided
+[WechatsyncBridge:audit] session_registered {
+  connectionId: '5e2638fb-ab49-4bf5-8df0-122d0bd5c705',
+  extensionInstanceId: 'ext-instance-test',
+  profileLabel: 'Test Profile',
+  browserName: 'TestBrowser',
+  sessionsCount: 1
+}
+
+stdout | tests/wechatsync_bridge_queue.test.js > Wechatsync bridge queue operations and recovery > forwards coverThumbnail through enqueueSyncArticle when provided
+[WechatsyncBridge] Sending request {
+  id: 'enqueue-thumb-1',
+  method: 'enqueueSyncArticle',
+  timeoutMs: 10000,
+  connectionId: '5e2638fb-ab49-4bf5-8df0-122d0bd5c705',
+  extensionInstanceId: 'ext-instance-test',
+  paramKeys: [ 'platforms', 'source', 'article' ]
+}
+
+stdout | tests/wechatsync_bridge_queue.test.js > Wechatsync bridge queue operations and recovery > forwards coverThumbnail through enqueueSyncArticle when provided
+[WechatsyncBridge] Request completed {
+  id: 'enqueue-thumb-1',
+  method: 'enqueueSyncArticle',
+  elapsedMs: 2,
+  resultKind: 'object'
+}
+
+stdout | tests/wechatsync_bridge_queue.test.js > Wechatsync bridge queue operations and recovery > omits coverThumbnail field entirely when not provided / empty
+[WechatsyncBridge] Bridge started { port: 45210, httpPort: 45211, host: '127.0.0.1', allowRemote: false }
+
+stdout | tests/wechatsync_bridge_queue.test.js > Wechatsync bridge queue operations and recovery > omits coverThumbnail field entirely when not provided / empty
+[WechatsyncBridge] Extension connected (pending hello) { connectionId: '4832d04d-2cd1-4f7c-9a19-233dcadf35f9', origin: '' }
+
+stdout | tests/wechatsync_bridge_queue.test.js > Wechatsync bridge queue operations and recovery > omits coverThumbnail field entirely when not provided / empty
+[WechatsyncBridge:audit] session_registered {
+  connectionId: '4832d04d-2cd1-4f7c-9a19-233dcadf35f9',
+  extensionInstanceId: 'ext-instance-test',
+  profileLabel: 'Test Profile',
+  browserName: 'TestBrowser',
+  sessionsCount: 1
+}
+
+stdout | tests/wechatsync_bridge_queue.test.js > Wechatsync bridge queue operations and recovery > omits coverThumbnail field entirely when not provided / empty
+[WechatsyncBridge] Sending request {
+  id: 'enqueue-no-thumb-1',
+  method: 'enqueueSyncArticle',
+  timeoutMs: 10000,
+  connectionId: '4832d04d-2cd1-4f7c-9a19-233dcadf35f9',
+  extensionInstanceId: 'ext-instance-test',
+  paramKeys: [ 'platforms', 'source', 'article' ]
+}
+
+stdout | tests/wechatsync_bridge_queue.test.js > Wechatsync bridge queue operations and recovery > omits coverThumbnail field entirely when not provided / empty
+[WechatsyncBridge] Request completed {
+  id: 'enqueue-no-thumb-1',
+  method: 'enqueueSyncArticle',
+  elapsedMs: 1,
+  resultKind: 'object'
+}
+
+stdout | tests/multi_platform_modal_assets.test.js > multi-platform modal image and cover assets > sends local markdown images as bridge assets and rewrites local HTML src values
+[Wechatsync] render cached platform state {
+  status: 'connected',
+  checkedAt: 1791650593726,
+  message: '',
+  responseKind: 'array',
+  rawCount: 2,
+  normalizedCount: 2,
+  authenticatedCount: 1,
+  platforms: [
+    { id: 'zhihu', name: '知乎', authenticated: true, username: 'Lin' },
+    { id: 'juejin', name: '掘金', authenticated: false, username: '' }
+  ]
+}
+
+stdout | tests/wechatsync_bridge_queue.test.js > Wechatsync bridge queue operations and recovery > passes quotaPolicy through when enqueuing article sync
+[WechatsyncBridge] Bridge started { port: 45212, httpPort: 45213, host: '127.0.0.1', allowRemote: false }
+
+stdout | tests/wechatsync_bridge_queue.test.js > Wechatsync bridge queue operations and recovery > passes quotaPolicy through when enqueuing article sync
+[WechatsyncBridge] Extension connected (pending hello) { connectionId: '1c3c0330-0918-4628-91ef-e3a11bf6d251', origin: '' }
+
+stdout | tests/wechatsync_bridge_queue.test.js > Wechatsync bridge queue operations and recovery > passes quotaPolicy through when enqueuing article sync
+[WechatsyncBridge:audit] session_registered {
+  connectionId: '1c3c0330-0918-4628-91ef-e3a11bf6d251',
+  extensionInstanceId: 'ext-instance-test',
+  profileLabel: 'Test Profile',
+  browserName: 'TestBrowser',
+  sessionsCount: 1
+}
+
+stdout | tests/wechatsync_bridge_queue.test.js > Wechatsync bridge queue operations and recovery > passes quotaPolicy through when enqueuing article sync
+[WechatsyncBridge] Sending request {
+  id: 'enqueue-quota-1',
+  method: 'enqueueSyncArticle',
+  timeoutMs: 10000,
+  connectionId: '1c3c0330-0918-4628-91ef-e3a11bf6d251',
+  extensionInstanceId: 'ext-instance-test',
+  paramKeys: [ 'platforms', 'source', 'article', 'quotaPolicy' ]
+}
+
+stdout | tests/wechatsync_bridge_queue.test.js > Wechatsync bridge queue operations and recovery > passes quotaPolicy through when enqueuing article sync
+[WechatsyncBridge] Request completed {
+  id: 'enqueue-quota-1',
+  method: 'enqueueSyncArticle',
+  elapsedMs: 1,
+  resultKind: 'object'
+}
+
+stdout | tests/wechatsync_bridge_queue.test.js > Wechatsync bridge queue operations and recovery > queries and opens extension sync tasks through the bridge
+[WechatsyncBridge] Bridge started { port: 45214, httpPort: 45215, host: '127.0.0.1', allowRemote: false }
+
+stdout | tests/wechatsync_bridge_queue.test.js > Wechatsync bridge queue operations and recovery > queries and opens extension sync tasks through the bridge
+[WechatsyncBridge] Extension connected (pending hello) { connectionId: 'fe665261-81c4-4458-bdcd-4e0d8a274271', origin: '' }
+
+stdout | tests/wechatsync_bridge_queue.test.js > Wechatsync bridge queue operations and recovery > queries and opens extension sync tasks through the bridge
+[WechatsyncBridge:audit] session_registered {
+  connectionId: 'fe665261-81c4-4458-bdcd-4e0d8a274271',
+  extensionInstanceId: 'ext-instance-test',
+  profileLabel: 'Test Profile',
+  browserName: 'TestBrowser',
+  sessionsCount: 1
+}
+
+stdout | tests/wechatsync_bridge_queue.test.js > Wechatsync bridge queue operations and recovery > queries and opens extension sync tasks through the bridge
+[WechatsyncBridge] Sending request {
+  id: 'task-1',
+  method: 'getSyncTask',
+  timeoutMs: 5000,
+  connectionId: 'fe665261-81c4-4458-bdcd-4e0d8a274271',
+  extensionInstanceId: 'ext-instance-test',
+  paramKeys: [ 'syncId' ]
+}
+
+stdout | tests/wechatsync_bridge_queue.test.js > Wechatsync bridge queue operations and recovery > queries and opens extension sync tasks through the bridge
+[WechatsyncBridge] Request completed {
+  id: 'task-1',
+  method: 'getSyncTask',
+  elapsedMs: 1,
+  resultKind: 'object'
+}
+
+stdout | tests/wechatsync_bridge_queue.test.js > Wechatsync bridge queue operations and recovery > queries and opens extension sync tasks through the bridge
+[WechatsyncBridge] Sending request {
+  id: 'task-2',
+  method: 'openSyncTask',
+  timeoutMs: 5000,
+  connectionId: 'fe665261-81c4-4458-bdcd-4e0d8a274271',
+  extensionInstanceId: 'ext-instance-test',
+  paramKeys: [ 'syncId' ]
+}
+
+stdout | tests/wechatsync_bridge_queue.test.js > Wechatsync bridge queue operations and recovery > queries and opens extension sync tasks through the bridge
+[WechatsyncBridge] Request completed {
+  id: 'task-2',
+  method: 'openSyncTask',
+  elapsedMs: 1,
+  resultKind: 'object'
+}
+
+stdout | tests/wechatsync_bridge_queue.test.js > Wechatsync bridge queue operations and recovery > falls back to snake_case task and snapshot methods for MCP tool names
+[WechatsyncBridge] Bridge started { port: 45216, httpPort: 45217, host: '127.0.0.1', allowRemote: false }
+
+stdout | tests/wechatsync_bridge_queue.test.js > Wechatsync bridge queue operations and recovery > falls back to snake_case task and snapshot methods for MCP tool names
+[WechatsyncBridge] Extension connected (pending hello) { connectionId: 'f1ffdc1e-055b-4723-94d8-571badf2a9b9', origin: '' }
+
+stdout | tests/wechatsync_bridge_queue.test.js > Wechatsync bridge queue operations and recovery > falls back to snake_case task and snapshot methods for MCP tool names
+[WechatsyncBridge:audit] session_registered {
+  connectionId: 'f1ffdc1e-055b-4723-94d8-571badf2a9b9',
+  extensionInstanceId: 'ext-instance-test',
+  profileLabel: 'Test Profile',
+  browserName: 'TestBrowser',
+  sessionsCount: 1
+}
+
+stdout | tests/wechatsync_bridge_queue.test.js > Wechatsync bridge queue operations and recovery > falls back to snake_case task and snapshot methods for MCP tool names
+[WechatsyncBridge] Sending request {
+  id: 'fallback-1',
+  method: 'getSyncTask',
+  timeoutMs: 5000,
+  connectionId: 'f1ffdc1e-055b-4723-94d8-571badf2a9b9',
+  extensionInstanceId: 'ext-instance-test',
+  paramKeys: [ 'syncId' ]
+}
+
+stdout | tests/wechatsync_bridge_queue.test.js > Wechatsync bridge queue operations and recovery > falls back to snake_case task and snapshot methods for MCP tool names
+[WechatsyncBridge] Request failed {
+  id: 'fallback-1',
+  method: 'getSyncTask',
+  elapsedMs: 1,
+  error: 'unknown method: getSyncTask'
+}
+
+stdout | tests/wechatsync_bridge_queue.test.js > Wechatsync bridge queue operations and recovery > falls back to snake_case task and snapshot methods for MCP tool names
+[WechatsyncBridge] Retrying request with fallback method {
+  method: 'getSyncTask',
+  fallbackMethod: 'get_sync_task',
+  code: undefined,
+  message: 'unknown method: getSyncTask'
+}
+
+stdout | tests/multi_platform_modal_assets.test.js > multi-platform modal image and cover assets > sends local markdown images as bridge assets and rewrites local HTML src values
+[Wechatsync] enqueueSyncArticle started {
+  platformCount: 1,
+  requestedPlatformCount: 1,
+  platforms: [ 'zhihu' ],
+  enqueuedPlatforms: [ 'zhihu' ],
+  skippedByPluginPolicy: [],
+  title: 'a',
+  hasMarkdown: true,
+  contentLength: 42,
+  hasCover: true,
+  hasCoverThumbnail: false,
+  coverThumbnailBytes: 0,
+  assetCount: 1,
+  assetBytes: 8
+}
+
+stdout | tests/wechatsync_bridge_queue.test.js > Wechatsync bridge queue operations and recovery > falls back to snake_case task and snapshot methods for MCP tool names
+[WechatsyncBridge] Sending request {
+  id: 'fallback-2',
+  method: 'get_sync_task',
+  timeoutMs: 5000,
+  connectionId: 'f1ffdc1e-055b-4723-94d8-571badf2a9b9',
+  extensionInstanceId: 'ext-instance-test',
+  paramKeys: [ 'syncId' ]
+}
+
+stdout | tests/multi_platform_modal_assets.test.js > multi-platform modal image and cover assets > sends local markdown images as bridge assets and rewrites local HTML src values
+[Wechatsync] enqueueSyncArticle accepted {
+  elapsedMs: 23,
+  resultKind: 'object',
+  syncId: 'sync-1',
+  requestId: undefined,
+  accepted: true,
+  quotaBlocked: undefined,
+  skippedPlatforms: undefined,
+  usedFallbackSend: false,
+  platformCount: 1,
+  requestedPlatformCount: 1,
+  supportsQuotaPolicy: true,
+  remotePolicy: false
+}
+
+stdout | tests/wechatsync_bridge_queue.test.js > Wechatsync bridge queue operations and recovery > falls back to snake_case task and snapshot methods for MCP tool names
+[WechatsyncBridge] Request completed {
+  id: 'fallback-2',
+  method: 'get_sync_task',
+  elapsedMs: 5,
+  resultKind: 'object'
+}
+
+stdout | tests/wechatsync_bridge_queue.test.js > Wechatsync bridge queue operations and recovery > falls back to snake_case task and snapshot methods for MCP tool names
+[WechatsyncBridge] Sending request {
+  id: 'fallback-3',
+  method: 'getAuthSnapshot',
+  timeoutMs: 5000,
+  connectionId: 'f1ffdc1e-055b-4723-94d8-571badf2a9b9',
+  extensionInstanceId: 'ext-instance-test',
+  paramKeys: [ 'platforms', 'maxAgeMs' ]
+}
+
+stdout | tests/wechatsync_bridge_queue.test.js > Wechatsync bridge queue operations and recovery > falls back to snake_case task and snapshot methods for MCP tool names
+[WechatsyncBridge] Request failed {
+  id: 'fallback-3',
+  method: 'getAuthSnapshot',
+  elapsedMs: 1,
+  error: 'unknown method: getAuthSnapshot'
+}
+
+stdout | tests/wechatsync_bridge_queue.test.js > Wechatsync bridge queue operations and recovery > falls back to snake_case task and snapshot methods for MCP tool names
+[WechatsyncBridge] Retrying request with fallback method {
+  method: 'getAuthSnapshot',
+  fallbackMethod: 'get_auth_snapshot',
+  code: undefined,
+  message: 'unknown method: getAuthSnapshot'
+}
+
+stdout | tests/wechatsync_bridge_queue.test.js > Wechatsync bridge queue operations and recovery > falls back to snake_case task and snapshot methods for MCP tool names
+[WechatsyncBridge] Sending request {
+  id: 'fallback-4',
+  method: 'get_auth_snapshot',
+  timeoutMs: 5000,
+  connectionId: 'f1ffdc1e-055b-4723-94d8-571badf2a9b9',
+  extensionInstanceId: 'ext-instance-test',
+  paramKeys: [ 'platforms', 'maxAgeMs' ]
+}
+
+stdout | tests/wechatsync_bridge_queue.test.js > Wechatsync bridge queue operations and recovery > falls back to snake_case task and snapshot methods for MCP tool names
+[WechatsyncBridge] Request completed {
+  id: 'fallback-4',
+  method: 'get_auth_snapshot',
+  elapsedMs: 0,
+  resultKind: 'object'
+}
+
+stdout | tests/multi_platform_modal_assets.test.js > multi-platform modal image and cover assets > uses frontmatter local cover as a bridge asset and reuses it for the first body image
+[Wechatsync] render cached platform state {
+  status: 'connected',
+  checkedAt: 1791650593847,
+  message: '',
+  responseKind: 'array',
+  rawCount: 2,
+  normalizedCount: 2,
+  authenticatedCount: 1,
+  platforms: [
+    { id: 'zhihu', name: '知乎', authenticated: true, username: 'Lin' },
+    { id: 'juejin', name: '掘金', authenticated: false, username: '' }
+  ]
+}
+
+ ✓ tests/wechatsync_bridge_queue.test.js (14 tests) 174ms
+stdout | tests/multi_platform_modal_assets.test.js > multi-platform modal image and cover assets > uses frontmatter local cover as a bridge asset and reuses it for the first body image
+[Wechatsync] enqueueSyncArticle started {
+  platformCount: 1,
+  requestedPlatformCount: 1,
+  platforms: [ 'zhihu' ],
+  enqueuedPlatforms: [ 'zhihu' ],
+  skippedByPluginPolicy: [],
+  title: 'a',
+  hasMarkdown: true,
+  contentLength: 43,
+  hasCover: true,
+  hasCoverThumbnail: false,
+  coverThumbnailBytes: 0,
+  assetCount: 1,
+  assetBytes: 8
+}
+
+stdout | tests/multi_platform_modal_assets.test.js > multi-platform modal image and cover assets > uses frontmatter local cover as a bridge asset and reuses it for the first body image
+[Wechatsync] enqueueSyncArticle accepted {
+  elapsedMs: 4,
+  resultKind: 'object',
+  syncId: 'sync-1',
+  requestId: undefined,
+  accepted: true,
+  quotaBlocked: undefined,
+  skippedPlatforms: undefined,
+  usedFallbackSend: false,
+  platformCount: 1,
+  requestedPlatformCount: 1,
+  supportsQuotaPolicy: true,
+  remotePolicy: false
+}
+
+stdout | tests/multi_platform_modal_assets.test.js > multi-platform modal image and cover assets > ignores app resource session cover and resolves the original frontmatter cover path
+[Wechatsync] render cached platform state {
+  status: 'connected',
+  checkedAt: 1791650593859,
+  message: '',
+  responseKind: 'array',
+  rawCount: 2,
+  normalizedCount: 2,
+  authenticatedCount: 1,
+  platforms: [
+    { id: 'zhihu', name: '知乎', authenticated: true, username: 'Lin' },
+    { id: 'juejin', name: '掘金', authenticated: false, username: '' }
+  ]
+}
+
+stdout | tests/multi_platform_modal_assets.test.js > multi-platform modal image and cover assets > ignores app resource session cover and resolves the original frontmatter cover path
+[Wechatsync] enqueueSyncArticle started {
+  platformCount: 1,
+  requestedPlatformCount: 1,
+  platforms: [ 'zhihu' ],
+  enqueuedPlatforms: [ 'zhihu' ],
+  skippedByPluginPolicy: [],
+  title: 'a',
+  hasMarkdown: true,
+  contentLength: 12,
+  hasCover: true,
+  hasCoverThumbnail: false,
+  coverThumbnailBytes: 0,
+  assetCount: 1,
+  assetBytes: 6
+}
+
+stdout | tests/multi_platform_modal_assets.test.js > multi-platform modal image and cover assets > ignores app resource session cover and resolves the original frontmatter cover path
+[Wechatsync] enqueueSyncArticle accepted {
+  elapsedMs: 8,
+  resultKind: 'object',
+  syncId: 'sync-1',
+  requestId: undefined,
+  accepted: true,
+  quotaBlocked: undefined,
+  skippedPlatforms: undefined,
+  usedFallbackSend: false,
+  platformCount: 1,
+  requestedPlatformCount: 1,
+  supportsQuotaPolicy: true,
+  remotePolicy: false
+}
+
+stdout | tests/multi_platform_modal_assets.test.js > multi-platform modal image and cover assets > downloads selected WeChat material cover and sends it as a bridge asset
+[Wechatsync] render cached platform state {
+  status: 'connected',
+  checkedAt: 1791650593874,
+  message: '',
+  responseKind: 'array',
+  rawCount: 2,
+  normalizedCount: 2,
+  authenticatedCount: 1,
+  platforms: [
+    { id: 'zhihu', name: '知乎', authenticated: true, username: 'Lin' },
+    { id: 'juejin', name: '掘金', authenticated: false, username: '' }
+  ]
+}
+
+stdout | tests/multi_platform_modal_assets.test.js > multi-platform modal image and cover assets > downloads selected WeChat material cover and sends it as a bridge asset
+[Wechatsync] enqueueSyncArticle started {
+  platformCount: 1,
+  requestedPlatformCount: 1,
+  platforms: [ 'zhihu' ],
+  enqueuedPlatforms: [ 'zhihu' ],
+  skippedByPluginPolicy: [],
+  title: 'a',
+  hasMarkdown: true,
+  contentLength: 12,
+  hasCover: true,
+  hasCoverThumbnail: false,
+  coverThumbnailBytes: 0,
+  assetCount: 1,
+  assetBytes: 4
+}
+
+stdout | tests/multi_platform_modal_assets.test.js > multi-platform modal image and cover assets > downloads selected WeChat material cover and sends it as a bridge asset
+[Wechatsync] enqueueSyncArticle accepted {
+  elapsedMs: 4,
+  resultKind: 'object',
+  syncId: 'sync-1',
+  requestId: undefined,
+  accepted: true,
+  quotaBlocked: undefined,
+  skippedPlatforms: undefined,
+  usedFallbackSend: false,
+  platformCount: 1,
+  requestedPlatformCount: 1,
+  supportsQuotaPolicy: true,
+  remotePolicy: false
+}
+
+stdout | tests/multi_platform_modal_assets.test.js > multi-platform modal image and cover assets > reuses cached downloaded WeChat material cover assets for later bridge sends
+[Wechatsync] render cached platform state {
+  status: 'connected',
+  checkedAt: 1791650593895,
+  message: '',
+  responseKind: 'array',
+  rawCount: 2,
+  normalizedCount: 2,
+  authenticatedCount: 1,
+  platforms: [
+    { id: 'zhihu', name: '知乎', authenticated: true, username: 'Lin' },
+    { id: 'juejin', name: '掘金', authenticated: false, username: '' }
+  ]
+}
+
+stdout | tests/multi_platform_modal_assets.test.js > multi-platform modal image and cover assets > reuses cached downloaded WeChat material cover assets for later bridge sends
+[Wechatsync] enqueueSyncArticle started {
+  platformCount: 1,
+  requestedPlatformCount: 1,
+  platforms: [ 'zhihu' ],
+  enqueuedPlatforms: [ 'zhihu' ],
+  skippedByPluginPolicy: [],
+  title: 'a',
+  hasMarkdown: true,
+  contentLength: 12,
+  hasCover: true,
+  hasCoverThumbnail: false,
+  coverThumbnailBytes: 0,
+  assetCount: 1,
+  assetBytes: 4
+}
+
+stdout | tests/multi_platform_modal_assets.test.js > multi-platform modal image and cover assets > reuses cached downloaded WeChat material cover assets for later bridge sends
+[Wechatsync] enqueueSyncArticle accepted {
+  elapsedMs: 7,
+  resultKind: 'object',
+  syncId: 'sync-1',
+  requestId: undefined,
+  accepted: true,
+  quotaBlocked: undefined,
+  skippedPlatforms: undefined,
+  usedFallbackSend: false,
+  platformCount: 1,
+  requestedPlatformCount: 1,
+  supportsQuotaPolicy: true,
+  remotePolicy: false
+}
+
+stdout | tests/multi_platform_modal_assets.test.js > multi-platform modal image and cover assets > reuses cached downloaded WeChat material cover assets for later bridge sends
+[Wechatsync] render cached platform state {
+  status: 'connected',
+  checkedAt: 1791650593907,
+  message: '',
+  responseKind: 'array',
+  rawCount: 2,
+  normalizedCount: 2,
+  authenticatedCount: 1,
+  platforms: [
+    { id: 'zhihu', name: '知乎', authenticated: true, username: 'Lin' },
+    { id: 'juejin', name: '掘金', authenticated: false, username: '' }
+  ]
+}
+
+stdout | tests/multi_platform_modal_assets.test.js > multi-platform modal image and cover assets > reuses cached downloaded WeChat material cover assets for later bridge sends
+[Wechatsync] enqueueSyncArticle started {
+  platformCount: 1,
+  requestedPlatformCount: 1,
+  platforms: [ 'zhihu' ],
+  enqueuedPlatforms: [ 'zhihu' ],
+  skippedByPluginPolicy: [],
+  title: 'a',
+  hasMarkdown: true,
+  contentLength: 12,
+  hasCover: true,
+  hasCoverThumbnail: false,
+  coverThumbnailBytes: 0,
+  assetCount: 1,
+  assetBytes: 4
+}
+
+stdout | tests/multi_platform_modal_assets.test.js > multi-platform modal image and cover assets > reuses cached downloaded WeChat material cover assets for later bridge sends
+[Wechatsync] enqueueSyncArticle accepted {
+  elapsedMs: 3,
+  resultKind: 'object',
+  syncId: 'sync-1',
+  requestId: undefined,
+  accepted: true,
+  quotaBlocked: undefined,
+  skippedPlatforms: undefined,
+  usedFallbackSend: false,
+  platformCount: 1,
+  requestedPlatformCount: 1,
+  supportsQuotaPolicy: true,
+  remotePolicy: false
+}
+
+stdout | tests/multi_platform_modal_assets.test.js > multi-platform modal image and cover assets > does not enqueue when a selected WeChat material cover has no downloadable URL
+[Wechatsync] render cached platform state {
+  status: 'connected',
+  checkedAt: 1791650593922,
+  message: '',
+  responseKind: 'array',
+  rawCount: 2,
+  normalizedCount: 2,
+  authenticatedCount: 1,
+  platforms: [
+    { id: 'zhihu', name: '知乎', authenticated: true, username: 'Lin' },
+    { id: 'juejin', name: '掘金', authenticated: false, username: '' }
+  ]
+}
+
+stderr | tests/multi_platform_modal_assets.test.js > multi-platform modal image and cover assets > does not enqueue whe
+n a selected WeChat material cover has no downloadable URL
+[Wechatsync] enqueueSyncArticle failed {
+  elapsedMs: 4,
+  code: '',
+  message: '微信素材库封面缺少可下载 URL，无法用于多平台发布。请改用本地封面或 frontmatter cover。',
+  stack: 'Error: 微信素材库封面缺少可下载 URL，无法用于多平台发布。请改用本地封面或 frontmatter cover。\n' +
+    '    at downloadMaterialCoverAsBridgeAsset (file:///C:/%E6%96%87%E4%BB%B6/%E7%AC%94%E8%AE%B0/obsidian/.obsidian/plu
+gins/obsidian-wechat-converter-2.10.10/views/publish-modal/multi-platform-cover-assets.js:149:11)\n' +
+    '    at HTMLButtonElement.syncBtn.onclick (file:///C:/%E6%96%87%E4%BB%B6/%E7%AC%94%E8%AE%B0/obsidian/.obsidian/plug
+ins/obsidian-wechat-converter-2.10.10/views/publish-modal/multi-platform.js:404:37)\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:104:5)\n' +
+    '    at C:/文件/笔记/obsidian/.obsidian/plugins/obsidian-wechat-converter-2.10.10/tests/multi_platform_modal_assets.tes
+t.js:271:5\n' +
+    '    at file:///C:/%E6%96%87%E4%BB%B6/%E7%AC%94%E8%AE%B0/obsidian/.obsidian/plugins/obsidian-wechat-converter-2.10.
+10/node_modules/.pnpm/@vitest+runner@4.0.18/node_modules/@vitest/runner/dist/index.js:915:20',
+  requestedPlatformIds: [ 'zhihu' ]
+}
+
+stdout | tests/multi_platform_modal_assets.test.js > multi-platform modal image and cover assets > does not enqueue when a selected WeChat material cover downloads as a non-image
+[Wechatsync] render cached platform state {
+  status: 'connected',
+  checkedAt: 1791650593932,
+  message: '',
+  responseKind: 'array',
+  rawCount: 2,
+  normalizedCount: 2,
+  authenticatedCount: 1,
+  platforms: [
+    { id: 'zhihu', name: '知乎', authenticated: true, username: 'Lin' },
+    { id: 'juejin', name: '掘金', authenticated: false, username: '' }
+  ]
+}
+
+stderr | tests/multi_platform_modal_assets.test.js > multi-platform modal image and cover assets > does not enqueue whe
+n a selected WeChat material cover downloads as a non-image
+[Wechatsync] enqueueSyncArticle failed {
+  elapsedMs: 0,
+  code: '',
+  message: '微信素材库封面格式不支持：text/html',
+  stack: 'Error: 微信素材库封面格式不支持：text/html\n' +
+    '    at downloadMaterialCoverAsBridgeAsset (file:///C:/%E6%96%87%E4%BB%B6/%E7%AC%94%E8%AE%B0/obsidian/.obsidian/plu
+gins/obsidian-wechat-converter-2.10.10/views/publish-modal/multi-platform-cover-assets.js:192:11)\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:104:5)\n' +
+    '    at HTMLButtonElement.syncBtn.onclick (file:///C:/%E6%96%87%E4%BB%B6/%E7%AC%94%E8%AE%B0/obsidian/.obsidian/plug
+ins/obsidian-wechat-converter-2.10.10/views/publish-modal/multi-platform.js:404:31)\n' +
+    '    at C:/文件/笔记/obsidian/.obsidian/plugins/obsidian-wechat-converter-2.10.10/tests/multi_platform_modal_assets.tes
+t.js:300:5\n' +
+    '    at file:///C:/%E6%96%87%E4%BB%B6/%E7%AC%94%E8%AE%B0/obsidian/.obsidian/plugins/obsidian-wechat-converter-2.10.
+10/node_modules/.pnpm/@vitest+runner@4.0.18/node_modules/@vitest/runner/dist/index.js:915:20',
+  requestedPlatformIds: [ 'zhihu' ]
+}
+
+ ✓ tests/multi_platform_modal_assets.test.js (7 tests) 223ms
+ ✓ tests/feishu_publish_modal.test.js (11 tests) 140ms
+(node:11952) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/%E6%96%87%E4%BB%B6/%E7%AC%94%E8%AE%B0/ob
+sidian/.obsidian/plugins/obsidian-wechat-converter-2.10.10/views/apple-style-view.js is not specified and it doesn't pa
+rse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\C:\文件\笔记\obsidian\.obsidian\plugins\obsidian-wechat-converter-2.
+10.10\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+ ✓ tests/math_conversion.test.js (7 tests) 346ms
+ ✓ tests/pseudo-element-renderer.test.js (20 tests) 114ms
+(node:15436) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/%E6%96%87%E4%BB%B6/%E7%AC%94%E8%AE%B0/ob
+sidian/.obsidian/plugins/obsidian-wechat-converter-2.10.10/services/dom-utils.js is not specified and it doesn't parse 
+as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\C:\文件\笔记\obsidian\.obsidian\plugins\obsidian-wechat-converter-2.
+10.10\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:12932) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/%E6%96%87%E4%BB%B6/%E7%AC%94%E8%AE%B0/ob
+sidian/.obsidian/plugins/obsidian-wechat-converter-2.10.10/views/apple-style-view.js is not specified and it doesn't pa
+rse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\C:\文件\笔记\obsidian\.obsidian\plugins\obsidian-wechat-converter-2.
+10.10\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+ ✓ tests/wechat_media_service.test.js (10 tests) 110ms
+stdout | tests/multi_platform_modal_publish.test.js > multi-platform modal publish policy > passes truncate quotaPolicy and shows quota modal when the extension blocks the task
+[Wechatsync] render cached platform state {
+  status: 'connected',
+  checkedAt: 1791650595706,
+  message: '',
+  responseKind: 'array',
+  rawCount: 2,
+  normalizedCount: 2,
+  authenticatedCount: 1,
+  platforms: [
+    { id: 'zhihu', name: '知乎', authenticated: true, username: 'Lin' },
+    { id: 'juejin', name: '掘金', authenticated: false, username: '' }
+  ]
+}
+
+stdout | tests/multi_platform_modal_publish.test.js > multi-platform modal publish policy > passes truncate quotaPolicy and shows quota modal when the extension blocks the task
+[Wechatsync] enqueueSyncArticle started {
+  platformCount: 2,
+  requestedPlatformCount: 2,
+  platforms: [ 'zhihu', 'juejin' ],
+  enqueuedPlatforms: [ 'zhihu', 'juejin' ],
+  skippedByPluginPolicy: [],
+  title: 'a',
+  hasMarkdown: false,
+  contentLength: 12,
+  hasCover: false,
+  hasCoverThumbnail: false,
+  coverThumbnailBytes: 0,
+  assetCount: 0,
+  assetBytes: 0
+}
+
+stdout | tests/multi_platform_modal_publish.test.js > multi-platform modal publish policy > passes truncate quotaPolicy and shows quota modal when the extension blocks the task
+[Wechatsync] enqueueSyncArticle accepted {
+  elapsedMs: 24,
+  resultKind: 'object',
+  syncId: undefined,
+  requestId: undefined,
+  accepted: false,
+  quotaBlocked: true,
+  skippedPlatforms: [ 'zhihu', 'juejin' ],
+  usedFallbackSend: false,
+  platformCount: 2,
+  requestedPlatformCount: 2,
+  supportsQuotaPolicy: true,
+  remotePolicy: false
+}
+
+stdout | tests/multi_platform_modal_publish.test.js > multi-platform modal publish policy > pre-truncates a Free remote-policy request before enqueueing selected platforms
+[Wechatsync] render cached platform state {
+  status: 'connected',
+  checkedAt: 1791650595791,
+  message: '',
+  responseKind: 'array',
+  rawCount: 3,
+  normalizedCount: 3,
+  authenticatedCount: 3,
+  platforms: [
+    { id: 'zhihu', name: '知乎', authenticated: true, username: '' },
+    { id: 'juejin', name: '掘金', authenticated: true, username: '' },
+    { id: 'csdn', name: 'CSDN', authenticated: true, username: '' }
+  ]
+}
+
+stdout | tests/multi_platform_modal_publish.test.js > multi-platform modal publish policy > pre-truncates a Free remote-policy request before enqueueing selected platforms
+[Wechatsync] request pre-truncated by Obsidian plugin policy {
+  requestedPlatformCount: 3,
+  enqueuedPlatformCount: 1,
+  skippedPlatformCount: 2,
+  quotaLimit: 1,
+  policyVersion: 0,
+  policySource: 'fallback'
+}
+
+stdout | tests/multi_platform_modal_publish.test.js > multi-platform modal publish policy > pre-truncates a Free remote-policy request before enqueueing selected platforms
+[Wechatsync] enqueueSyncArticle started {
+  platformCount: 1,
+  requestedPlatformCount: 3,
+  platforms: [ 'zhihu', 'csdn', 'juejin' ],
+  enqueuedPlatforms: [ 'zhihu' ],
+  skippedByPluginPolicy: [ 'csdn', 'juejin' ],
+  title: 'a',
+  hasMarkdown: false,
+  contentLength: 12,
+  hasCover: false,
+  hasCoverThumbnail: false,
+  coverThumbnailBytes: 0,
+  assetCount: 0,
+  assetBytes: 0
+}
+
+stdout | tests/multi_platform_modal_publish.test.js > multi-platform modal publish policy > pre-truncates a Free remote-policy request before enqueueing selected platforms
+[Wechatsync] enqueueSyncArticle accepted {
+  elapsedMs: 6,
+  resultKind: 'object',
+  syncId: 'sync-remote-policy',
+  requestId: undefined,
+  accepted: true,
+  quotaBlocked: true,
+  skippedPlatforms: [ 'csdn', 'juejin' ],
+  usedFallbackSend: false,
+  platformCount: 1,
+  requestedPlatformCount: 3,
+  supportsQuotaPolicy: true,
+  remotePolicy: true
+}
+
+stdout | tests/multi_platform_modal_publish.test.js > multi-platform modal publish policy > does not pre-truncate when remote policy confirms an active Pro license
+[Wechatsync] render cached platform state {
+  status: 'connected',
+  checkedAt: 1791650595811,
+  message: '',
+  responseKind: 'array',
+  rawCount: 2,
+  normalizedCount: 2,
+  authenticatedCount: 2,
+  platforms: [
+    { id: 'zhihu', name: '知乎', authenticated: true, username: '' },
+    { id: 'juejin', name: '掘金', authenticated: true, username: '' }
+  ]
+}
+
+stdout | tests/multi_platform_modal_publish.test.js > multi-platform modal publish policy > does not pre-truncate when remote policy confirms an active Pro license
+[Wechatsync] enqueueSyncArticle started {
+  platformCount: 2,
+  requestedPlatformCount: 2,
+  platforms: [ 'zhihu', 'juejin' ],
+  enqueuedPlatforms: [ 'zhihu', 'juejin' ],
+  skippedByPluginPolicy: [],
+  title: 'a',
+  hasMarkdown: false,
+  contentLength: 12,
+  hasCover: false,
+  hasCoverThumbnail: false,
+  coverThumbnailBytes: 0,
+  assetCount: 0,
+  assetBytes: 0
+}
+
+stdout | tests/multi_platform_modal_publish.test.js > multi-platform modal publish policy > does not pre-truncate when remote policy confirms an active Pro license
+[Wechatsync] enqueueSyncArticle accepted {
+  elapsedMs: 5,
+  resultKind: 'object',
+  syncId: 'sync-pro-policy',
+  requestId: undefined,
+  accepted: true,
+  quotaBlocked: undefined,
+  skippedPlatforms: undefined,
+  usedFallbackSend: false,
+  platformCount: 2,
+  requestedPlatformCount: 2,
+  supportsQuotaPolicy: true,
+  remotePolicy: true
+}
+
+ ✓ tests/multi_platform_modal_publish.test.js (3 tests) 127ms
+ ✓ tests/custom_css_inliner.test.js (17 tests) 82ms
+(node:19348) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/%E6%96%87%E4%BB%B6/%E7%AC%94%E8%AE%B0/ob
+sidian/.obsidian/plugins/obsidian-wechat-converter-2.10.10/views/apple-style-view.js is not specified and it doesn't pa
+rse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\C:\文件\笔记\obsidian\.obsidian\plugins\obsidian-wechat-converter-2.
+10.10\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+stderr | tests/circuit_breaker.test.js > Circuit Breaker (Rate Limit & Quota Handling) > should identify 45009 (Daily L
+imit) as a fatal error
+Upload Error: Error: 微信API报错: reach max api daily quota limit (45009)
+    at file:///C:/%E6%96%87%E4%BB%B6/%E7%AC%94%E8%AE%B0/obsidian/.obsidian/plugins/obsidian-wechat-converter-2.10.10/se
+rvices/wechat-api.js:656:19
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at WechatAPI.requestWithRetry (file:///C:/%E6%96%87%E4%BB%B6/%E7%AC%94%E8%AE%B0/obsidian/.obsidian/plugins/obsidian
+-wechat-converter-2.10.10/services/wechat-api.js:227:16)
+    at file:///C:/%E6%96%87%E4%BB%B6/%E7%AC%94%E8%AE%B0/obsidian/.obsidian/plugins/obsidian-wechat-converter-2.10.10/se
+rvices/wechat-api.js:423:14
+    at WechatAPI.actionWithTokenRetry (file:///C:/%E6%96%87%E4%BB%B6/%E7%AC%94%E8%AE%B0/obsidian/.obsidian/plugins/obsi
+dian-wechat-converter-2.10.10/services/wechat-api.js:308:16)
+    at C:/文件/笔记/obsidian/.obsidian/plugins/obsidian-wechat-converter-2.10.10/tests/circuit_breaker.test.js:60:7
+    at file:///C:/%E6%96%87%E4%BB%B6/%E7%AC%94%E8%AE%B0/obsidian/.obsidian/plugins/obsidian-wechat-converter-2.10.10/no
+de_modules/.pnpm/@vitest+runner@4.0.18/node_modules/@vitest/runner/dist/index.js:915:20
+
+stderr | tests/circuit_breaker.test.js > Circuit Breaker (Rate Limit & Quota Handling) > should identify 45001 (Media C
+ount Limit) as a fatal error
+Upload Error: Error: 微信API报错: media size out of limit (45001)
+    at file:///C:/%E6%96%87%E4%BB%B6/%E7%AC%94%E8%AE%B0/obsidian/.obsidian/plugins/obsidian-wechat-converter-2.10.10/se
+rvices/wechat-api.js:656:19
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at WechatAPI.requestWithRetry (file:///C:/%E6%96%87%E4%BB%B6/%E7%AC%94%E8%AE%B0/obsidian/.obsidian/plugins/obsidian
+-wechat-converter-2.10.10/services/wechat-api.js:227:16)
+    at file:///C:/%E6%96%87%E4%BB%B6/%E7%AC%94%E8%AE%B0/obsidian/.obsidian/plugins/obsidian-wechat-converter-2.10.10/se
+rvices/wechat-api.js:412:14
+    at WechatAPI.actionWithTokenRetry (file:///C:/%E6%96%87%E4%BB%B6/%E7%AC%94%E8%AE%B0/obsidian/.obsidian/plugins/obsi
+dian-wechat-converter-2.10.10/services/wechat-api.js:308:16)
+    at C:/文件/笔记/obsidian/.obsidian/plugins/obsidian-wechat-converter-2.10.10/tests/circuit_breaker.test.js:83:7
+    at file:///C:/%E6%96%87%E4%BB%B6/%E7%AC%94%E8%AE%B0/obsidian/.obsidian/plugins/obsidian-wechat-converter-2.10.10/no
+de_modules/.pnpm/@vitest+runner@4.0.18/node_modules/@vitest/runner/dist/index.js:915:20
+
+stderr | tests/circuit_breaker.test.js > Circuit Breaker (Rate Limit & Quota Handling) > Process Flow Abortion > should
+ continue processing upon encountering a NON-fatal error (e.g. 404)
+公式转换失败，保留原SVG: Error: Network 404
+    at C:/文件/笔记/obsidian/.obsidian/plugins/obsidian-wechat-converter-2.10.10/tests/circuit_breaker.test.js:174:36
+    at file:///C:/%E6%96%87%E4%BB%B6/%E7%AC%94%E8%AE%B0/obsidian/.obsidian/plugins/obsidian-wechat-converter-2.10.10/no
+de_modules/.pnpm/@vitest+runner@4.0.18/node_modules/@vitest/runner/dist/index.js:145:11
+    at file:///C:/%E6%96%87%E4%BB%B6/%E7%AC%94%E8%AE%B0/obsidian/.obsidian/plugins/obsidian-wechat-converter-2.10.10/no
+de_modules/.pnpm/@vitest+runner@4.0.18/node_modules/@vitest/runner/dist/index.js:915:26
+    at file:///C:/%E6%96%87%E4%BB%B6/%E7%AC%94%E8%AE%B0/obsidian/.obsidian/plugins/obsidian-wechat-converter-2.10.10/no
+de_modules/.pnpm/@vitest+runner@4.0.18/node_modules/@vitest/runner/dist/index.js:1243:20
+    at new Promise (<anonymous>)
+    at runWithTimeout (file:///C:/%E6%96%87%E4%BB%B6/%E7%AC%94%E8%AE%B0/obsidian/.obsidian/plugins/obsidian-wechat-conv
+erter-2.10.10/node_modules/.pnpm/@vitest+runner@4.0.18/node_modules/@vitest/runner/dist/index.js:1209:10)
+    at file:///C:/%E6%96%87%E4%BB%B6/%E7%AC%94%E8%AE%B0/obsidian/.obsidian/plugins/obsidian-wechat-converter-2.10.10/no
+de_modules/.pnpm/@vitest+runner@4.0.18/node_modules/@vitest/runner/dist/index.js:1653:37
+    at Traces.$ (file:///C:/%E6%96%87%E4%BB%B6/%E7%AC%94%E8%AE%B0/obsidian/.obsidian/plugins/obsidian-wechat-converter-
+2.10.10/node_modules/.pnpm/vitest@4.0.18_@types+node@2_a19b9e59b8ec02b5d719c0952ab0230b/node_modules/vitest/dist/chunks
+/traces.CCmnQaNT.js:142:27)
+    at trace (file:///C:/%E6%96%87%E4%BB%B6/%E7%AC%94%E8%AE%B0/obsidian/.obsidian/plugins/obsidian-wechat-converter-2.1
+0.10/node_modules/.pnpm/vitest@4.0.18_@types+node@2_a19b9e59b8ec02b5d719c0952ab0230b/node_modules/vitest/dist/chunks/te
+st.B8ej_ZHS.js:239:21)
+    at runTest (file:///C:/%E6%96%87%E4%BB%B6/%E7%AC%94%E8%AE%B0/obsidian/.obsidian/plugins/obsidian-wechat-converter-2
+.10.10/node_modules/.pnpm/@vitest+runner@4.0.18/node_modules/@vitest/runner/dist/index.js:1653:12)
+
+ ✓ tests/circuit_breaker.test.js (6 tests) 117ms
+ ✓ tests/feishu_sync_coordinator_basic.test.js (14 tests) 73ms
+ ✓ tests/feishu_settings_tab.test.js (1 test) 120ms
+ ✓ tests/custom_css_sample.test.js (1 test) 99ms
+(node:18748) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/%E6%96%87%E4%BB%B6/%E7%AC%94%E8%AE%B0/ob
+sidian/.obsidian/plugins/obsidian-wechat-converter-2.10.10/views/apple-style-view.js is not specified and it doesn't pa
+rse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\C:\文件\笔记\obsidian\.obsidian\plugins\obsidian-wechat-converter-2.
+10.10\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+ ✓ tests/custom_css_ai_decoupling.test.js (8 tests) 82ms
+(node:8112) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/%E6%96%87%E4%BB%B6/%E7%AC%94%E8%AE%B0/obs
+idian/.obsidian/plugins/obsidian-wechat-converter-2.10.10/views/apple-style-view.js is not specified and it doesn't par
+se as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\C:\文件\笔记\obsidian\.obsidian\plugins\obsidian-wechat-converter-2.
+10.10\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+ ✓ tests/connection_status_bar.test.js (13 tests) 67ms
+(node:15500) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/%E6%96%87%E4%BB%B6/%E7%AC%94%E8%AE%B0/ob
+sidian/.obsidian/plugins/obsidian-wechat-converter-2.10.10/services/dom-utils.js is not specified and it doesn't parse 
+as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\C:\文件\笔记\obsidian\.obsidian\plugins\obsidian-wechat-converter-2.
+10.10\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+ ✓ tests/wechat_html_cleaner_service.test.js (4 tests) 92ms
+ ✓ tests/feishu_sync.test.js (29 tests) 60ms
+ ✓ tests/feishu_sync_coordinator_smart_update.test.js (4 tests) 58ms
+ ✓ tests/custom_css_compiler.test.js (8 tests) 116ms
+(node:11528) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/%E6%96%87%E4%BB%B6/%E7%AC%94%E8%AE%B0/ob
+sidian/.obsidian/plugins/obsidian-wechat-converter-2.10.10/services/dom-utils.js is not specified and it doesn't parse 
+as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\C:\文件\笔记\obsidian\.obsidian\plugins\obsidian-wechat-converter-2.
+10.10\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+ ✓ tests/svg_rasterizer.test.js (2 tests) 60ms
+ ✓ tests/dom_utils.test.js (7 tests) 35ms
+(node:19044) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/%E6%96%87%E4%BB%B6/%E7%AC%94%E8%AE%B0/ob
+sidian/.obsidian/plugins/obsidian-wechat-converter-2.10.10/services/dom-utils.js is not specified and it doesn't parse 
+as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\C:\文件\笔记\obsidian\.obsidian\plugins\obsidian-wechat-converter-2.
+10.10\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+ ✓ tests/wechat_image_transcoder.test.js (13 tests) 42ms
+ ✓ tests/sticker_image_list.test.js (3 tests) 35ms
+ ✓ tests/wechat_sync_sticker.test.js (6 tests) 12ms
+ ✓ tests/about_settings_tab.test.js (2 tests) 152ms
+ ✓ tests/publish_cleanup.test.js (6 tests) 11ms
+(node:12264) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/%E6%96%87%E4%BB%B6/%E7%AC%94%E8%AE%B0/ob
+sidian/.obsidian/plugins/obsidian-wechat-converter-2.10.10/themes/apple-theme.js is not specified and it doesn't parse 
+as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\C:\文件\笔记\obsidian\.obsidian\plugins\obsidian-wechat-converter-2.
+10.10\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:21816) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/%E6%96%87%E4%BB%B6/%E7%AC%94%E8%AE%B0/ob
+sidian/.obsidian/plugins/obsidian-wechat-converter-2.10.10/views/apple-style-view.js is not specified and it doesn't pa
+rse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\C:\文件\笔记\obsidian\.obsidian\plugins\obsidian-wechat-converter-2.
+10.10\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+ ✓ tests/render_flags.test.js (2 tests) 15ms
+ ✓ tests/dependency_loader.test.js (5 tests) 23ms
+ ❯ tests/callout.test.js (33 tests | 2 failed) 38ms
+       ✓ should detect basic callout syntax [!note] and clean tokens 3ms
+       ✓ should hide paragraph if marker is the only content 1ms
+       ✓ should detect callout without custom title 0ms
+       ✓ should return null for regular blockquote 0ms
+       ✓ should handle various callout types with correct icons 1ms
+       × should handle unknown callout type with info fallback icon 12ms
+       × should detect custom Chinese callout type and use info fallback icon 1ms
+       ✓ should not detect callout when type is only whitespace 0ms
+       ✓ should handle callout with multiline content (only checks first inline) 0ms
+       ✓ should generate correct HTML structure 1ms
+       ✓ should use semantic type color for styling 0ms
+       ✓ should include flex layout for header 0ms
+       ✓ should escape HTML in callout title 0ms
+       ✓ should render neutral callout with semantic accent color for known types 1ms
+       ✓ should fall back to info semantic color for unknown type in neutral mode 0ms
+       ✓ should render semantic card style for serif theme 0ms
+       ✓ should render semantic card style for github theme 0ms
+       ✓ should render semantic card style for wechat theme 0ms
+       ✓ should use consistent semantic color for callout type across themes 0ms
+       ✓ should render serif neutral callouts with the same full semantic card sizing 0ms
+       ✓ should use semantic colors for different callout types in serif theme 0ms
+       ✓ should keep a single blockquote paragraph vertically balanced 1ms
+       ✓ should preserve gaps created by blank lines inside blockquotes 0ms
+       ✓ should not count nested callout paragraphs as outer blockquote paragraphs 0ms
+       ✓ should properly manage stack for nested blockquotes 3ms
+       ✓ should preserve [!type] markers in regular paragraphs (Regression Fix) 3ms
+     ✓ should apply different styles for wechat theme blockquote vs H3 1ms
+     ✓ should NOT apply special blockquote style for github theme 0ms
+     ✓ should keep regular serif blockquotes distinct from callout cards 0ms
+     ✓ should use theme color in blockquote border 0ms
+     ✓ should differentiate blockquote from H3 visually in wechat theme 0ms
+     ✓ should use neutral blockquote background with slight indent in wechat theme 0ms
+     ✓ should keep serif blockquote unmarked in neutral mode 0ms
+ ✓ tests/article_image_assets.test.js (29 tests) 26ms
+(node:13828) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/%E6%96%87%E4%BB%B6/%E7%AC%94%E8%AE%B0/ob
+sidian/.obsidian/plugins/obsidian-wechat-converter-2.10.10/services/obsidian-triplet-serializer.js is not specified and
+ it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\C:\文件\笔记\obsidian\.obsidian\plugins\obsidian-wechat-converter-2.
+10.10\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+ ✓ tests/obsidian_triplet_renderer_preprocessing.test.js (37 tests) 41ms
+ ✓ tests/wechatsync_results.test.js (24 tests) 20ms
+(node:2800) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/%E6%96%87%E4%BB%B6/%E7%AC%94%E8%AE%B0/obs
+idian/.obsidian/plugins/obsidian-wechat-converter-2.10.10/services/ai-layout-runtime/registry.js is not specified and i
+t doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\C:\文件\笔记\obsidian\.obsidian\plugins\obsidian-wechat-converter-2.
+10.10\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+ ✓ tests/ai_layout_service_cache.test.js (10 tests) 27ms
+ ✓ tests/theme_color.test.js (33 tests) 23ms
+ ✓ tests/markdown_cleaner.test.js (19 tests) 18ms
+ ✓ tests/sticker_order_mapping.test.js (13 tests) 18ms
+(node:13368) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/%E6%96%87%E4%BB%B6/%E7%AC%94%E8%AE%B0/ob
+sidian/.obsidian/plugins/obsidian-wechat-converter-2.10.10/views/apple-style-view.js is not specified and it doesn't pa
+rse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\C:\文件\笔记\obsidian\.obsidian\plugins\obsidian-wechat-converter-2.
+10.10\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+stdout | tests/image_swipe_commands.test.js > Image swipe editor commands > should register image swipe commands as always-visible command palette actions
+📝 正在加载 Obsidian 发布助手...
+
+stdout | tests/image_swipe_commands.test.js > Image swipe editor commands > should register image swipe commands as always-visible command palette actions
+✅ Obsidian 发布助手加载完成
+
+ ✓ tests/image_swipe_commands.test.js (5 tests) 34ms
+ ✓ tests/sticker_extractor.test.js (9 tests) 19ms
+(node:19108) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/%E6%96%87%E4%BB%B6/%E7%AC%94%E8%AE%B0/ob
+sidian/.obsidian/plugins/obsidian-wechat-converter-2.10.10/services/wechatsync-constants.js is not specified and it doe
+sn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\C:\文件\笔记\obsidian\.obsidian\plugins\obsidian-wechat-converter-2.
+10.10\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+ ✓ tests/wechatsync_settings_normalize.test.js (30 tests) 24ms
+ ✓ tests/obsidian_publisher_policy.test.js (3 tests) 19ms
+ ✓ tests/feishu_mermaid_remote_renderer.test.js (6 tests) 14ms
+(node:15600) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/%E6%96%87%E4%BB%B6/%E7%AC%94%E8%AE%B0/ob
+sidian/.obsidian/plugins/obsidian-wechat-converter-2.10.10/services/ai-layout-runtime/registry.js is not specified and 
+it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\C:\文件\笔记\obsidian\.obsidian\plugins\obsidian-wechat-converter-2.
+10.10\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+ ✓ tests/ai_layout_skill_bundle.test.js (9 tests) 24ms
+ ✓ tests/obsidian_fetch_adapter.test.js (7 tests) 16ms
+ ✓ tests/render_pipeline.test.js (6 tests) 12ms
+ ✓ tests/markdown_source.test.js (8 tests) 14ms
+ ✓ tests/styles_source_structure.test.js (5 tests) 10ms
+ ✓ tests/sticker_media_resolver.test.js (3 tests) 10ms
+(node:20964) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/%E6%96%87%E4%BB%B6/%E7%AC%94%E8%AE%B0/ob
+sidian/.obsidian/plugins/obsidian-wechat-converter-2.10.10/services/path-utils.js is not specified and it doesn't parse
+ as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\C:\文件\笔记\obsidian\.obsidian\plugins\obsidian-wechat-converter-2.
+10.10\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+ ✓ tests/wechat_draft_cache.test.js (5 tests) 10ms
+ ✓ tests/validateLink.test.js (11 tests) 10ms
+ ✓ tests/sticker_image_items.test.js (4 tests) 10ms
+ ✓ tests/security.test.js (5 tests) 8ms
+ ✓ tests/settings_toggle.test.js (3 tests) 8ms
+ ✓ tests/custom_css_source.test.js (5 tests) 10ms
+ ✓ tests/sync_context.test.js (11 tests) 8ms
+ ✓ tests/sticker_publish_state.test.js (6 tests) 7ms
+ ✓ tests/brand_icon.test.js (1 test) 5ms
+ ✓ tests/markdown_frontmatter.test.js (3 tests) 4ms
+ ✓ tests/obsidian_loader.test.js (1 test) 3ms
+ ✓ tests/build_sync.test.js (1 test) 3ms
+ ✓ tests/path_utils.test.js (2 tests) 6ms
+(node:6344) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/%E6%96%87%E4%BB%B6/%E7%AC%94%E8%AE%B0/obs
+idian/.obsidian/plugins/obsidian-wechat-converter-2.10.10/views/apple-style-view.js is not specified and it doesn't par
+se as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\C:\文件\笔记\obsidian\.obsidian\plugins\obsidian-wechat-converter-2.
+10.10\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+ ✓ tests/settings_cleanup_path.test.js (2 tests) 6ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 3 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/callout.test.js > Callout Syntax Support > detectCallout > should handle unknown callout type with info fa
+llback icon
+AssertionError: expected '🗒️' to be 'ℹ️' // Object.is equality
+
+Expected: "ℹ️"
+Received: "🗒️"
+
+ ❯ tests/callout.test.js:179:27
+    177|       expect(result.type).toBe('customtype');
+    178|       expect(result.title).toBe('Custom Title');
+    179|       expect(result.icon).toBe('ℹ️');
+       |                           ^
+    180|     });
+    181| 
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/3]⎯
+
+ FAIL  tests/callout.test.js > Callout Syntax Support > detectCallout > should detect custom Chinese callout type and u
+se info fallback icon
+AssertionError: expected '🗒️' to be 'ℹ️' // Object.is equality
+
+Expected: "ℹ️"
+Received: "🗒️"
+
+ ❯ tests/callout.test.js:196:27
+    194|       expect(result.type).toBe('学习研究');
+    195|       expect(result.title).toBe('研究内容');
+    196|       expect(result.icon).toBe('ℹ️');
+       |                           ^
+    197|       expect(result.label).toBe('学习研究');
+    198|     });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/3]⎯
+
+ FAIL  tests/dsh_icon_matrix.test.js > DSH 图标矩阵 > 每种块都有自己的图标，未登记类型才回退 ℹ️
+AssertionError: expected [ 'info' ] to deeply equal []
+
+- Expected
++ Received
+
+- []
++ [
++   "info",
++ ]
+
+ ❯ tests/dsh_icon_matrix.test.js:44:22
+     42|     console.log('\n回退到 ℹ️ 的类型:', fallback.length ? fallback.join(', ')…
+     43| 
+     44|     expect(fallback).toEqual([]);
+       |                      ^
+     45|   });
+     46| });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/3]⎯
+
+
+ Test Files  2 failed | 107 passed (109)
+      Tests  3 failed | 1171 passed (1174)
+   Start at  00:42:49
+   Duration  42.21s (transform 6.23s, setup 1.00s, import 35.16s, tests 56.18s, environment 151.92s)
+
+full exit=1

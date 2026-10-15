@@ -1,0 +1,20 @@
+{
+  "name": "wechat-sync-proxy-server",
+  "version": "1.0.0",
+  "description": "Paid proxy server for Obsidian WeChat Converter",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "sqlite3": "^5.1.7",
+    "node-fetch": "^2.7.0",
+    "form-data": "^4.0.0"
+  },
+  "author": "Indie Developer",
+  "license": "MIT",
+  "overrides": {
+    "tar": "7.5.22"
+  }
+}

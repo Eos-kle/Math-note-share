@@ -1,0 +1,14 @@
+{
+  "includeHero": true,
+  "includePartNav": false,
+  "includeLeadQuote": true,
+  "includePhoneFrame": false,
+  "includeCta": false,
+  "heroVariant": "cover-left",
+  "heroEyebrow": "Editorial Layout",
+  "galleryCaseLabel": "IMAGES",
+  "galleryTitle": "图像摘录",
+  "preferSectionBlocks": true,
+  "remainingImageStrategy": "sections-first",
+  "maxSectionBlocks": 5
+}

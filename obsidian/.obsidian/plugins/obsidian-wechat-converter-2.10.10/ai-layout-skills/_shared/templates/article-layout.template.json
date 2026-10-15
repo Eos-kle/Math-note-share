@@ -1,0 +1,62 @@
+{
+  "articleType": "tutorial",
+  "selection": {
+    "layoutFamily": "auto",
+    "colorPalette": "auto"
+  },
+  "resolved": {
+    "layoutFamily": "tutorial-cards",
+    "colorPalette": "tech-green"
+  },
+  "recommendedLayoutFamily": "tutorial-cards",
+  "recommendedColorPalette": "tech-green",
+  "title": "文章标题",
+  "summary": "一句摘要",
+  "blocks": [
+    {
+      "type": "hero",
+      "eyebrow": "AI Layout Draft",
+      "title": "文章标题",
+      "subtitle": "封面导语",
+      "coverImageId": "image-1",
+      "variant": "cover-right"
+    },
+    {
+      "type": "lead-quote",
+      "text": "一段适合做导语的重点摘要。",
+      "note": "补充说明或上下文。"
+    },
+    {
+      "type": "section-block",
+      "sectionIndex": 0,
+      "sectionLabel": "PART 01",
+      "headingLevel": 2,
+      "title": "第一部分",
+      "paragraphs": ["这里是承接原文章节的正文。"],
+      "bulletGroups": [],
+      "callouts": [
+        {
+          "type": "tip",
+          "title": "补充提示",
+          "body": "这里是保留在 section-block 内的 callout。"
+        }
+      ],
+      "subsections": [
+        {
+          "title": "子节一",
+          "level": 3,
+          "paragraphs": ["这里是块内 subsection 的正文。"],
+          "bulletGroups": [],
+          "callouts": [
+            {
+              "type": "note",
+              "title": "子节说明",
+              "body": "这里是 subsection 内的 callout。"
+            }
+          ]
+        }
+      ],
+      "imageIds": ["image-1"]
+    }
+  ]
+}

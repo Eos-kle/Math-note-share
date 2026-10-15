@@ -1,0 +1,33 @@
+{
+  "articleType": "article",
+  "selection": {
+    "layoutFamily": "source-first",
+    "colorPalette": "tech-green"
+  },
+  "resolved": {
+    "layoutFamily": "source-first",
+    "colorPalette": "tech-green"
+  },
+  "recommendedLayoutFamily": "source-first",
+  "recommendedColorPalette": "tech-green",
+  "title": "养好一个孩子，从放过自己开始！",
+  "summary": "保留原文节奏，只做轻量增强。",
+  "blocks": [
+    {
+      "type": "lead-quote",
+      "text": "先放过自己，很多教育焦虑才会真正松开。",
+      "note": "摘自原文导语"
+    },
+    {
+      "type": "section-block",
+      "sectionIndex": 0,
+      "callouts": [
+        {
+          "type": "tip",
+          "title": "作者提醒",
+          "body": "这类提醒应保留在正文对应 section 里，而不是改写成普通段落。"
+        }
+      ]
+    }
+  ]
+}

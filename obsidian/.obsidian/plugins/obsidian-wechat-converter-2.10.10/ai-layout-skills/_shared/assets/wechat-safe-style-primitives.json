@@ -1,0 +1,148 @@
+{
+  "version": "2026.03.25-alpha.1",
+  "typography": {
+    "bodyFontFamily": "-apple-system,BlinkMacSystemFont,\"Segoe UI\",\"PingFang SC\",\"Hiragino Sans GB\",\"Microsoft YaHei\",sans-serif",
+    "editorialDisplayFont": "Georgia,\"Times New Roman\",\"Songti SC\",\"Noto Serif SC\",serif",
+    "bodyFontSize": 16,
+    "bodyLineHeight": 1.8,
+    "paragraphGap": 20,
+    "letterSpacing": "0"
+  },
+  "image": {
+    "borderRadius": 14,
+    "captionFontSize": 12
+  },
+  "sectionLabels": {
+    "source-first": "Section",
+    "tutorial-cards": "SECTION",
+    "editorial-lite": "Part"
+  },
+  "profiles": {
+    "source-first": {
+      "wrapperPadding": "20px 16px 28px",
+      "cardRadius": 10,
+      "cardPadding": "0",
+      "cardMargin": 8,
+      "cardShadow": "none",
+      "hero": {
+        "eyebrowSize": 11,
+        "eyebrowLetterSpacing": 1.2,
+        "titleSize": 26,
+        "subtitleSize": 16,
+        "subtitleLineHeight": 1.8,
+        "footerMode": "divider",
+        "imageRadius": 18
+      },
+      "partNav": {
+        "gap": 16,
+        "direction": "row",
+        "useCard": false,
+        "useDivider": true
+      },
+      "leadQuote": {
+        "background": "transparent",
+        "borderLeft": true,
+        "fontSize": 16,
+        "fontWeight": 600
+      },
+      "caseBlock": {
+        "useCard": false,
+        "indexSize": 22,
+        "titleSize": 20
+      },
+      "subsection": {
+        "titleSize": 16,
+        "titleWeight": 700,
+        "useCard": false,
+        "useBorderLeft": true,
+        "spacingTop": 14
+      }
+    },
+    "tutorial-cards": {
+      "wrapperPadding": "26px 18px 34px",
+      "cardRadius": 18,
+      "cardPadding": "18px",
+      "cardMargin": 18,
+      "cardShadow": "0 10px 30px -24px rgba(0,0,0,0.18)",
+      "hero": {
+        "eyebrowSize": 11,
+        "eyebrowLetterSpacing": 1.2,
+        "titleSize": 28,
+        "subtitleSize": 14,
+        "subtitleLineHeight": 1.7,
+        "footerMode": "accent-bar",
+        "imageRadius": 18
+      },
+      "partNav": {
+        "gap": 10,
+        "direction": "row",
+        "useCard": true,
+        "useDivider": false
+      },
+      "leadQuote": {
+        "background": "quoteBg",
+        "borderLeft": false,
+        "fontSize": 18,
+        "fontWeight": 700
+      },
+      "caseBlock": {
+        "useCard": true,
+        "indexSize": 28,
+        "titleSize": 22
+      },
+      "subsection": {
+        "titleSize": 15,
+        "titleWeight": 700,
+        "useCard": true,
+        "useBorderLeft": true,
+        "spacingTop": 16
+      }
+    },
+    "editorial-lite": {
+      "wrapperPadding": "30px 22px 40px",
+      "cardRadius": 0,
+      "cardPadding": "0",
+      "cardMargin": 30,
+      "cardShadow": "none",
+      "hero": {
+        "eyebrowSize": 10,
+        "eyebrowLetterSpacing": 2,
+        "titleSize": 36,
+        "subtitleSize": 17,
+        "subtitleLineHeight": 1.88,
+        "footerMode": "editorial-divider",
+        "imageRadius": 28
+      },
+      "partNav": {
+        "gap": 10,
+        "direction": "column",
+        "useCard": false,
+        "useDivider": true
+      },
+      "leadQuote": {
+        "background": "transparent",
+        "borderLeft": false,
+        "fontSize": 26,
+        "fontWeight": 600
+      },
+      "caseBlock": {
+        "useCard": false,
+        "indexSize": 14,
+        "titleSize": 26
+      },
+      "subsection": {
+        "titleSize": 18,
+        "titleWeight": 600,
+        "useCard": false,
+        "useBorderLeft": false,
+        "spacingTop": 18
+      }
+    }
+  },
+  "allowedCssNotes": [
+    "仅允许 inline style",
+    "优先使用 section/p/figure/img/figcaption/span 等稳定标签",
+    "允许有限 flex，但不能依赖复杂 class 选择器",
+    "禁止 style 标签与外部 class 驱动样式"
+  ]
+}

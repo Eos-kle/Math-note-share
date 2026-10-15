@@ -1,0 +1,51 @@
+{
+  "version": "2026.03.25-alpha.1",
+  "selectionAutoValue": "auto",
+  "outputFields": [
+    "articleType",
+    "selection",
+    "resolved",
+    "recommendedLayoutFamily",
+    "recommendedColorPalette",
+    "title",
+    "summary",
+    "blocks"
+  ],
+  "blocks": [
+    {
+      "type": "hero",
+      "fields": ["eyebrow", "title", "subtitle", "coverImageId", "variant"],
+      "description": "文章封面卡，适合标题、导语和封面图。"
+    },
+    {
+      "type": "part-nav",
+      "fields": ["items[{label,text}]"],
+      "description": "章节导航卡，适合目录或分段导读。"
+    },
+    {
+      "type": "lead-quote",
+      "fields": ["text", "note"],
+      "description": "导语摘要卡，适合金句、总结或开场重点。"
+    },
+    {
+      "type": "case-block",
+      "fields": ["caseLabel", "title", "summary", "bullets", "imageIds", "highlight"],
+      "description": "案例/教程主体区块，适合分章节承载正文。"
+    },
+    {
+      "type": "section-block",
+      "fields": ["sectionIndex", "sectionLabel", "headingLevel", "title", "paragraphs", "bulletGroups", "callouts", "subsections[{title,level,paragraphs,bulletGroups,callouts}]", "imageIds"],
+      "description": "正文保真区块，按 sectionIndex 引用原文章节内容，不改写正文；默认由 H2 级主章节承载，H3/H4 留在块内做 subsection，并尽量保留 callout、代码块、表格和嵌套列表等特殊结构。"
+    },
+    {
+      "type": "phone-frame",
+      "fields": ["imageId", "caption"],
+      "description": "手机截图展示块，适合 App 界面或聊天截图。"
+    },
+    {
+      "type": "cta-card",
+      "fields": ["title", "body", "buttonText", "note"],
+      "description": "收尾 CTA 区块，适合总结、引导或后续动作。"
+    }
+  ]
+}

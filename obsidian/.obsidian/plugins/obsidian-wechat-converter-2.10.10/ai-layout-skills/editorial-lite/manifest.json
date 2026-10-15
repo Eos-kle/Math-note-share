@@ -1,0 +1,16 @@
+{
+  "id": "editorial-lite",
+  "label": "轻杂志型",
+  "order": 3,
+  "version": "2026.03.25-alpha.1",
+  "selectionValue": "editorial-lite",
+  "defaultColorPalette": "graphite-rose",
+  "promptMode": "editorial-lite",
+  "fallbackPolicy": "editorial-flow",
+  "renderProfile": "editorial-lite",
+  "allowedBlocks": ["hero", "part-nav", "lead-quote", "case-block", "section-block", "phone-frame", "cta-card"],
+  "supportsImages": true,
+  "providerStrategy": "require-ai",
+  "recommendedArticleTypes": ["editorial", "brand-story", "opinion"],
+  "description": "偏编辑感的留白与图文节奏，适合观点、经验与品牌表达类内容。"
+}

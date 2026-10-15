@@ -1,0 +1,8 @@
+{
+  "preferredIntroBlocks": ["hero", "part-nav", "lead-quote"],
+  "optionalIntroBlocks": [],
+  "preferredBodyBlocks": ["section-block", "case-block"],
+  "optionalBodyBlocks": ["phone-frame"],
+  "optionalTailBlocks": ["cta-card"],
+  "imageStrategy": "tutorial-forward"
+}

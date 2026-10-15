@@ -1,0 +1,323 @@
+/*
+## 核心功能
+
+飞书同步设置与发布交互的视觉样式
+
+## 输入
+
+接收 Obsidian DOM 结构、插件视图类名、发布弹窗状态和主题变量。
+
+## 输出
+
+输出 CSS 选择器、布局规则、颜色变量和响应式表现。
+
+## 定位
+
+位于 styles/，是样式源文件；构建后汇总到 styles.css，禁止只改生成样式。
+
+## 依赖
+
+关键依赖：Obsidian 主题变量、插件 DOM class 命名和对应 views/ 结构。
+
+## 维护规则
+
+- 修改逻辑后同步更新本文件说明书，并检查 styles 的文件夹 README 是否仍准确。
+- 保持职责边界清晰，跨层行为优先通过既有服务、视图或测试 helper 协作。
+*/
+
+.apple-settings-tab-content {
+  padding: 0;
+}
+
+@media (max-width: 760px) {
+  .apple-settings-github-banner {
+    grid-template-columns: auto minmax(0, 1fr);
+  }
+
+  .apple-settings-github-button {
+    grid-column: 1 / -1;
+    justify-self: stretch;
+  }
+}
+
+.wechat-draft-status {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 8px;
+  min-height: 0;
+  margin-top: 10px;
+  padding: 0 6px;
+  border: none;
+  background: transparent;
+  color: var(--text-muted);
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+.wechat-draft-status span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.wechat-draft-status.is-confirming span {
+  color: var(--apple-primary);
+}
+
+.wechat-draft-status:empty {
+  display: none;
+}
+
+.wechat-draft-unlink {
+  flex: 0 0 auto;
+  padding: 2px 5px;
+  border: none;
+  border-radius: 5px;
+  background: transparent;
+  color: var(--text-muted);
+  font-size: 12px;
+  cursor: pointer;
+  transition: color 0.15s ease, background-color 0.15s ease;
+}
+
+.wechat-draft-unlink:hover {
+  color: var(--text-accent);
+  background: color-mix(in srgb, var(--apple-accent) 8%, transparent);
+}
+
+.wechat-draft-status.is-confirming .wechat-draft-unlink {
+  color: var(--apple-error);
+  background: color-mix(in srgb, var(--apple-error) 7%, transparent);
+}
+
+.wechat-feishu-result-card {
+  margin: 16px 0;
+  padding: 16px 18px;
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 12px;
+  background: color-mix(in srgb, var(--background-secondary) 88%, var(--background-primary));
+}
+
+.wechat-feishu-result-card.is-hidden {
+  display: none;
+}
+
+.wechat-feishu-result-card.is-success {
+  border-color: color-mix(in srgb, var(--text-success) 18%, var(--background-modifier-border));
+}
+
+.wechat-feishu-result-card.has-warning {
+  border-color: color-mix(in srgb, var(--text-warning) 35%, var(--background-modifier-border));
+}
+
+.wechat-feishu-result-heading {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.wechat-feishu-result-icon {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  color: var(--text-success);
+}
+
+.wechat-feishu-result-icon svg {
+  width: 18px;
+  height: 18px;
+}
+
+.wechat-feishu-result-title {
+  margin: 0;
+  color: var(--text-normal);
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.wechat-feishu-result-card.has-warning .wechat-feishu-result-title {
+  color: var(--text-normal);
+}
+
+.wechat-feishu-result-desc {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+.wechat-feishu-result-warnings {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 12px;
+}
+
+.wechat-feishu-result-warning {
+  margin: 0;
+  padding: 8px 10px;
+  border-radius: 8px;
+  background: color-mix(in srgb, var(--text-warning) 10%, transparent);
+  color: var(--text-muted);
+  font-size: 12px;
+  line-height: 1.55;
+}
+
+.wechat-feishu-result-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.wechat-feishu-publish-shell {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.wechat-feishu-publish-content {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  gap: 14px;
+  min-height: 0;
+  overflow-y: auto;
+  padding: 2px 4px 18px 0;
+}
+
+.wechat-feishu-publish-content::-webkit-scrollbar {
+  width: 8px;
+}
+
+.wechat-feishu-publish-content::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.wechat-feishu-publish-content::-webkit-scrollbar-thumb {
+  border-radius: 999px;
+  background: transparent;
+  transition: background 0.22s ease;
+}
+
+.wechat-feishu-publish-content.is-scrolling::-webkit-scrollbar-thumb {
+  background: color-mix(in srgb, var(--apple-tertiary) 42%, transparent);
+}
+
+.wechat-feishu-intro-card {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 18px 20px;
+  border: 1px solid color-mix(in srgb, var(--apple-border) 68%, transparent);
+  border-radius: 18px;
+  background:
+    radial-gradient(circle at top left, color-mix(in srgb, var(--apple-accent) 10%, transparent), transparent 38%),
+    color-mix(in srgb, var(--apple-background) 92%, var(--apple-surface));
+  box-shadow: 0 10px 30px color-mix(in srgb, var(--apple-primary) 6%, transparent);
+}
+
+.wechat-feishu-intro-copy {
+  min-width: 0;
+}
+
+.wechat-feishu-intro-kicker {
+  margin-bottom: 6px;
+  color: var(--apple-primary);
+  font-size: 17px;
+  font-weight: 760;
+  letter-spacing: -0.01em;
+}
+
+.wechat-feishu-intro-card p {
+  margin: 0;
+  color: var(--apple-secondary);
+  font-size: 13.5px;
+  line-height: 1.6;
+}
+
+.wechat-feishu-mode-pill {
+  flex: 0 0 auto;
+  padding: 6px 11px;
+  border: 1px solid color-mix(in srgb, var(--apple-accent) 28%, transparent);
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--apple-accent) 9%, transparent);
+  color: var(--apple-accent);
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.wechat-feishu-mode-pill.is-update {
+  border-color: color-mix(in srgb, var(--text-success) 30%, transparent);
+  background: color-mix(in srgb, var(--text-success) 10%, transparent);
+  color: var(--text-success);
+}
+
+.wechat-feishu-section {
+  padding: 0;
+  border-top: none;
+}
+
+.wechat-feishu-card-section,
+.wechat-feishu-mermaid-section,
+.wechat-feishu-status-section {
+  padding: 18px 20px;
+  border: 1px solid color-mix(in srgb, var(--apple-border) 72%, transparent);
+  border-radius: 16px;
+  background: color-mix(in srgb, var(--apple-surface) 72%, var(--apple-background));
+}
+
+.wechat-feishu-section-title {
+  margin: 0 0 14px;
+  color: var(--apple-primary);
+  font-size: 15px;
+  font-weight: 740;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+}
+
+.wechat-feishu-section .setting-item {
+  margin: 0;
+  padding: 14px 0;
+  border-top: 1px solid color-mix(in srgb, var(--apple-border) 76%, transparent);
+}
+
+.wechat-feishu-section .setting-item:first-of-type {
+  border-top: none;
+  padding-top: 0;
+}
+
+.wechat-feishu-title-setting {
+  flex-direction: column;
+  align-items: stretch;
+  gap: 8px;
+}
+
+.wechat-feishu-title-setting .setting-item-info {
+  width: 100%;
+  max-width: none;
+}
+
+.wechat-feishu-title-setting .setting-item-control {
+  width: 100%;
+  justify-content: flex-start;
+}
+
+.wechat-feishu-title-setting .setting-item-control input[type='text'] {
+  width: 100%;
+  max-width: none;
+}
+
+.wechat-feishu-title-setting .setting-item-control input[type='text']:focus {
+  border-color: var(--apple-accent);
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--apple-accent) 18%, transparent);
+}

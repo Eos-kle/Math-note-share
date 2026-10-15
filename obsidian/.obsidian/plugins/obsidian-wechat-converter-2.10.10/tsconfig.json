@@ -1,0 +1,30 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "allowJs": true,
+    "checkJs": true,
+    "strict": false,
+    "noEmit": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true
+  },
+  "include": [
+    "**/*.js",
+    "**/*.mjs",
+    "project-*.d.ts",
+  ],
+  "exclude": [
+    "node_modules",
+    "coverage",
+    ".codex",
+    ".openprd",
+    ".workbuddy",
+    "dist",
+    "server",
+    "main.js",
+    "lib/**/*.js"
+  ]
+}

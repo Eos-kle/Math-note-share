@@ -1,0 +1,14 @@
+{
+  "includeHero": false,
+  "includePartNav": false,
+  "includeLeadQuote": true,
+  "includePhoneFrame": false,
+  "includeCta": false,
+  "heroVariant": "cover-right",
+  "heroEyebrow": "AI Article Layout",
+  "galleryCaseLabel": "GALLERY",
+  "galleryTitle": "配图补充",
+  "preferSectionBlocks": true,
+  "remainingImageStrategy": "sections-first",
+  "maxSectionBlocks": 6
+}

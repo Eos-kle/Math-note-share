@@ -1,0 +1,14 @@
+{
+  "cssTheme": "Maple",
+  "theme": "moonstone",
+  "textFontFamily": "华文楷体",
+  "monospaceFontFamily": "Times New Roman",
+  "interfaceFontFamily": "华文宋体",
+  "baseFontSize": 15,
+  "enabledCssSnippets": [
+    "下划线",
+    "笔记块-数学块",
+    "笔记块-版式块",
+    "笔记块-强调块"
+  ]
+}
