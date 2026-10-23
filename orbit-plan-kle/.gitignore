@@ -1,0 +1,6 @@
+# 构建与测试产物，不入库；main.js 是交付产物，需要入库
+dev/bundle.cjs
+dev/smoke-bundle.cjs
+node_modules/
+*.log
+.DS_Store

@@ -1,0 +1,9 @@
+{
+	"id": "orbit-plan-kle",
+	"name": "Orbit Plan",
+	"version": "1.1.0",
+	"minAppVersion": "1.5.0",
+	"description": "上半部分是顺序填轨的星图（容量 2·(π/e)^(3n)、相邻轨反向、可拖拽吸附、带斥力与四颗进动彗星（两颗 PDF）），下半部分是每周四项计划表（含完成度与 PDCA 复盘）。",
+	"author": "Kle",
+	"isDesktopOnly": true
+}

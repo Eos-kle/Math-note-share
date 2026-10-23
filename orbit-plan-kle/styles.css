@@ -1,0 +1,843 @@
+/* ==========================================================================
+   Orbit Plan — 样式
+   上半：星图 canvas；中间：可拖拽分隔条；下半：每周四项计划表 + PDCA。
+   颜色全部走 Obsidian 的 CSS 变量。
+   ========================================================================== */
+
+.workspace-leaf-content[data-type='orbit-plan-kle-view'] .view-content {
+	padding: 0;
+	overflow: hidden;
+}
+
+.orbit-plan-root {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	height: 100%;
+	min-height: 240px;
+	overflow: hidden;
+}
+
+.orbit-plan-split {
+	display: flex;
+	flex-direction: column;
+	flex: 1 1 auto;
+	min-height: 0;
+}
+
+.orbit-plan-graph {
+	position: relative;
+	flex: 0 0 55%;
+	min-height: 90px;
+	overflow: hidden;
+}
+
+.graph-orbit-wrap {
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+
+.graph-orbit-canvas {
+	display: block;
+	width: 100%;
+	height: 100%;
+	cursor: grab;
+	/* 渲染器读取该颜色来画点、弧线与连线，从而跟随主题 */
+	color: var(--text-normal);
+	outline: none;
+}
+
+.graph-orbit-canvas:active {
+	cursor: grabbing;
+}
+
+.orbit-plan-divider {
+	flex: 0 0 6px;
+	cursor: row-resize;
+	background: var(--background-modifier-border);
+	transition: background 120ms ease;
+}
+
+.orbit-plan-divider:hover,
+.orbit-plan-divider:active {
+	background: var(--interactive-accent);
+}
+
+/* ---------------- 下半区 ---------------- */
+.orbit-plan-panel {
+	display: flex;
+	flex-direction: column;
+	flex: 1 1 auto;
+	min-height: 0;
+	overflow: hidden;
+	background: var(--background-primary);
+}
+
+.orbit-plan-head {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	padding: 6px 10px;
+	border-bottom: 1px solid var(--background-modifier-border);
+}
+
+.orbit-plan-nav {
+	cursor: pointer;
+	padding: 0 6px;
+	font-size: 15px;
+	line-height: 1;
+	color: var(--text-muted);
+	border-radius: 4px;
+}
+
+.orbit-plan-nav:hover {
+	background: var(--background-modifier-hover);
+	color: var(--text-normal);
+}
+
+.orbit-plan-week {
+	font-family: 'Times New Roman', 'KaiTi', 'STKaiti', '楷体', serif;
+	font-weight: 600;
+	font-size: 13px;
+	letter-spacing: 0.02em;
+	cursor: pointer;
+	color: var(--orbit-ink, #6d4d99);
+}
+
+.orbit-plan-week:hover {
+	text-decoration: underline;
+}
+
+/* 本周完成度：胶囊进度条 */
+.orbit-plan-progress {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	padding: 2px 10px 8px;
+}
+
+.orbit-plan-progress-bar {
+	position: relative;
+	flex: 1 1 auto;
+	height: 8px;
+	border-radius: 999px;
+	background: var(--background-modifier-border);
+	overflow: hidden;
+}
+
+.orbit-plan-progress-fill {
+	height: 100%;
+	border-radius: 999px;
+	background: var(--orbit-c2, #b39dd8);
+	transition: width 180ms ease;
+}
+
+.orbit-plan-progress-text {
+	font-size: 11px;
+	color: var(--orbit-ink, #6d4d99);
+	font-variant-numeric: tabular-nums;
+	min-width: 30px;
+	text-align: right;
+}
+
+.orbit-plan-actions {
+	display: flex;
+	gap: 4px;
+}
+
+.orbit-plan-btn {
+	font-size: 12px;
+	padding: 2px 8px;
+	border: 1px solid var(--background-modifier-border);
+	border-radius: 6px;
+	cursor: pointer;
+	color: var(--text-muted);
+	white-space: nowrap;
+}
+
+.orbit-plan-btn:hover {
+	background: var(--background-modifier-hover);
+	color: var(--text-normal);
+}
+
+.orbit-plan-body {
+	flex: 1 1 auto;
+	min-height: 0;
+	overflow-y: auto;
+	padding: 8px 10px 4px;
+}
+
+.orbit-plan-quad {
+	margin-bottom: 10px;
+	padding-left: 8px;
+	border-left: 3px solid var(--background-modifier-border);
+}
+
+.orbit-plan-tone-urgent {
+	border-left-color: var(--orbit-q1, #e05a54);
+}
+.orbit-plan-tone-noisy {
+	border-left-color: var(--orbit-q2, #8a5cf5);
+}
+.orbit-plan-tone-calm {
+	border-left-color: var(--orbit-q3, #3d7ff0);
+}
+.orbit-plan-tone-idle {
+	border-left-color: var(--orbit-q4, var(--text-faint));
+}
+
+.orbit-plan-quad-head {
+	display: flex;
+	align-items: center;
+	margin-bottom: 3px;
+}
+
+.orbit-plan-quad-title {
+	font-size: 12px;
+	font-weight: 600;
+	color: var(--text-muted);
+	letter-spacing: 0.02em;
+}
+
+.orbit-plan-task {
+	display: flex;
+	align-items: center;
+	gap: 6px;
+	padding: 1px 0;
+	font-size: 13px;
+	line-height: 1.5;
+}
+
+.orbit-plan-task input[type='checkbox'] {
+	margin: 0;
+	flex: 0 0 auto;
+}
+
+.orbit-plan-task-text {
+	flex: 1 1 auto;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.orbit-plan-task-text.is-done {
+	text-decoration: line-through;
+	opacity: 0.55;
+}
+
+.orbit-plan-task-edit {
+	flex: 1 1 auto;
+	width: 100%;
+	font-size: 13px;
+	min-width: 0;
+	border: 1px solid var(--orbit-accent, var(--background-modifier-border));
+	padding: 2px 6px;
+	border-radius: 6px;
+}
+
+.orbit-plan-task-del {
+	flex: 0 0 auto;
+	cursor: pointer;
+	color: var(--text-faint);
+	opacity: 0;
+	padding: 0 2px;
+}
+
+.orbit-plan-task:hover .orbit-plan-task-del {
+	opacity: 1;
+}
+
+.orbit-plan-task-del:hover {
+	color: var(--text-error, #e05a54);
+}
+
+.orbit-plan-add,
+.orbit-plan-add-input {
+	font-size: 12px;
+	color: var(--text-faint);
+	padding: 2px 0;
+}
+
+.orbit-plan-add {
+	cursor: pointer;
+}
+
+.orbit-plan-add:hover {
+	color: var(--text-muted);
+}
+
+.orbit-plan-add-input {
+	width: 100%;
+	border: 1px solid var(--orbit-accent, var(--background-modifier-border));
+}
+
+.orbit-plan-add-input:focus,
+.orbit-plan-task-edit:focus {
+	outline: none;
+	box-shadow: 0 0 0 2px var(--orbit-accent, var(--background-modifier-border));
+	box-shadow: 0 0 0 2px color-mix(in srgb, var(--orbit-accent, #888) 35%, transparent);
+}
+
+.orbit-plan-empty {
+	font-size: 12px;
+	color: var(--text-faint);
+	padding: 2px 0 8px;
+}
+
+/* ---------------- PDCA ---------------- */
+.orbit-plan-pdca {
+	flex: 0 0 auto;
+	border-top: 1px solid var(--background-modifier-border);
+}
+
+.orbit-plan-pdca-head {
+	display: flex;
+	align-items: center;
+	gap: 6px;
+	padding: 6px 10px;
+	cursor: pointer;
+	font-weight: 600;
+	font-size: 12px;
+	color: var(--text-muted);
+}
+
+.orbit-plan-pdca-head:hover {
+	background: var(--background-modifier-hover);
+}
+
+.orbit-plan-pdca-body {
+	max-height: 34vh;
+	overflow-y: auto;
+	padding: 0 10px 8px;
+}
+
+.orbit-plan-pdca-block {
+	margin-bottom: 8px;
+}
+
+.orbit-plan-pdca-label {
+	display: flex;
+	align-items: center;
+	gap: 6px;
+	font-size: 12px;
+	margin-bottom: 2px;
+}
+
+.orbit-plan-pdca-badge {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 16px;
+	height: 16px;
+	border-radius: 4px;
+	background: var(--background-modifier-border);
+	font-size: 11px;
+	font-weight: 600;
+	color: var(--text-muted);
+}
+
+.orbit-plan-pdca-name {
+	color: var(--text-normal);
+}
+
+.orbit-plan-pdca-text {
+	font-size: 12px;
+	color: var(--text-normal);
+	white-space: pre-wrap;
+	padding: 2px 0;
+	cursor: text;
+	border-radius: 4px;
+}
+
+.orbit-plan-pdca-text:hover {
+	background: var(--background-modifier-hover);
+}
+
+.orbit-plan-pdca-text.is-empty {
+	color: var(--text-faint);
+}
+
+.orbit-plan-pdca-input {
+	width: 100%;
+	font-size: 12px;
+	resize: vertical;
+}
+
+/* ---------------- 跳周弹窗 ---------------- */
+.orbit-plan-jump-row {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	margin: 10px 0 16px;
+}
+
+.orbit-plan-jump-label {
+	font-size: 13px;
+	color: var(--text-muted);
+}
+
+.orbit-plan-jump-input {
+	width: 90px;
+}
+
+/* ---------------- 计时器按钮与计时标签 ---------------- */
+/* 计时器：秒表图标按钮 */
+.orbit-plan-timer-btn {
+	position: absolute;
+	left: 10px;
+	top: 8px;
+	z-index: 2;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 26px;
+	height: 26px;
+	border-radius: 8px;
+	background: var(--background-primary);
+	color: var(--orbit-accent, var(--text-muted));
+	cursor: pointer;
+	user-select: none;
+	box-shadow: var(--shadow-s, 0 1px 4px rgba(0, 0, 0, 0.12));
+}
+
+.orbit-plan-timer-btn svg {
+	width: 16px;
+	height: 16px;
+}
+
+.orbit-plan-timer-btn:hover {
+	background: color-mix(in srgb, var(--orbit-accent, #888) 16%, transparent);
+}
+
+.orbit-plan-timer-btn.is-active {
+	color: #e05a54;
+	box-shadow: 0 0 0 1px currentColor, var(--shadow-s, 0 1px 4px rgba(0, 0, 0, 0.12));
+}
+
+.orbit-plan-timer-label {
+	position: absolute;
+	left: 10px;
+	top: 38px;
+	width: 26px;
+	text-align: center;
+	z-index: 2;
+	font-size: 11px;
+	font-variant-numeric: tabular-nums;
+	color: var(--text-muted);
+	pointer-events: none;
+}
+
+/* ---------------- 取色弹窗 ---------------- */
+.graph-orbit-modal h3 {
+	margin-top: 0;
+	margin-bottom: 4px;
+}
+
+.graph-orbit-modal-desc {
+	color: var(--text-muted);
+	margin-top: 0;
+	margin-bottom: 16px;
+	line-height: 1.5;
+}
+
+.graph-orbit-color-row {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	margin-bottom: 20px;
+}
+
+.graph-orbit-color-input {
+	width: 56px;
+	height: 34px;
+	padding: 0;
+	border: 1px solid var(--background-modifier-border);
+	border-radius: 6px;
+	background: transparent;
+	cursor: pointer;
+}
+
+.graph-orbit-color-hex {
+	font-family: var(--font-monospace);
+	font-size: 13px;
+	color: var(--text-muted);
+	letter-spacing: 0.04em;
+}
+
+.graph-orbit-color-actions {
+	display: flex;
+	justify-content: flex-end;
+	gap: 8px;
+}
+
+/* ---------------- 计时器输入弹窗 ---------------- */
+.orbit-plan-timer-modal .orbit-plan-timer-title {
+	margin: 0 0 14px;
+	font-size: 16px;
+}
+
+.orbit-plan-field {
+	margin-bottom: 12px;
+}
+
+.orbit-plan-field-label {
+	font-size: 12px;
+	color: var(--text-muted);
+	margin-bottom: 4px;
+}
+
+.orbit-plan-field-input,
+.orbit-plan-field-textarea {
+	width: 100%;
+	font-size: 13px;
+	border-radius: 6px;
+	border: 1px solid var(--background-modifier-border);
+}
+
+.orbit-plan-field-input:focus,
+.orbit-plan-field-textarea:focus {
+	outline: none;
+	border-color: var(--orbit-accent, var(--interactive-accent));
+	box-shadow: 0 0 0 2px color-mix(in srgb, var(--orbit-accent, #888) 30%, transparent);
+}
+
+.orbit-plan-field-input.is-invalid {
+	border-color: var(--text-error, #e05a54);
+}
+
+.orbit-plan-field-textarea {
+	resize: vertical;
+	min-height: 72px;
+	max-height: 40vh;
+	line-height: 1.5;
+}
+
+.orbit-plan-field-error {
+	min-height: 16px;
+	font-size: 12px;
+	color: var(--text-error, #e05a54);
+	margin-bottom: 4px;
+}
+
+.orbit-plan-chips {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 6px;
+}
+
+.orbit-plan-chip {
+	padding: 3px 10px;
+	font-size: 12px;
+	line-height: 1.6;
+	border-radius: 999px;
+	border: 1px solid var(--background-modifier-border);
+	color: var(--text-muted);
+	cursor: pointer;
+	user-select: none;
+}
+
+.orbit-plan-chip:hover {
+	background: var(--background-modifier-hover);
+}
+
+.orbit-plan-chip.is-selected {
+	color: var(--text-normal);
+	background: var(--background-modifier-hover);
+}
+
+.orbit-plan-chip.orbit-plan-tone-urgent.is-selected {
+	border-color: var(--orbit-q1, #e05a54);
+	box-shadow: inset 0 0 0 1px var(--orbit-q1, #e05a54);
+}
+.orbit-plan-chip.orbit-plan-tone-noisy.is-selected {
+	border-color: var(--orbit-q2, #8a5cf5);
+	box-shadow: inset 0 0 0 1px var(--orbit-q2, #8a5cf5);
+}
+.orbit-plan-chip.orbit-plan-tone-calm.is-selected {
+	border-color: var(--orbit-q3, #3d7ff0);
+	box-shadow: inset 0 0 0 1px var(--orbit-q3, #3d7ff0);
+}
+.orbit-plan-chip.orbit-plan-tone-idle.is-selected {
+	border-color: var(--orbit-q4, var(--text-faint));
+	box-shadow: inset 0 0 0 1px var(--orbit-q4, var(--text-faint));
+}
+
+.orbit-plan-timer-actions {
+	display: flex;
+	justify-content: space-between;
+	gap: 8px;
+	margin-top: 6px;
+}
+/* 图标按钮：颜色跟随 orbit 渐变首色 */
+.orbit-plan-icon {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 24px;
+	height: 24px;
+	border-radius: 6px;
+	cursor: pointer;
+	color: var(--orbit-c2, var(--orbit-accent, var(--text-muted)));
+	opacity: 0.9;
+}
+
+.orbit-plan-icon:hover {
+	background: color-mix(in srgb, var(--orbit-accent, #888) 16%, transparent);
+	opacity: 1;
+}
+
+.orbit-plan-icon svg {
+	width: 15px;
+	height: 15px;
+}
+
+/* 面板作为容器：按容器宽度切换四象限布局 */
+.orbit-plan-panel {
+	container-type: inline-size;
+}
+
+@container (max-width: 520px) {
+	.orbit-plan-body {
+		display: block;
+		padding: 6px 8px 4px;
+	}
+
+	.orbit-plan-quad {
+		padding-bottom: 8px;
+		border-bottom: 1px solid var(--background-modifier-border);
+	}
+
+	.orbit-plan-head {
+		gap: 4px;
+		padding: 4px 6px;
+	}
+
+	.orbit-plan-week {
+		font-size: 12px;
+	}
+
+	.orbit-plan-actions {
+		gap: 2px;
+	}
+
+	.orbit-plan-icon {
+		width: 22px;
+		height: 22px;
+	}
+}
+
+@container (max-width: 360px) {
+	.orbit-plan-week {
+		font-size: 11px;
+		letter-spacing: 0;
+	}
+
+	.orbit-plan-task-text {
+		white-space: normal;
+		line-height: 1.35;
+	}
+}
+
+/* 进度条吸顶 */
+.orbit-plan-progress {
+	position: sticky;
+	top: 0;
+	z-index: 1;
+	background: var(--background-primary);
+}
+/* ---------------- 按天分组（周一…周日） ---------------- */
+.orbit-plan-day {
+	margin-bottom: 12px;
+}
+
+.orbit-plan-day-head {
+	display: flex;
+	align-items: center;
+	gap: 6px;
+	padding: 4px 2px;
+	cursor: pointer;
+	user-select: none;
+	border-bottom: 1px solid var(--background-modifier-border);
+	font-family: 'Times New Roman', 'KaiTi', 'STKaiti', '楷体', serif;
+	font-weight: 600;
+	font-size: 13px;
+	color: var(--text-normal);
+}
+
+.orbit-plan-day.is-today .orbit-plan-day-head {
+	color: var(--orbit-ink, #6d4d99);
+	border-bottom-color: var(--orbit-c2, #6d4d99);
+}
+
+.orbit-plan-day-chevron {
+	width: 12px;
+	font-size: 10px;
+	color: var(--text-muted);
+}
+
+.orbit-plan-day-title {
+	flex: 1 1 auto;
+}
+
+.orbit-plan-day-count {
+	font-size: 11px;
+	color: var(--text-muted);
+	font-variant-numeric: tabular-nums;
+}
+
+.orbit-plan-day-body {
+	padding-top: 6px;
+}
+/* ---------------- 未完成任务记录弹窗 ---------------- */
+.orbit-plan-carry-item {
+	margin-bottom: 14px;
+	padding-bottom: 10px;
+	border-bottom: 1px solid var(--background-modifier-border);
+}
+
+.orbit-plan-carry-name {
+	font-size: 13px;
+	font-weight: 600;
+	margin-bottom: 6px;
+	color: var(--text-normal);
+}
+
+.orbit-plan-carry-item .orbit-plan-field-input {
+	margin-bottom: 6px;
+}
+/* 未完成任务记录：卡片 + 行内标签 + 固定底部 */
+.orbit-plan-carry-summary {
+	font-size: 12px;
+	color: var(--text-muted);
+	margin-bottom: 8px;
+}
+
+.orbit-plan-carry-scroll {
+	max-height: 60vh;
+	overflow-y: auto;
+	padding-right: 4px;
+}
+
+.orbit-plan-carry-item {
+	margin-bottom: 10px;
+	padding: 10px;
+	border-radius: 8px;
+	background: var(--background-secondary);
+	border-bottom: none;
+}
+
+.orbit-plan-carry-name {
+	font-size: 13px;
+	font-weight: 600;
+	margin-bottom: 8px;
+	color: var(--text-normal);
+}
+
+.orbit-plan-carry-row {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	margin-bottom: 6px;
+}
+
+.orbit-plan-carry-label {
+	flex: 0 0 56px;
+	font-size: 12px;
+	color: var(--text-muted);
+}
+
+.orbit-plan-carry-row .orbit-plan-field-input {
+	flex: 1 1 auto;
+	margin-bottom: 0;
+}
+
+.orbit-plan-carry-actions {
+	position: sticky;
+	bottom: 0;
+	padding-top: 8px;
+	background: var(--background-primary);
+}
+/* 迁移弹窗：折叠卡片 */
+.orbit-plan-carry-head {
+	display: flex;
+	align-items: center;
+	gap: 6px;
+	cursor: pointer;
+	user-select: none;
+}
+
+.orbit-plan-carry-chevron {
+	width: 12px;
+	font-size: 10px;
+	color: var(--text-muted);
+}
+
+.orbit-plan-carry-body {
+	margin-top: 8px;
+}
+
+.orbit-plan-carry-name {
+	margin-bottom: 0;
+}
+
+.orbit-plan-carry-body .orbit-plan-carry-row:last-child {
+	margin-bottom: 0;
+}
+.orbit-plan-countdown-hint {
+	margin-top: 4px;
+	font-variant-numeric: tabular-nums;
+}
+/* 搜索按钮与输入框 */
+.orbit-plan-search-btn {
+	position: absolute;
+	left: 44px;
+	top: 8px;
+	z-index: 3;
+	width: 26px;
+	height: 26px;
+	border-radius: 8px;
+	background: var(--background-primary);
+	box-shadow: var(--shadow-s, 0 1px 4px rgba(0, 0, 0, 0.12));
+}
+
+.orbit-plan-search-input {
+	position: absolute;
+	left: 44px;
+	top: 40px;
+	z-index: 3;
+	width: 160px;
+	display: none;
+	padding: 3px 8px;
+	font-size: 12px;
+	border-radius: 6px;
+	border: 1px solid var(--orbit-c1, var(--background-modifier-border));
+	background: var(--background-primary);
+}
+
+.orbit-plan-search-input.is-open {
+	display: block;
+}
+
+.orbit-plan-search-input:focus {
+	outline: none;
+	border-color: var(--orbit-c2, var(--interactive-accent));
+	box-shadow: 0 0 0 2px var(--orbit-c2, transparent);
+}
+/* 搜索：无命中提示 */
+.orbit-plan-search-hint {
+	position: absolute;
+	left: 44px;
+	top: 66px;
+	z-index: 3;
+	display: none;
+	padding: 2px 8px;
+	font-size: 11px;
+	color: var(--text-muted);
+	background: var(--background-primary);
+	border-radius: 6px;
+}
+
+.orbit-plan-search-hint.is-open {
+	display: block;
+}
